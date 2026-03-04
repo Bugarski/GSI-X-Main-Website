@@ -1,6 +1,14 @@
+// =============================================
+// About Page
+// =============================================
+
 .about {
   background-color: var(--surface-dark);
 }
+
+// =============================================
+// Standard sections
+// =============================================
 
 .section {
   padding: var(--section-padding-mobile);
@@ -24,6 +32,10 @@
   }
 }
 
+// =============================================
+// Intro
+// =============================================
+
 .heroDescription {
   max-width: 800px;
   margin-bottom: var(--space-10);
@@ -36,146 +48,277 @@
   max-width: 800px;
 }
 
-.timeline {
-  position: relative;
-  margin-top: var(--space-12);
-  padding-left: var(--space-8);
+// =============================================
+// History section title
+// =============================================
 
-  @include lg { padding-left: 0; }
+.historySectionTitle {
+  margin-bottom: var(--space-12);
+}
 
-  &::before {
-    content: '';
-    position: absolute;
-    left: 11px;
-    top: 0;
-    bottom: 0;
-    width: 1px;
-    background: linear-gradient(180deg, var(--color-electric-dim), transparent);
+// =============================================
+// Era Stack
+// =============================================
 
-    @include lg {
-      left: 50%;
-      transform: translateX(-50%);
-    }
+.eraStack {
+  display: flex;
+  flex-direction: column;
+}
+
+// =============================================
+// Era Row — alternating layout
+// =============================================
+
+.era {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+
+  @include lg {
+    grid-template-columns: 1fr 48px 1fr;
+    gap: 0;
+    align-items: center;
+    min-height: 380px;
   }
 }
 
-.timelineItem {
-  position: relative;
-  margin-bottom: var(--space-10);
+// Reversed: swap image and text columns on desktop
+.eraReversed {
+  @include lg {
+    .eraImageCol { order: 3; }
+    .timelineCol { order: 2; }
+    .eraTextCol  { order: 1; text-align: right; }
 
-  &:last-child { margin-bottom: 0; }
+    .eraTextCol .eraIndex { margin-left: auto; }
+  }
+}
+
+// =============================================
+// Image Column
+// =============================================
+
+.eraImageCol {
+  position: relative;
+
+  @include lg {
+    order: 1;
+  }
+}
+
+.eraImageWrap {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+
+  @include lg {
+    aspect-ratio: 16 / 11;
+  }
+}
+
+// Blue overlay on the image
+.eraImageOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 15, 40, 0.55) 0%,
+      rgba(0, 30, 70, 0.45) 50%,
+      rgba(0, 15, 40, 0.6) 100%
+    );
+  pointer-events: none;
+}
+
+// Single or crossfade base image
+.eraImg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+// Crossfade second image
+.eraImgAlt {
+  animation: crossfade 12s ease-in-out infinite alternate;
+}
+
+@keyframes crossfade {
+  0%, 40% { opacity: 0; }
+  60%, 100% { opacity: 1; }
+}
+
+// Split: two images stacked vertically
+.eraSplitStack {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.eraSplitImg {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+// =============================================
+// Timeline Column (center spine)
+// =============================================
+
+.timelineCol {
+  display: none;
+
+  @include lg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    order: 2;
+    align-self: stretch;
+    position: relative;
+  }
+}
+
+.timelineLine {
+  flex: 1;
+  width: 1px;
+  background: linear-gradient(180deg, transparent 0%, var(--color-electric-dim) 100%);
 }
 
 .timelineDot {
-  position: absolute;
-  left: -24px;
-  top: var(--space-2);
-  width: 8px;
-  height: 8px;
-  background-color: var(--color-electric);
-  box-shadow: 0 0 8px var(--color-electric-glow-strong);
-
-  @include lg {
-    left: 50%;
-    margin-left: -4px;
-    top: var(--space-3);
-  }
-}
-
-.timelineContent {
-  padding: var(--space-6);
-  background-color: var(--surface-panel);
-  border: 1px solid var(--border-panel);
-  border-left: 2px solid var(--color-electric-dim);
-  margin-left: var(--space-4);
-  transition: all var(--transition-system);
-
-  &:hover {
-    border-color: var(--border-medium);
-    border-left-color: var(--color-electric);
-    box-shadow: var(--shadow-glow-sm);
-  }
-
-  @include lg {
-    margin-left: 0;
-    width: calc(50% - var(--space-8));
-  }
-}
-
-.timelineLeft {
-  @include lg {
-    .timelineContent {
-      margin-left: 0;
-      margin-right: auto;
-    }
-  }
-}
-
-.timelineRight {
-  @include lg {
-    .timelineContent {
-      margin-left: auto;
-      margin-right: 0;
-    }
-
-    .timelineDot {
-      left: 50%;
-      margin-left: -4px;
-    }
-  }
-}
-
-.timelineTitle {
-  margin-bottom: var(--space-3);
-}
-
-.corporateGrid {
+  position: relative;
   display: flex;
-  flex-direction: column;
-  gap: var(--space-8);
-  margin-top: var(--space-8);
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.timelineDotInner {
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: var(--color-electric);
+  box-shadow: 0 0 10px var(--color-electric-glow-strong), 0 0 24px rgba(0, 136, 255, 0.15);
+}
+
+.timelineLineBottom {
+  flex: 1;
+  width: 1px;
+  background: linear-gradient(180deg, var(--color-electric-dim) 0%, transparent 100%);
+}
+
+// =============================================
+// Text Column
+// =============================================
+
+.eraTextCol {
+  padding: var(--space-8) 0;
 
   @include lg {
-    flex-direction: row;
-    gap: var(--space-8);
-    align-items: flex-start;
+    order: 3;
+    padding: var(--space-10) var(--space-8);
   }
 }
 
-.corporateCard {
-  flex: 1;
+.eraIndex {
+  display: block;
+  font-family: var(--font-primary);
+  font-size: 11px;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.12em;
+  color: var(--text-electric);
+  margin-bottom: var(--space-3);
+  opacity: 0.6;
+}
+
+.eraTitle {
+  font-family: var(--font-primary);
+  font-size: var(--text-xl);
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin: 0 0 var(--space-4);
+
+  @include md { font-size: var(--text-2xl); }
+}
+
+.eraText {
+  font-family: var(--font-primary);
+  font-size: var(--text-base);
+  font-weight: var(--fw-regular);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0;
+}
+
+// =============================================
+// Corporate — Who We Are Today
+// =============================================
+
+.corporateLead {
+  max-width: 780px;
+  margin: var(--space-6) auto var(--space-10);
+  text-align: center;
+  line-height: 1.7;
+}
+
+.corporateImageWrap {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: var(--space-10);
+  border: 1px solid var(--border-panel);
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    box-shadow: inset 0 0 40px rgba(0, 10, 24, 0.4);
+  }
+}
+
+.corporateImage {
+  display: block;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+.mvGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+
+  @include md { grid-template-columns: repeat(2, 1fr); }
+}
+
+.mvCard {
   padding: var(--space-8);
   background-color: var(--surface-panel);
   border: 1px solid var(--border-panel);
-  border-left: 2px solid var(--color-electric-dim);
+  border-top: 2px solid var(--color-electric-dim);
   transition: all var(--transition-system);
 
   &:hover {
     border-color: var(--border-medium);
-    border-left-color: var(--color-electric);
-    box-shadow: var(--shadow-glow-sm);
-  }
-}
-
-.missionVision {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-6);
-
-  @include lg { flex: 1; }
-}
-
-.missionCard,
-.visionCard {
-  padding: var(--space-6);
-  background-color: var(--surface-panel);
-  border: 1px solid var(--border-panel);
-  border-left: 2px solid var(--color-electric-dim);
-  transition: all var(--transition-system);
-
-  &:hover {
-    border-color: var(--border-medium);
-    border-left-color: var(--color-electric);
+    border-top-color: var(--color-electric);
     box-shadow: var(--shadow-glow-sm);
   }
 }
@@ -183,6 +326,10 @@
 .cardTitle {
   margin-bottom: var(--space-4);
 }
+
+// =============================================
+// Strengths Grid
+// =============================================
 
 .strengthsGrid {
   display: grid;
