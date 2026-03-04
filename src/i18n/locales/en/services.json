@@ -26,46 +26,64 @@
   "cards": {
     "cit": {
       "title": "Cash-In-Transit (CIT)",
+      "navTitle": "Cash-In-Transit",
+      "navDesc": "Armored transport & value logistics",
       "description": "Armored, monitored, and reinforced for absolute reliability. High-volume routes, sensitive cargo, and financial operations handled with zero margin for error.",
       "slug": "cash-in-transit"
     },
     "guards": {
       "title": "Security Guard Services",
+      "navTitle": "Guard Services",
+      "navDesc": "Trained personnel for any environment",
       "description": "Professional, trained, and disciplined personnel ready for corporate, industrial, retail, and high-risk environments.",
       "slug": "security-guard-services"
     },
     "cargo": {
       "title": "Cargo Monitoring & Secure Logistics",
+      "navTitle": "Cargo Monitoring",
+      "navDesc": "Real-time tracking & escort logistics",
       "description": "Real-time GPS tracking, route risk assessment, escorts, and incident response for critical shipments.",
       "slug": "cargo-monitoring"
     },
     "technology": {
       "title": "Technology Integration & Surveillance Systems",
+      "navTitle": "Technology & Surveillance",
+      "navDesc": "CCTV, AI, drones & unified monitoring",
       "description": "CCTV, AI analytics, drones, perimeter protection, access control, and unified monitoring across sites.",
       "slug": "technology-integration"
     },
     "consulting": {
       "title": "Security Consulting & Risk Strategy",
+      "navTitle": "Consulting & Strategy",
+      "navDesc": "Risk audits & security architecture",
       "description": "Audits, vulnerability analysis, operational design, and implementation of end-to-end security architectures.",
       "slug": "security-consulting"
     },
     "conceptDesign": {
       "title": "Security Concept Design & Implementation",
+      "navTitle": "Concept Design",
+      "navDesc": "Full-lifecycle security engineering",
       "description": "Engineering of physical, digital, and operational security systems tailor-made for complex industries.",
       "slug": "security-concept-design"
     },
     "executive": {
       "title": "Executive Protection",
+      "navTitle": "Executive Protection",
+      "navDesc": "Discreet close-protection teams",
       "description": "Discreet, trained, and region-wide personal protection teams for executives, VIPs, and sensitive missions.",
       "slug": "executive-protection"
     },
     "atm": {
       "title": "ATM Operations & Secure Cash Management",
+      "navTitle": "ATM Operations",
+      "navDesc": "Replenishment, monitoring & servicing",
       "description": "Replenishment, maintenance, secure transport, error resolution, and network-wide monitoring.",
       "slug": "atm-operations"
     },
     "custom": {
       "title": "Custom High-Security Projects",
+      "navTitle": "Custom Projects",
+      "navDesc": "Tailored high-security solutions",
       "description": "Tailored solutions for critical infrastructure, government, and enterprise environments.",
       "slug": "custom-projects"
     }
@@ -132,12 +150,11 @@
         "highRisk": { "title": "High-Risk Site Protection", "text": "Critical facilities, energy sites, logistics hubs, infrastructure." },
         "events": { "title": "Event & Temporary Deployments", "text": "Scalable teams for peak demand or special operations." }
       },
-      "model": {
-        "title": "A security force is only as strong as the system behind it.",
-        "recruitment": { "title": "Recruitment & Vetting", "text": "Background checks, psychometric analysis, compliance reviews." },
-        "training": { "title": "Training & Certification", "text": "Operational discipline, emergency response, customer interaction." },
-        "deployment": { "title": "Deployment & Supervision", "text": "Patrol cycles, task assignments, remote oversight." },
-        "reporting": { "title": "Digital Reporting & Incident Control", "text": "Real-time alerts, logs, escalation protocols, and analytics." }
+      "process": {
+        "step1": { "title": "Recruitment & Vetting", "text": "Background checks, psychometric analysis, compliance reviews." },
+        "step2": { "title": "Training & Certification", "text": "Operational discipline, emergency response, customer interaction." },
+        "step3": { "title": "Deployment & Supervision", "text": "Patrol cycles, task assignments, remote oversight." },
+        "step4": { "title": "Digital Reporting & Incident Control", "text": "Real-time alerts, logs, escalation protocols, and analytics." }
       },
       "metrics": {
         "guards": "5,000+ Guards Across Regions",
@@ -260,6 +277,13 @@
         "step3": { "title": "Strategy & Control Design", "text": "Policies, systems, and operational frameworks." },
         "step4": { "title": "Implementation & Validation", "text": "Deployment support, testing, and adjustments." }
       },
+      "differentiators": [
+        "Prevents costly incidents",
+        "Reduces operational blind spots",
+        "Improves decision-making",
+        "Aligns security with business goals",
+        "Enables scalable growth"
+      ],
       "industries": ["Financial Institutions", "Logistics & Distribution Networks", "Industrial & Energy Operations", "Retail & Corporate Campuses", "Government & Public Sector", "Multinational Operations"],
       "cta": {
         "title": "Turn Risk Into Control",
@@ -293,6 +317,13 @@
         "step3": { "title": "Deployment & Integration", "text": "Installation, configuration, and personnel alignment." },
         "step4": { "title": "Go-Live & Optimization", "text": "Live operation, monitoring, tuning, and refinement." }
       },
+      "differentiators": [
+        "One accountable partner",
+        "No handoffs between vendors",
+        "Proven operational experience",
+        "Technology-agnostic solutions",
+        "Built to operate, not just impress"
+      ],
       "industries": ["High-risk facilities", "Corporate headquarters", "Logistics hubs", "Financial infrastructure", "Industrial plants", "Government & public assets"],
       "cta": {
         "title": "Build a Security Concept That Holds Under Pressure",
@@ -326,6 +357,13 @@
         "step3": { "title": "Secure Execution", "text": "Close protection, transport, and live monitoring." },
         "step4": { "title": "Continuous Oversight", "text": "Command center support and incident escalation." }
       },
+      "differentiators": [
+        "Low-profile, non-disruptive operations",
+        "Intelligence-led deployment",
+        "Regional operational reach",
+        "Integrated logistics & security",
+        "Single accountable provider"
+      ],
       "industries": ["Executive travel & site visits", "Cross-border operations", "High-visibility corporate events", "Sensitive negotiations", "Crisis or elevated threat scenarios"],
       "cta": {
         "title": "Protect Leadership Without Disruption",
@@ -399,6 +437,13 @@
         "step4": { "title": "Operation & Oversight", "text": "Live monitoring, escalation, and optimization." },
         "step5": { "title": "Review & Continuous Improvement", "text": "Post-operation analysis and refinements." }
       },
+      "differentiators": [
+        "One partner, full accountability",
+        "Integrated consulting + execution",
+        "Proven regional operations",
+        "Technology-agnostic solutions",
+        "Built for uncertainty and scale"
+      ],
       "industries": ["Critical infrastructure", "Special logistics", "Government & institutional", "Crisis & temporary deployments", "Pilot programs"],
       "cta": {
         "title": "Design a Security Solution Built for Your Reality",

@@ -21,7 +21,6 @@ import Container from '../../components/atoms/Container/Container';
 import SectionTitle from '../../components/atoms/SectionTitle/SectionTitle';
 import Text from '../../components/atoms/Text/Text';
 import { routeConfig } from '../../router/routes';
-import SectionDivider from '../../components/molecules/SectionDivider/SectionDivider';
 import placeholders from '../../utils/placeholders';
 import styles from './Services.module.scss';
 
@@ -101,11 +100,6 @@ export default function Services() {
           </div>
         </Container>
       </section>
-
-      <SectionDivider
-        fallback={placeholders.dividers.surveillanceRoom}
-        alt="GSI surveillance operations"
-      />
 
       <section className={`${styles.section} ${styles.sectionAlt}`}>
         <Container size="lg">

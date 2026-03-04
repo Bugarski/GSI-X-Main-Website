@@ -18,7 +18,6 @@ import Container from '../../components/atoms/Container/Container';
 import SectionTitle from '../../components/atoms/SectionTitle/SectionTitle';
 import Text from '../../components/atoms/Text/Text';
 import Button from '../../components/atoms/Button/Button';
-import SectionDivider from '../../components/molecules/SectionDivider/SectionDivider';
 import placeholders from '../../utils/placeholders';
 import { getLocalizedPath, routeConfig } from '../../router/routes';
 import styles from './Home.module.scss';
@@ -121,11 +120,6 @@ export default function Home() {
           </div>
         </Container>
       </section>
-
-      <SectionDivider
-        fallback={placeholders.dividers.fleetConvoy}
-        alt="GSI armored fleet convoy"
-      />
 
       <section className={`${styles.section} ${styles.sectionAlt}`}>
         <Container size="lg">

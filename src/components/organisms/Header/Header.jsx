@@ -1,13 +1,12 @@
 /**
- * Header — Organism: Full responsive navbar with centered nav
+ * Header — Full responsive navbar with centered nav + mega-menu
  *
- * Desktop: Logo (left) + centered nav links + Language switcher + CTA (right)
- * Services link has a hover dropdown showing all 9 service detail pages.
- * Mobile: Logo + hamburger menu, slide-in overlay with accordion services.
- * Sticky on scroll with glassmorphism.
+ * Desktop: Logo + centered nav + Language switcher + CTA.
+ * Services triggers a full-width mega-menu panel with a 3×3 grid.
+ * Mobile: Hamburger overlay with accordion services sub-menu.
  */
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { Link, useLocation, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { getLocalizedPath, SERVICE_KEYS, routeConfig } from '../../../router/routes';
@@ -41,48 +40,72 @@ function NavLink({ link, lang, currentPath }) {
   );
 }
 
-function ServicesDropdown({ lang, currentPath, onClose }) {
-  const { t } = useTranslation(['common', 'services']);
+function ServicesTrigger({ lang, currentPath, megaOpen, onEnter, onLeave }) {
+  const { t } = useTranslation('common');
   const servicesHref = getLocalizedPath('services', lang);
   const pathWithoutLang = currentPath.replace(new RegExp(`^/${lang}`), '') || '/';
-  const servicesRoute = servicesHref.replace(new RegExp(`^/${lang}`), '') || '/';
-  const isServicesActive = pathWithoutLang === servicesRoute;
   const isOnServicePage = pathWithoutLang.startsWith('/services') || pathWithoutLang.startsWith('/servicios');
 
   return (
-    <div className={styles.dropdownWrap} onMouseLeave={onClose}>
+    <div
+      className={styles.servicesTriggerWrap}
+      onMouseEnter={onEnter}
+      onMouseLeave={onLeave}
+    >
       <Link
         to={servicesHref}
-        className={`${styles.navLink} ${isServicesActive || isOnServicePage ? styles.active : ''} ${styles.dropdownTrigger}`}
+        className={`${styles.navLink} ${isOnServicePage ? styles.active : ''} ${megaOpen ? styles.megaActive : ''}`}
       >
         {t('nav.services')}
-        <svg className={styles.chevron} width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+        <svg className={`${styles.chevron} ${megaOpen ? styles.chevronOpen : ''}`} width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
           <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </Link>
-      <div className={styles.dropdown}>
-        <div className={styles.dropdownInner}>
-          <Link to={servicesHref} className={styles.dropdownOverview}>
-            {t('nav.services')} — {lang === 'es' ? 'Vista General' : 'Overview'}
+    </div>
+  );
+}
+
+function MegaMenu({ lang, currentPath, open }) {
+  const { t } = useTranslation(['common', 'services']);
+  const servicesHref = getLocalizedPath('services', lang);
+
+  return (
+    <div className={`${styles.mega} ${open ? styles.megaOpen : ''}`}>
+      <div className={styles.megaInner}>
+        <div className={styles.megaHeader}>
+          <Link to={servicesHref} className={styles.megaOverviewLink}>
+            {t('nav.services', { ns: 'common' })}
+            <span className={styles.megaOverviewArrow}>&rarr;</span>
           </Link>
-          <div className={styles.dropdownDivider} />
-          <div className={styles.dropdownGrid}>
-            {SERVICE_KEYS.map((key) => {
-              const detail = routeConfig.serviceDetail[key];
-              if (!detail) return null;
-              const href = `/${lang}${detail[lang]}`;
-              const isItemActive = currentPath === href;
-              return (
-                <Link
-                  key={key}
-                  to={href}
-                  className={`${styles.dropdownItem} ${isItemActive ? styles.dropdownItemActive : ''}`}
-                >
-                  {t(`cards.${key}.title`, { ns: 'services' })}
-                </Link>
-              );
-            })}
-          </div>
+          <span className={styles.megaTagline}>
+            {lang === 'es' ? '9 líneas de servicio especializadas' : '9 specialized service lines'}
+          </span>
+        </div>
+        <div className={styles.megaGrid}>
+          {SERVICE_KEYS.map((key, i) => {
+            const detail = routeConfig.serviceDetail[key];
+            if (!detail) return null;
+            const href = `/${lang}${detail[lang]}`;
+            const isItemActive = currentPath === href;
+            return (
+              <Link
+                key={key}
+                to={href}
+                className={`${styles.megaCard} ${isItemActive ? styles.megaCardActive : ''}`}
+                style={{ transitionDelay: open ? `${i * 30}ms` : '0ms' }}
+              >
+                <span className={styles.megaCardIndex}>
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <span className={styles.megaCardTitle}>
+                  {t(`cards.${key}.navTitle`, { ns: 'services' })}
+                </span>
+                <span className={styles.megaCardDesc}>
+                  {t(`cards.${key}.navDesc`, { ns: 'services' })}
+                </span>
+              </Link>
+            );
+          })}
         </div>
       </div>
     </div>
@@ -120,7 +143,7 @@ function MobileServicesAccordion({ lang, currentPath }) {
             const href = `/${lang}${detail[lang]}`;
             return (
               <Link key={key} to={href} className={styles.mobileSubLink}>
-                {t(`cards.${key}.title`, { ns: 'services' })}
+                {t(`cards.${key}.navTitle`, { ns: 'services' })}
               </Link>
             );
           })}
@@ -136,8 +159,8 @@ function Header() {
   const { t } = useTranslation('common');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const dropdownTimer = useRef(null);
+  const [megaOpen, setMegaOpen] = useState(false);
+  const leaveTimer = useRef(null);
 
   const currentLang = lang || 'en';
   const currentPath = location.pathname;
@@ -151,81 +174,94 @@ function Header() {
 
   useEffect(() => {
     setMobileMenuOpen(false);
-    setDropdownOpen(false);
+    setMegaOpen(false);
   }, [currentPath]);
 
-  const handleDropdownEnter = () => {
-    clearTimeout(dropdownTimer.current);
-    setDropdownOpen(true);
-  };
+  const handleMegaEnter = useCallback(() => {
+    clearTimeout(leaveTimer.current);
+    setMegaOpen(true);
+  }, []);
 
-  const handleDropdownLeave = () => {
-    dropdownTimer.current = setTimeout(() => setDropdownOpen(false), 150);
-  };
+  const handleMegaLeave = useCallback(() => {
+    leaveTimer.current = setTimeout(() => setMegaOpen(false), 200);
+  }, []);
 
   return (
-    <header
-      className={`${styles.header} ${scrolled ? styles.scrolled : ''} ${mobileMenuOpen ? styles.menuOpen : ''}`}
-    >
-      <div className={styles.inner}>
-        <Link to={`/${currentLang}`} className={styles.logo}>
-          <img
-            src="/media/logos/gsi-logo-white.png"
-            alt="GSI — Grupo Seguridad Integral"
-            className={styles.logoImg}
-          />
-        </Link>
+    <>
+      <header
+        className={`${styles.header} ${scrolled ? styles.scrolled : ''} ${mobileMenuOpen ? styles.menuOpen : ''} ${megaOpen ? styles.megaVisible : ''}`}
+      >
+        <div className={styles.inner}>
+          <Link to={`/${currentLang}`} className={styles.logo}>
+            <img
+              src="/media/logos/gsi-logo-white.png"
+              alt="GSI — Grupo Seguridad Integral"
+              className={styles.logoImg}
+            />
+          </Link>
 
-        <nav className={styles.nav} aria-label="Main navigation">
-          {NAV_LINKS.map((link) =>
-            link.hasDropdown ? (
-              <div
-                key={link.key}
-                className={`${styles.dropdownContainer} ${dropdownOpen ? styles.dropdownVisible : ''}`}
-                onMouseEnter={handleDropdownEnter}
-                onMouseLeave={handleDropdownLeave}
-              >
-                <ServicesDropdown
+          <nav className={styles.nav} aria-label="Main navigation">
+            {NAV_LINKS.map((link) =>
+              link.hasDropdown ? (
+                <ServicesTrigger
+                  key={link.key}
                   lang={currentLang}
                   currentPath={currentPath}
-                  onClose={handleDropdownLeave}
+                  megaOpen={megaOpen}
+                  onEnter={handleMegaEnter}
+                  onLeave={handleMegaLeave}
                 />
-              </div>
-            ) : (
-              <NavLink
-                key={link.key}
-                link={link}
-                lang={currentLang}
-                currentPath={currentPath}
-              />
-            )
-          )}
-        </nav>
+              ) : (
+                <NavLink
+                  key={link.key}
+                  link={link}
+                  lang={currentLang}
+                  currentPath={currentPath}
+                />
+              )
+            )}
+          </nav>
 
-        <div className={styles.actions}>
-          <LanguageSwitcher />
-          <Link
-            to={quoteHref}
-            className={`${buttonStyles.button} ${buttonStyles.primary} ${buttonStyles.sm}`}
+          <div className={styles.actions}>
+            <LanguageSwitcher />
+            <Link
+              to={quoteHref}
+              className={`${buttonStyles.button} ${buttonStyles.primary} ${buttonStyles.sm}`}
+            >
+              <span className={buttonStyles.label}>{t('cta.requestQuote')}</span>
+            </Link>
+          </div>
+
+          <button
+            type="button"
+            className={styles.hamburger}
+            aria-label={t('accessibility.openMenu')}
+            aria-expanded={mobileMenuOpen}
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            <span className={buttonStyles.label}>{t('cta.requestQuote')}</span>
-          </Link>
+            <span className={styles.hamburgerBar} />
+            <span className={styles.hamburgerBar} />
+            <span className={styles.hamburgerBar} />
+          </button>
         </div>
+      </header>
 
-        <button
-          type="button"
-          className={styles.hamburger}
-          aria-label={t('accessibility.openMenu')}
-          aria-expanded={mobileMenuOpen}
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
-          <span className={styles.hamburgerBar} />
-          <span className={styles.hamburgerBar} />
-          <span className={styles.hamburgerBar} />
-        </button>
+      {/* Mega-menu panel — outside header for full-width positioning */}
+      <div
+        onMouseEnter={handleMegaEnter}
+        onMouseLeave={handleMegaLeave}
+      >
+        <MegaMenu lang={currentLang} currentPath={currentPath} open={megaOpen} />
       </div>
 
-      <div className={styles.mobileOverlay}>
+      {/* Mega backdrop */}
+      <div
+        className={`${styles.megaBackdrop} ${megaOpen ? styles.megaBackdropVisible : ''}`}
+        onClick={() => setMegaOpen(false)}
+      />
+
+      {/* Mobile overlay */}
+      <div className={`${styles.mobileOverlay} ${mobileMenuOpen ? styles.mobileOverlayVisible : ''}`}>
         <nav className={styles.mobileNav} aria-label="Mobile navigation">
           {NAV_LINKS.map((link) =>
             link.hasDropdown ? (
@@ -252,7 +288,7 @@ function Header() {
           </Link>
         </nav>
       </div>
-    </header>
+    </>
   );
 }
 

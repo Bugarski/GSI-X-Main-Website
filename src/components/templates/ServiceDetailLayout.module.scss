@@ -72,6 +72,37 @@
   @include md { grid-template-columns: repeat(4, 1fr); }
 }
 
+.differentiatorGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+
+  @include md { grid-template-columns: repeat(2, 1fr); }
+  @include lg { grid-template-columns: repeat(3, 1fr); }
+}
+
+.differentiatorItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  background-color: var(--surface-panel);
+  border: 1px solid var(--border-panel);
+  transition: all var(--transition-system);
+
+  &:hover {
+    border-color: var(--border-medium);
+  }
+}
+
+.differentiatorCheck {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-electric);
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
 .industriesGrid {
   display: flex;
   flex-wrap: wrap;

@@ -26,46 +26,64 @@
   "cards": {
     "cit": {
       "title": "Transporte de Valores (CIT)",
+      "navTitle": "Transporte de Valores",
+      "navDesc": "Transporte blindado y logística",
       "description": "Blindado, monitoreado y reforzado para máxima confiabilidad. Rutas de alto volumen, carga sensible y operaciones financieras sin margen de error.",
       "slug": "transporte-de-valores"
     },
     "guards": {
       "title": "Guardias de Seguridad",
+      "navTitle": "Guardias de Seguridad",
+      "navDesc": "Personal capacitado y certificado",
       "description": "Personal profesional, capacitado y disciplinado para entornos corporativos, industriales, comerciales y de alto riesgo.",
       "slug": "guardias-de-seguridad"
     },
     "cargo": {
       "title": "Monitoreo de Carga y Logística Segura",
+      "navTitle": "Monitoreo de Carga",
+      "navDesc": "Rastreo en tiempo real y escoltas",
       "description": "Rastreo GPS en tiempo real, evaluación de rutas, escoltas y respuesta a incidentes para envíos críticos.",
       "slug": "monitoreo-de-carga"
     },
     "technology": {
       "title": "Integración Tecnológica y Sistemas de Vigilancia",
+      "navTitle": "Tecnología y Vigilancia",
+      "navDesc": "CCTV, IA, drones y monitoreo",
       "description": "CCTV, analítica con IA, drones, protección perimetral, control de accesos y monitoreo unificado entre sitios.",
       "slug": "integracion-tecnologica"
     },
     "consulting": {
       "title": "Consultoría de Seguridad y Gestión de Riesgos",
+      "navTitle": "Consultoría y Estrategia",
+      "navDesc": "Auditorías y arquitectura de seguridad",
       "description": "Auditorías, análisis de vulnerabilidades, diseño operativo e implementación de arquitecturas de seguridad integrales.",
       "slug": "consultoria-de-seguridad"
     },
     "conceptDesign": {
       "title": "Diseño e Implementación de Conceptos de Seguridad",
+      "navTitle": "Diseño Conceptual",
+      "navDesc": "Ingeniería de seguridad integral",
       "description": "Ingeniería de sistemas de seguridad física, digital y operativa, hechos a medida para industrias complejas.",
       "slug": "diseno-conceptos-seguridad"
     },
     "executive": {
       "title": "Protección Ejecutiva",
+      "navTitle": "Protección Ejecutiva",
+      "navDesc": "Equipos de protección discreta",
       "description": "Equipos de protección personal discretos, capacitados y con cobertura regional para ejecutivos, VIPs y misiones sensibles.",
       "slug": "proteccion-ejecutiva"
     },
     "atm": {
       "title": "Operación de Cajeros y Gestión Segura de Efectivo",
+      "navTitle": "Operación de Cajeros",
+      "navDesc": "Abastecimiento, monitoreo y servicio",
       "description": "Abastecimiento, mantenimiento, transporte seguro, resolución de incidencias y monitoreo de redes completas.",
       "slug": "operacion-cajeros"
     },
     "custom": {
       "title": "Proyectos Especiales de Alta Seguridad",
+      "navTitle": "Proyectos Especiales",
+      "navDesc": "Soluciones de alta seguridad a medida",
       "description": "Soluciones a medida para infraestructura crítica, gobierno y entornos empresariales.",
       "slug": "proyectos-especiales"
     }
@@ -184,21 +202,20 @@
           "text": "Equipos escalables para picos de demanda u operaciones especiales."
         }
       },
-      "model": {
-        "title": "Una fuerza de seguridad es tan fuerte como el sistema que la respalda.",
-        "recruitment": {
+      "process": {
+        "step1": {
           "title": "Reclutamiento y Evaluación",
           "text": "Verificación de antecedentes, análisis psicométrico y revisiones de cumplimiento."
         },
-        "training": {
+        "step2": {
           "title": "Capacitación y Certificación",
           "text": "Disciplina operativa, respuesta a emergencias, interacción con clientes."
         },
-        "deployment": {
+        "step3": {
           "title": "Despliegue y Supervisión",
           "text": "Ciclos de rondines, asignación de tareas, supervisión remota."
         },
-        "reporting": {
+        "step4": {
           "title": "Reportes Digitales y Control de Incidentes",
           "text": "Alertas en tiempo real, bitácoras, protocolos de escalamiento y analítica."
         }
@@ -438,6 +455,13 @@
           "text": "Soporte en despliegue, pruebas y ajustes."
         }
       },
+      "differentiators": [
+        "Previene incidentes costosos",
+        "Reduce puntos ciegos operativos",
+        "Mejora la toma de decisiones",
+        "Alinea la seguridad con los objetivos del negocio",
+        "Permite crecimiento escalable"
+      ],
       "industries": [
         "Instituciones Financieras",
         "Redes Logísticas y de Distribución",
@@ -505,6 +529,13 @@
           "text": "Operación en vivo, monitoreo, ajustes y mejora continua."
         }
       },
+      "differentiators": [
+        "Un solo socio responsable",
+        "Sin transferencias entre proveedores",
+        "Experiencia operativa comprobada",
+        "Soluciones tecnológicamente neutrales",
+        "Diseñado para operar, no solo impresionar"
+      ],
       "industries": [
         "Instalaciones de alto riesgo",
         "Sedes corporativas",
@@ -572,6 +603,13 @@
           "text": "Soporte de centro de comando y escalamiento de incidentes."
         }
       },
+      "differentiators": [
+        "Operaciones discretas y no invasivas",
+        "Despliegue basado en inteligencia",
+        "Alcance operativo regional",
+        "Logística y seguridad integradas",
+        "Un solo proveedor responsable"
+      ],
       "industries": [
         "Viajes ejecutivos y visitas a sitio",
         "Operaciones transfronterizas",
@@ -714,6 +752,13 @@
           "text": "Análisis posterior y ajustes."
         }
       },
+      "differentiators": [
+        "Un solo socio, responsabilidad total",
+        "Consultoría y ejecución integradas",
+        "Operación regional comprobada",
+        "Soluciones tecnológicamente neutrales",
+        "Diseñado para la incertidumbre y la escala"
+      ],
       "industries": [
         "Infraestructura crítica",
         "Logística especial",

@@ -14,7 +14,6 @@ import HeroSection from '../../components/organisms/HeroSection/HeroSection';
 import Container from '../../components/atoms/Container/Container';
 import SectionTitle from '../../components/atoms/SectionTitle/SectionTitle';
 import Text from '../../components/atoms/Text/Text';
-import SectionDivider from '../../components/molecules/SectionDivider/SectionDivider';
 import placeholders from '../../utils/placeholders';
 import styles from './About.module.scss';
 
@@ -162,11 +161,6 @@ export default function About() {
           </div>
         </Container>
       </section>
-
-      <SectionDivider
-        fallback={placeholders.dividers.infrastructure}
-        alt="GSI operations infrastructure"
-      />
 
       <section className={`${styles.section} ${styles.sectionAlt}`}>
         <Container size="lg">

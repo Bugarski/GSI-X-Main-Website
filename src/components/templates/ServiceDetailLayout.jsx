@@ -31,6 +31,7 @@ export default function ServiceDetailLayout({ serviceKey }) {
   const capabilities = detail.capabilities || {};
   const process = detail.process || {};
   const metrics = detail.metrics || {};
+  const differentiators = detail.differentiators || [];
   const industries = detail.industries || [];
 
   const processSteps = Object.values(process).map((step) => ({
@@ -117,9 +118,33 @@ export default function ServiceDetailLayout({ serviceKey }) {
         </section>
       )}
 
+      {/* Differentiators */}
+      {differentiators.length > 0 && (
+        <section className={`${styles.section} ${styles.sectionAlt}`}>
+          <Container size="lg">
+            <div className={styles.differentiatorGrid}>
+              {differentiators.map((item, i) => (
+                <motion.div
+                  key={i}
+                  className={styles.differentiatorItem}
+                  variants={panelReveal}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  custom={i}
+                >
+                  <span className={styles.differentiatorCheck} aria-hidden="true" />
+                  <Text variant="body2">{item}</Text>
+                </motion.div>
+              ))}
+            </div>
+          </Container>
+        </section>
+      )}
+
       {/* Industries */}
       {industries.length > 0 && (
-        <section className={`${styles.section} ${styles.sectionAlt}`}>
+        <section className={styles.section}>
           <Container size="lg">
             <motion.div variants={panelReveal} initial="hidden" whileInView="visible" viewport={{ once: true }}>
               <div className={styles.industriesGrid}>
