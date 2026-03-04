@@ -19,7 +19,7 @@ const placeholders = {
   },
 
   services: {
-    cit: `https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1920&${UQ}`,
+    cit: '/media/optimized/services/cit-hero-lg.jpg',
     guards: `https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=1920&${UQ}`,
     cargo: `https://images.unsplash.com/photo-1586528116022-ab763d075f20?w=1920&${UQ}`,
     technology: `https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1920&${UQ}`,

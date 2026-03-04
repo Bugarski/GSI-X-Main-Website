@@ -17,6 +17,7 @@ function HeroSection({
   ctaSecondary,
   backgroundImage,
   backgroundVideo,
+  backgroundPosition = 'center',
   overlay = true,
   align = 'center',
   fullHeight = false,
@@ -41,7 +42,7 @@ function HeroSection({
   return (
     <section
       className={`${styles.hero} ${fullHeight ? styles.fullHeight : ''}`}
-      style={backgroundImage && !backgroundVideo ? { backgroundImage: `url(${backgroundImage})` } : undefined}
+      style={backgroundImage && !backgroundVideo ? { backgroundImage: `url(${backgroundImage})`, backgroundPosition } : undefined}
     >
       {backgroundVideo && (
         <OptimizedVideo

@@ -46,6 +46,7 @@ export default function ServiceDetailLayout({ serviceKey }) {
         title={detail.hero.title}
         subtitle={detail.hero.subtitle}
         backgroundImage={placeholders.services[serviceKey]}
+        backgroundPosition={detail.hero.bgPosition || 'center'}
         align="center"
       />
 

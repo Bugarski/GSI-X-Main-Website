@@ -44,7 +44,7 @@ const ERA_CONFIG = [
   {
     key: 'armored',
     images: [`${BASE}/armored-truck`, `${BASE}/armored-blueprints`],
-    split: true,
+    crossfade: true,
   },
   {
     key: 'intelligent',
@@ -149,7 +149,7 @@ export default function About() {
             <Text variant="body1" color="secondary" className={styles.heroDescription}>
               {t('hero.description')}
             </Text>
-            <SectionTitle title={t('intro.title')} />
+            <SectionTitle title={t('intro.title')} align="center" />
             <Text variant="body1" color="muted" className={styles.introText}>
               {t('intro.text')}
             </Text>
@@ -268,7 +268,7 @@ export default function About() {
             viewport={{ once: true }}
             variants={panelReveal}
           >
-            <SectionTitle title={t('strengths.title')} />
+            <SectionTitle title={t('strengths.title')} align="center" />
           </motion.div>
           <div className={styles.strengthsGrid}>
             {Object.keys(STRENGTH_ICONS).map((key, i) => (

@@ -89,6 +89,7 @@ export default function Home() {
         subtitle={t('hero.subtitle')}
         ctaPrimary={heroCtaPrimary}
         ctaSecondary={heroCtaSecondary}
+        backgroundVideo="/media/optimized/videos/hero-flag"
         backgroundImage={placeholders.heroes.home}
         fullHeight
         align="center"

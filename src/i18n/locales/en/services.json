@@ -92,7 +92,8 @@
     "cit": {
       "hero": {
         "title": "Cash-In-Transit (CIT)",
-        "subtitle": "High-risk routes. High-value cargo. Zero room for failure. GSI delivers armored transport engineered for absolute reliability and controlled end-to-end with advanced monitoring."
+        "subtitle": "High-risk routes. High-value cargo. Zero room for failure. GSI delivers armored transport engineered for absolute reliability and controlled end-to-end with advanced monitoring.",
+        "bgPosition": "top center"
       },
       "problem": {
         "title": "Moving cash has never been more complex — or more exposed.",

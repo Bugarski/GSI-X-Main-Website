@@ -92,7 +92,8 @@
     "cit": {
       "hero": {
         "title": "Transporte de Valores (CIT)",
-        "subtitle": "Rutas de alto riesgo. Carga de alto valor. Cero margen de error. GSI ofrece transporte blindado diseñado para máxima confiabilidad y control total mediante monitoreo avanzado."
+        "subtitle": "Rutas de alto riesgo. Carga de alto valor. Cero margen de error. GSI ofrece transporte blindado diseñado para máxima confiabilidad y control total mediante monitoreo avanzado.",
+        "bgPosition": "top center"
       },
       "problem": {
         "title": "Mover efectivo nunca ha sido tan complejo — ni tan expuesto.",
