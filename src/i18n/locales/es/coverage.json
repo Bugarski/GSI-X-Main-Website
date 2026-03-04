@@ -1,0 +1,28 @@
+{
+  "hero": {
+    "title": "Cobertura Operativa en las Américas",
+    "subtitle": "Operaciones de seguridad coordinadas en México, Centroamérica, Brasil y alianzas estratégicas internacionales."
+  },
+  "regions": {
+    "mexico": {
+      "title": "México",
+      "description": "Operaciones a nivel nacional cubriendo todas las principales ciudades y corredores de alto riesgo con centros de comando dedicados."
+    },
+    "centralAmerica": {
+      "title": "Centroamérica",
+      "description": "Cobertura regional mediante operaciones coordinadas y alianzas estratégicas en Guatemala, Honduras, El Salvador, Costa Rica y Panamá."
+    },
+    "brazil": {
+      "title": "Brasil",
+      "description": "Presencia operativa en crecimiento apoyando transporte de valores y servicios de seguridad en áreas metropolitanas clave."
+    },
+    "global": {
+      "title": "Aliados Globales Estratégicos",
+      "description": "Alianzas internacionales que permiten operaciones de seguridad coordinadas en España, Estados Unidos y mercados selectos a nivel mundial."
+    }
+  },
+  "cta": {
+    "title": "¿Necesita cobertura en su región?",
+    "subtitle": "Contacte a nuestro equipo para discutir disponibilidad operativa y tiempos de despliegue."
+  }
+}

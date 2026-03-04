@@ -1,0 +1,218 @@
+.about {
+  background-color: var(--surface-dark);
+}
+
+.section {
+  padding: var(--section-padding-mobile);
+
+  @include md { padding: var(--section-padding-tablet); }
+  @include lg { padding: var(--section-padding-desktop); }
+}
+
+.sectionAlt {
+  background-color: var(--surface-dark-elevated);
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--border-medium) 50%, transparent 100%);
+  }
+}
+
+.heroDescription {
+  max-width: 800px;
+  margin-bottom: var(--space-10);
+  font-size: var(--text-lg);
+  line-height: 1.6;
+}
+
+.introText {
+  margin-top: var(--space-6);
+  max-width: 800px;
+}
+
+.timeline {
+  position: relative;
+  margin-top: var(--space-12);
+  padding-left: var(--space-8);
+
+  @include lg { padding-left: 0; }
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 11px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(180deg, var(--color-electric-dim), transparent);
+
+    @include lg {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.timelineItem {
+  position: relative;
+  margin-bottom: var(--space-10);
+
+  &:last-child { margin-bottom: 0; }
+}
+
+.timelineDot {
+  position: absolute;
+  left: -24px;
+  top: var(--space-2);
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-electric);
+  box-shadow: 0 0 8px var(--color-electric-glow-strong);
+
+  @include lg {
+    left: 50%;
+    margin-left: -4px;
+    top: var(--space-3);
+  }
+}
+
+.timelineContent {
+  padding: var(--space-6);
+  background-color: var(--surface-panel);
+  border: 1px solid var(--border-panel);
+  border-left: 2px solid var(--color-electric-dim);
+  margin-left: var(--space-4);
+  transition: all var(--transition-system);
+
+  &:hover {
+    border-color: var(--border-medium);
+    border-left-color: var(--color-electric);
+    box-shadow: var(--shadow-glow-sm);
+  }
+
+  @include lg {
+    margin-left: 0;
+    width: calc(50% - var(--space-8));
+  }
+}
+
+.timelineLeft {
+  @include lg {
+    .timelineContent {
+      margin-left: 0;
+      margin-right: auto;
+    }
+  }
+}
+
+.timelineRight {
+  @include lg {
+    .timelineContent {
+      margin-left: auto;
+      margin-right: 0;
+    }
+
+    .timelineDot {
+      left: 50%;
+      margin-left: -4px;
+    }
+  }
+}
+
+.timelineTitle {
+  margin-bottom: var(--space-3);
+}
+
+.corporateGrid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  margin-top: var(--space-8);
+
+  @include lg {
+    flex-direction: row;
+    gap: var(--space-8);
+    align-items: flex-start;
+  }
+}
+
+.corporateCard {
+  flex: 1;
+  padding: var(--space-8);
+  background-color: var(--surface-panel);
+  border: 1px solid var(--border-panel);
+  border-left: 2px solid var(--color-electric-dim);
+  transition: all var(--transition-system);
+
+  &:hover {
+    border-color: var(--border-medium);
+    border-left-color: var(--color-electric);
+    box-shadow: var(--shadow-glow-sm);
+  }
+}
+
+.missionVision {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+
+  @include lg { flex: 1; }
+}
+
+.missionCard,
+.visionCard {
+  padding: var(--space-6);
+  background-color: var(--surface-panel);
+  border: 1px solid var(--border-panel);
+  border-left: 2px solid var(--color-electric-dim);
+  transition: all var(--transition-system);
+
+  &:hover {
+    border-color: var(--border-medium);
+    border-left-color: var(--color-electric);
+    box-shadow: var(--shadow-glow-sm);
+  }
+}
+
+.cardTitle {
+  margin-bottom: var(--space-4);
+}
+
+.strengthsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+  margin-top: var(--space-8);
+
+  @include md { grid-template-columns: repeat(2, 1fr); }
+  @include lg { grid-template-columns: repeat(5, 1fr); }
+}
+
+.strengthCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--space-6);
+  background-color: var(--surface-panel);
+  border: 1px solid var(--border-panel);
+  border-left: 2px solid var(--color-electric-dim);
+  transition: all var(--transition-system);
+
+  &:hover {
+    border-color: var(--border-medium);
+    border-left-color: var(--color-electric);
+    box-shadow: var(--shadow-glow-sm);
+  }
+}
+
+.strengthIcon {
+  color: var(--text-electric);
+  font-size: 24px;
+  margin-bottom: var(--space-4);
+}

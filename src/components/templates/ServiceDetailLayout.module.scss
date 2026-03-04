@@ -1,0 +1,128 @@
+.servicePage {
+  background-color: var(--surface-dark);
+}
+
+.section {
+  padding: var(--section-padding-mobile);
+  position: relative;
+
+  @include md { padding: var(--section-padding-tablet); }
+  @include lg { padding: var(--section-padding-desktop); }
+}
+
+.sectionAlt {
+  background-color: var(--surface-dark-elevated);
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--border-medium) 50%, transparent 100%);
+  }
+
+  &::before { top: 0; }
+  &::after { bottom: 0; }
+}
+
+.problemText {
+  max-width: 800px;
+  margin-top: var(--space-6);
+}
+
+.mt4 {
+  margin-top: var(--space-4);
+}
+
+.capabilitiesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+
+  @include md { grid-template-columns: repeat(2, 1fr); }
+  @include lg { grid-template-columns: repeat(3, 1fr); }
+}
+
+.capabilityCard {
+  padding: var(--space-6);
+  background-color: var(--surface-panel);
+  border: 1px solid var(--border-panel);
+  border-left: 2px solid var(--color-electric-dim);
+  transition: all var(--transition-system);
+
+  &:hover {
+    border-color: var(--border-medium);
+    border-left-color: var(--color-electric);
+    box-shadow: var(--shadow-glow-sm);
+  }
+}
+
+.capTitle {
+  margin-bottom: var(--space-3);
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-5);
+
+  @include md { grid-template-columns: repeat(4, 1fr); }
+}
+
+.industriesGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.industryTag {
+  padding: var(--space-2) var(--space-4);
+  background-color: var(--surface-panel);
+  border: 1px solid var(--border-panel);
+  font-size: 12px;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  transition: all var(--transition-system);
+
+  &:hover {
+    border-color: var(--border-medium);
+    color: var(--text-primary);
+  }
+}
+
+.ctaSection {
+  padding: var(--space-20) var(--space-4);
+  background: linear-gradient(170deg, var(--surface-dark-elevated) 0%, var(--surface-primary) 100%);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--grid-color) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+    background-size: var(--grid-size) var(--grid-size);
+    mask-image: radial-gradient(ellipse 60% 80% at 50% 50%, black 10%, transparent 70%);
+  }
+
+  @include md { padding: var(--space-24) var(--space-6); }
+}
+
+.ctaContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}

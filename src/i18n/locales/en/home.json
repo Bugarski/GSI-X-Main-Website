@@ -1,0 +1,83 @@
+{
+  "hero": {
+    "title": "High-Stakes Security. Zero Room for Failure.",
+    "subtitle": "We move what others can't. Cash, assets, people, and critical operations — protected through advanced technology, trained personnel, and strategic precision across Latin America.",
+    "ctaPrimary": "Explore Services",
+    "ctaSecondary": "Contact Our Team"
+  },
+  "coreServices": {
+    "sectionTitle": "Core Services",
+    "cit": {
+      "title": "Cash-In-Transit (CIT)",
+      "description": "Secure, hardened, and monitored. No delays. No excuses."
+    },
+    "guards": {
+      "title": "Security Guard Services",
+      "description": "Trained, verified, and disciplined teams for industry, retail, corporate, and critical facilities."
+    }
+  },
+  "advancedServices": {
+    "sectionTitle": "Advanced Security Solutions",
+    "technology": {
+      "title": "Security Technology Integration",
+      "description": "CCTV, AI analytics, drones, perimeter systems, and unified monitoring — deployed fast, customized deeply, and scaled anywhere."
+    },
+    "cargo": {
+      "title": "Cargo Monitoring & Secure Logistics",
+      "description": "Real-time tracking, escorting, and high-risk route engineering for sensitive shipments."
+    },
+    "consulting": {
+      "title": "Security Consulting & Risk Strategy",
+      "description": "We audit, design, and execute operational security architectures for corporations across the region."
+    },
+    "executive": {
+      "title": "Executive Protection",
+      "description": "Discreet, professional, region-wide deployment for executives, teams, and sensitive operations."
+    }
+  },
+  "whyGsi": {
+    "sectionTitle": "Why GSI",
+    "subtitle": "We operate where precision matters, downtime is unacceptable, and security must never fail.",
+    "points": {
+      "coverage": "National and regional coverage",
+      "monitoring": "Advanced monitoring and command centers",
+      "personnel": "Certified personnel and standardized operations",
+      "technology": "Technology-driven scalability",
+      "trusted": "Trusted by major banks and global brands"
+    }
+  },
+  "testimonials": {
+    "sectionTitle": "Client Stories & Experiences",
+    "quote1": {
+      "text": "GSI executed flawlessly. Their monitoring and response times outperform what we've seen in the region. This is operational security done right.",
+      "author": "Ricardo Méndez"
+    },
+    "cta": "See All Testimonials"
+  },
+  "process": {
+    "sectionTitle": "How It Works",
+    "subtitle": "Your operation stays protected through a fast, structured, and technology-backed process.",
+    "steps": {
+      "step1": {
+        "title": "Service Request",
+        "description": "We confirm scope and validate requirements."
+      },
+      "step2": {
+        "title": "Assignment & Preparation",
+        "description": "Routes, personnel, and protocols set."
+      },
+      "step3": {
+        "title": "Execution & Monitoring",
+        "description": "Operated with 24/7 command center support."
+      },
+      "step4": {
+        "title": "Secure Delivery",
+        "description": "Final confirmation with client."
+      }
+    }
+  },
+  "quoteSection": {
+    "title": "Take the First Step Toward Secure Operations",
+    "subtitle": "Tell us what you need — our specialists respond fast and deploy faster."
+  }
+}

@@ -1,0 +1,25 @@
+.divider {
+  position: relative;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  overflow: hidden;
+
+  @include lg {
+    background-attachment: fixed;
+  }
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    var(--surface-dark) 0%,
+    rgba(0, 10, 24, 0.5) 30%,
+    rgba(0, 10, 24, 0.5) 70%,
+    var(--surface-dark) 100%
+  );
+}

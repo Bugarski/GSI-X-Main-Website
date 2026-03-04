@@ -1,0 +1,54 @@
+{
+  "history": {
+    "sectionTitle": "Our History"
+  },
+  "hero": {
+    "title": "About Us",
+    "subtitle": "Protecting value across centuries. Advancing security across nations.",
+    "description": "We combine legacy expertise with modern technology to secure the movement of what matters most."
+  },
+  "intro": {
+    "title": "For centuries, protecting cash and valuables has meant one thing",
+    "text": "Putting trusted people between assets and the risks of an unpredictable world. From armored caravans and horse riders to modern fleets and satellite-linked teams, our industry has evolved — but the mission has always been the same: move value safely through an unsafe world."
+  },
+  "timeline": {
+    "origins": {
+      "title": "Origins of Cash in Transit",
+      "text": "From Roman coin couriers and medieval armored wagons to early bank messengers, moving money has always relied on ingenuity. Security relied on escorts, weapons, and reputation more than on systems."
+    },
+    "armored": {
+      "title": "The Armored Century",
+      "text": "In the last hundred years, armored services became an industrial standard. Highly trained operators, armored vehicles, secure vaults, route planning, communications, and strict protocols defined a new era of CIT. These innovations enabled safe movement of value for banks, retailers, businesses, and governments."
+    },
+    "intelligent": {
+      "title": "The Intelligent Route Ahead",
+      "text": "Today and tomorrow, logistics of value depend on smart routes, real-time monitoring, digital oversight, and coordinated response teams. Technology reinforces every step — from satellite vehicle tracking to centralized command centers."
+    },
+    "cash": {
+      "title": "Cash: The Last Offline Freedom Layer",
+      "text": "In a world where every transaction leaves a digital trace, cash remains the last offline form of economic freedom. As societies digitalize, secure-value logistics becomes even more vital. For millions, cash is stability, autonomy, and resilience. Protecting it means protecting livelihoods."
+    }
+  },
+  "corporate": {
+    "title": "Who We Are Today",
+    "text": "GSI is a multinational security and logistics network operating across Mexico, Central America, Brazil, Spain, and the United States through strategic alliances. We combine operational strength, advanced technology, and decades of expertise to deliver high-reliability services.",
+    "mission": {
+      "title": "Our Mission",
+      "text": "Deliver secure, efficient, and innovative protection solutions that support the financial system, commerce, industry, and society."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "text": "To lead Latin America's transformation toward modern, technology-enabled security services."
+    }
+  },
+  "strengths": {
+    "title": "Our Strengths",
+    "items": {
+      "footprint": "National & regional footprint",
+      "command": "Advanced command & monitoring systems",
+      "personnel": "Specialized personnel & certified teams",
+      "portfolio": "Integrated service portfolio",
+      "trusted": "Trusted by major banks & global brands"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "name": "gsi-x-main-website",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "optimize-media": "node scripts/optimize-images.js",
+    "optimize-media:watch": "node scripts/optimize-images.js --watch",
+    "deploy:build": "npm run optimize-media && npm run build",
+    "s3:sync-assets": "aws s3 sync dist/assets/ s3://YOUR-BUCKET-NAME/assets/ --cache-control max-age=31536000,public --delete",
+    "s3:sync-media": "aws s3 sync dist/media/optimized/ s3://YOUR-BUCKET-NAME/media/optimized/ --cache-control max-age=31536000,immutable --exclude '*.mp4' --exclude '*.webm'",
+    "s3:sync-video": "aws s3 sync dist/media/optimized/ s3://YOUR-BUCKET-NAME/media/optimized/ --cache-control max-age=2592000,public --exclude '*' --include '*.mp4' --include '*.webm'",
+    "s3:sync-avif": "aws s3 sync dist/media/optimized/ s3://YOUR-BUCKET-NAME/media/optimized/ --exclude '*' --include '*.avif' --content-type image/avif --cache-control max-age=31536000,immutable",
+    "s3:sync-webm": "aws s3 sync dist/media/optimized/ s3://YOUR-BUCKET-NAME/media/optimized/ --exclude '*' --include '*.webm' --content-type video/webm --cache-control max-age=2592000,public",
+    "s3:sync-html": "aws s3 cp dist/index.html s3://YOUR-BUCKET-NAME/index.html --cache-control max-age=0,no-cache,no-store,must-revalidate --content-type text/html",
+    "cloudfront:invalidate": "aws cloudfront create-invalidation --distribution-id YOUR-DISTRIBUTION-ID --paths '/*'",
+    "deploy": "npm run deploy:build && npm run s3:sync-assets && npm run s3:sync-media && npm run s3:sync-video && npm run s3:sync-avif && npm run s3:sync-webm && npm run s3:sync-html && npm run cloudfront:invalidate"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^7.2.0",
+    "@fortawesome/free-brands-svg-icons": "^7.2.0",
+    "@fortawesome/free-solid-svg-icons": "^7.2.0",
+    "@fortawesome/pro-light-svg-icons": "^7.2.0",
+    "@fortawesome/react-fontawesome": "^3.2.0",
+    "framer-motion": "^12.34.1",
+    "i18next": "^25.8.10",
+    "i18next-browser-languagedetector": "^8.2.1",
+    "i18next-http-backend": "^3.0.2",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-i18next": "^16.5.4",
+    "react-router-dom": "^7.13.0",
+    "sass": "^1.97.3",
+    "vite-plugin-compression": "^0.5.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "sharp": "^0.34.5",
+    "vite": "^7.3.1",
+    "vite-plugin-imagemin": "^0.6.1"
+  }
+}

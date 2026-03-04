@@ -1,0 +1,99 @@
+.cardWrapper {
+  height: 100%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-8);
+  height: 100%;
+  text-decoration: none;
+  position: relative;
+  background-color: var(--surface-panel);
+  border: 1px solid var(--border-panel);
+  transition: all var(--transition-system);
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border: 1px solid transparent;
+    transition: border-color var(--transition-system);
+  }
+
+  &:hover {
+    border-color: var(--color-electric-glow);
+    box-shadow: var(--shadow-glow-sm), var(--shadow-inset);
+    transform: translateY(-2px);
+
+    &::before {
+      border-color: var(--border-glow);
+    }
+  }
+}
+
+.accentLine {
+  display: block;
+  width: 24px;
+  height: 2px;
+  margin-bottom: var(--space-6);
+  background: linear-gradient(90deg, var(--color-electric), transparent);
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: var(--space-5);
+  color: var(--text-electric);
+  font-size: 22px;
+}
+
+.title {
+  font-family: var(--font-primary);
+  font-size: 17px;
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+  line-height: 1.25;
+  margin-bottom: var(--space-3);
+}
+
+.description {
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: var(--fw-regular);
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-top: auto;
+  padding-top: var(--space-3);
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  margin-top: var(--space-5);
+  font-family: var(--font-primary);
+  font-size: 13px;
+  font-weight: var(--fw-semibold);
+  color: var(--text-electric);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: color var(--transition-system);
+
+  &::after {
+    content: '\2192';
+    margin-left: var(--space-2);
+    transition: transform var(--transition-system);
+  }
+
+  .card:hover & {
+    color: var(--color-electric-bright);
+
+    &::after {
+      transform: translateX(4px);
+    }
+  }
+}

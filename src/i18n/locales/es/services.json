@@ -1,0 +1,730 @@
+{
+  "hero": {
+    "title": "Seguridad Integrada. Precisión Operativa. Resultados Garantizados.",
+    "subtitle": "Explore nuestra gama completa de servicios de seguridad y logística de alto rendimiento, diseñados para bancos, empresas, redes logísticas y operaciones de alto riesgo en toda Latinoamérica."
+  },
+  "core": {
+    "sectionTitle": "Servicios Principales"
+  },
+  "advanced": {
+    "sectionTitle": "Soluciones de Seguridad Avanzadas"
+  },
+  "special": {
+    "sectionTitle": "Operaciones Especiales"
+  },
+  "whyChoose": {
+    "title": "Diseñado para Entornos de Alto Riesgo y Alta Demanda",
+    "subtitle": "Cuando la operación no puede fallar, las empresas eligen GSI.",
+    "points": {
+      "coverage": "Cobertura regional",
+      "monitoring": "Monitoreo y respuesta 24/7",
+      "personnel": "Personal estandarizado y certificado",
+      "technology": "Ecosistema tecnológico avanzado",
+      "proven": "Rendimiento comprobado con marcas globales"
+    }
+  },
+  "cards": {
+    "cit": {
+      "title": "Transporte de Valores (CIT)",
+      "description": "Blindado, monitoreado y reforzado para máxima confiabilidad. Rutas de alto volumen, carga sensible y operaciones financieras sin margen de error.",
+      "slug": "transporte-de-valores"
+    },
+    "guards": {
+      "title": "Guardias de Seguridad",
+      "description": "Personal profesional, capacitado y disciplinado para entornos corporativos, industriales, comerciales y de alto riesgo.",
+      "slug": "guardias-de-seguridad"
+    },
+    "cargo": {
+      "title": "Monitoreo de Carga y Logística Segura",
+      "description": "Rastreo GPS en tiempo real, evaluación de rutas, escoltas y respuesta a incidentes para envíos críticos.",
+      "slug": "monitoreo-de-carga"
+    },
+    "technology": {
+      "title": "Integración Tecnológica y Sistemas de Vigilancia",
+      "description": "CCTV, analítica con IA, drones, protección perimetral, control de accesos y monitoreo unificado entre sitios.",
+      "slug": "integracion-tecnologica"
+    },
+    "consulting": {
+      "title": "Consultoría de Seguridad y Gestión de Riesgos",
+      "description": "Auditorías, análisis de vulnerabilidades, diseño operativo e implementación de arquitecturas de seguridad integrales.",
+      "slug": "consultoria-de-seguridad"
+    },
+    "conceptDesign": {
+      "title": "Diseño e Implementación de Conceptos de Seguridad",
+      "description": "Ingeniería de sistemas de seguridad física, digital y operativa, hechos a medida para industrias complejas.",
+      "slug": "diseno-conceptos-seguridad"
+    },
+    "executive": {
+      "title": "Protección Ejecutiva",
+      "description": "Equipos de protección personal discretos, capacitados y con cobertura regional para ejecutivos, VIPs y misiones sensibles.",
+      "slug": "proteccion-ejecutiva"
+    },
+    "atm": {
+      "title": "Operación de Cajeros y Gestión Segura de Efectivo",
+      "description": "Abastecimiento, mantenimiento, transporte seguro, resolución de incidencias y monitoreo de redes completas.",
+      "slug": "operacion-cajeros"
+    },
+    "custom": {
+      "title": "Proyectos Especiales de Alta Seguridad",
+      "description": "Soluciones a medida para infraestructura crítica, gobierno y entornos empresariales.",
+      "slug": "proyectos-especiales"
+    }
+  },
+  "detail": {
+    "cit": {
+      "hero": {
+        "title": "Transporte de Valores (CIT)",
+        "subtitle": "Rutas de alto riesgo. Carga de alto valor. Cero margen de error. GSI ofrece transporte blindado diseñado para máxima confiabilidad y control total mediante monitoreo avanzado."
+      },
+      "problem": {
+        "title": "Mover efectivo nunca ha sido tan complejo — ni tan expuesto.",
+        "text": "El aumento de robos en ruta, ataques coordinados, riesgos internos y brechas operativas exige un socio CIT capaz de garantizar continuidad operativa en cualquier escenario."
+      },
+      "value": {
+        "title": "Transporte blindado diseñado para misiones críticas.",
+        "text1": "Nuestras unidades CIT operan bajo protocolos reforzados, personal capacitado, monitoreo GPS en tiempo real e integración de respuesta inmediata con centros de comando.",
+        "text2": "Transportamos efectivo, valores, documentos confidenciales, cargas de cajeros y activos de alto valor en todo el país con precisión y consistencia."
+      },
+      "capabilities": {
+        "national": {
+          "title": "Cobertura Nacional",
+          "text": "Red operativa 24/7 con presencia multicidad."
+        },
+        "monitoring": {
+          "title": "Monitoreo Avanzado",
+          "text": "Rastreo GPS, geocercas, alertas de pánico y analítica en tiempo real."
+        },
+        "personnel": {
+          "title": "Personal Especializado",
+          "text": "Conductores, escoltas y comandantes certificados."
+        },
+        "fleet": {
+          "title": "Flota Blindada",
+          "text": "Niveles de blindaje adaptados al tipo de carga y riesgo de ruta."
+        },
+        "atm": {
+          "title": "Logística de Cajeros Automáticos",
+          "text": "Carga, abastecimiento, escolta de mantenimiento y recolecciones seguras."
+        },
+        "incident": {
+          "title": "Integración de Respuesta a Incidentes",
+          "text": "Conexión directa con centros de comando para emergencias."
+        }
+      },
+      "process": {
+        "step1": {
+          "title": "Validación de Ruta",
+          "text": "Evaluación de riesgo, aprobación de ruta y asignación de vehículo."
+        },
+        "step2": {
+          "title": "Despacho Blindado",
+          "text": "Despliegue de tripulación y protocolos de salida segura."
+        },
+        "step3": {
+          "title": "Monitoreo en Tiempo Real",
+          "text": "Rastreo GPS en vivo y supervisión por centros de comando."
+        },
+        "step4": {
+          "title": "Entrega Segura y Confirmación",
+          "text": "Entrega verificada y reporte digital."
+        }
+      },
+      "metrics": {
+        "years": "38+ Años Operando CIT",
+        "routes": "860+ Rutas Mensuales",
+        "performance": "98% Puntualidad Operativa",
+        "coverage": "Cobertura 24/7/365"
+      },
+      "industries": [
+        "Bancos e Instituciones Financieras",
+        "Cadenas Retail",
+        "Logística y Distribución",
+        "Entidades Gubernamentales",
+        "Energía e Industria",
+        "Operaciones de Alto Valor"
+      ],
+      "cta": {
+        "title": "Asegure Su Operación CIT Hoy",
+        "text": "Contacte a nuestro equipo para cotizaciones, evaluación de rutas o soluciones CIT empresariales."
+      }
+    },
+    "guards": {
+      "hero": {
+        "title": "Guardias en Quienes Puede Confiar. Operaciones en las Que Puede Depender.",
+        "subtitle": "Personal de seguridad capacitado, verificado y disciplinado para entornos corporativos, industriales, comerciales y de alto riesgo, desplegado con estructura, supervisión y control en tiempo real."
+      },
+      "problem": {
+        "title": "Las amenazas modernas evolucionan. Su fuerza de seguridad debe evolucionar aún más rápido.",
+        "text": "Muchas organizaciones dependen de modelos de guardias obsoletos, lo que genera brechas en supervisión, capacitación, tecnología y capacidad de respuesta. GSI ofrece operaciones de guardias estructuradas, escalables y gestionadas profesionalmente, adaptadas al riesgo y al sector."
+      },
+      "value": {
+        "title": "Fuerzas de seguridad confiables basadas en disciplina, supervisión y tecnología.",
+        "text1": "Cada guardia es capacitado, evaluado y desplegado bajo procedimientos estandarizados, respaldados por monitoreo digital y gestión centralizada.",
+        "text2": "Nuestros equipos operan con protocolos claros, estructuras de reporte y rutas de escalamiento para mantener los sitios seguros y las operaciones sin interrupciones."
+      },
+      "capabilities": {
+        "corporate": {
+          "title": "Seguridad Corporativa",
+          "text": "Recepción, control de acceso, gestión de visitantes, protección perimetral."
+        },
+        "industrial": {
+          "title": "Seguridad Industrial y de Manufactura",
+          "text": "Prevención de pérdidas, supervisión de procesos, rondines, control de turnos."
+        },
+        "retail": {
+          "title": "Seguridad Comercial y Retail",
+          "text": "Control de acceso, protección de activos, gestión de incidentes, disuasión de robos."
+        },
+        "highRisk": {
+          "title": "Protección de Sitios de Alto Riesgo",
+          "text": "Instalaciones críticas, sitios de energía, centros logísticos, infraestructura."
+        },
+        "events": {
+          "title": "Eventos y Despliegues Temporales",
+          "text": "Equipos escalables para picos de demanda u operaciones especiales."
+        }
+      },
+      "model": {
+        "title": "Una fuerza de seguridad es tan fuerte como el sistema que la respalda.",
+        "recruitment": {
+          "title": "Reclutamiento y Evaluación",
+          "text": "Verificación de antecedentes, análisis psicométrico y revisiones de cumplimiento."
+        },
+        "training": {
+          "title": "Capacitación y Certificación",
+          "text": "Disciplina operativa, respuesta a emergencias, interacción con clientes."
+        },
+        "deployment": {
+          "title": "Despliegue y Supervisión",
+          "text": "Ciclos de rondines, asignación de tareas, supervisión remota."
+        },
+        "reporting": {
+          "title": "Reportes Digitales y Control de Incidentes",
+          "text": "Alertas en tiempo real, bitácoras, protocolos de escalamiento y analítica."
+        }
+      },
+      "metrics": {
+        "guards": "5,000+ Guardias en la Región",
+        "training": "Programas de Capacitación Estandarizados",
+        "supervision": "Supervisión y Monitoreo 24/7",
+        "specialists": "Especialistas en Sitios de Alto Riesgo"
+      },
+      "industries": [
+        "Oficinas Corporativas",
+        "Energía e Industrial",
+        "Cadenas Retail",
+        "Logística y Almacenaje",
+        "Gobierno y Sector Público",
+        "Eventos y Operaciones de Alta Visibilidad"
+      ],
+      "cta": {
+        "title": "Construya una Operación de Seguridad Más Fuerte Hoy",
+        "text": "Nuestros especialistas le ayudarán a desplegar el personal y la estructura adecuados — rápido."
+      }
+    },
+    "cargo": {
+      "hero": {
+        "title": "Carga Que Puede Rastrear. Rutas en Las Que Puede Confiar.",
+        "subtitle": "Visibilidad en tiempo real, rutas diseñadas con análisis de riesgo y logística de alta seguridad para carga sensible, de alto valor o crítica."
+      },
+      "problem": {
+        "title": "La carga de alto valor es un objetivo. Sin visibilidad, queda expuesto.",
+        "text": "Robos, interceptaciones en ruta, coordinación interna y sistemas de monitoreo ineficientes ponen en riesgo la continuidad operativa. GSI ofrece un marco logístico reforzado con sensores, escoltas, centros de monitoreo y alertas en tiempo real."
+      },
+      "value": {
+        "title": "Su carga, mapeada, monitoreada y asegurada de origen a destino.",
+        "text1": "Controlamos cada movimiento: sensores ambientales, unidades GPS, telemática, vehículos escolta y equipos de respuesta integrada.",
+        "text2": "Nuestros centros de monitoreo rastrean rutas 24/7, aseguran cumplimiento, detectan anomalías y activan intervenciones inmediatas."
+      },
+      "capabilities": {
+        "gps": {
+          "title": "Rastreo GPS en Tiempo Real",
+          "text": "Ubicación en vivo, alertas de desvío y control de geocercas."
+        },
+        "route": {
+          "title": "Ingeniería de Riesgo de Rutas",
+          "text": "Selección inteligente de rutas basada en mapas de riesgo, datos delictivos y restricciones operativas."
+        },
+        "escort": {
+          "title": "Escoltas y Custodia Armada",
+          "text": "Carriles de alto riesgo protegidos por equipos de escoltas entrenados."
+        },
+        "telematics": {
+          "title": "Telemática y Control de Sensores",
+          "text": "Sensores de puerta, vibración, ambiente y protección contra manipulación."
+        },
+        "incident": {
+          "title": "Integración de Respuesta a Incidentes",
+          "text": "Escalamiento al centro de comando, bloqueo remoto y procedimientos de emergencia."
+        },
+        "reporting": {
+          "title": "Reporte Completo del Recorrido",
+          "text": "Confirmaciones detalladas de entrega y documentación lista para auditorías."
+        }
+      },
+      "process": {
+        "step1": {
+          "title": "Registro de Carga y Análisis de Riesgo",
+          "text": "Clasificamos el tipo de carga, sensibilidad y amenazas potenciales."
+        },
+        "step2": {
+          "title": "Ingeniería de Ruta y Configuración de Protocolos",
+          "text": "Selección de ruta segura, requerimientos de escoltas y parámetros de monitoreo."
+        },
+        "step3": {
+          "title": "Despacho Seguro",
+          "text": "Carga sellada, validada y despachada con sensores activos."
+        },
+        "step4": {
+          "title": "Supervisión en Tiempo Real e Intervención",
+          "text": "Centros de monitoreo rastrean desvíos, alertas e incidentes."
+        },
+        "step5": {
+          "title": "Entrega Segura y Documentación",
+          "text": "Confirmación digital, bitácoras de auditoría y retroalimentación operativa."
+        }
+      },
+      "metrics": {
+        "monitoring": "100% Cobertura de Monitoreo en Tiempo Real",
+        "kilometers": "Miles de kilómetros de alto riesgo monitoreados mensualmente",
+        "alerts": "Alertas de desvío en menos de 3 segundos",
+        "fleet": "Flota de escoltas integrada"
+      },
+      "industries": [
+        "Manufactura e Industrial",
+        "Retail y Distribución",
+        "Farmacéutica y Médica",
+        "Electrónicos y Carga de Alto Valor",
+        "Energía e Infraestructura",
+        "Gobierno y Envíos Sensibles"
+      ],
+      "cta": {
+        "title": "Tome Control Total de Su Carga Hoy",
+        "text": "Solicite una evaluación de rutas o diseñe un modelo logístico seguro con nuestros especialistas."
+      }
+    },
+    "technology": {
+      "hero": {
+        "title": "Tecnología de Seguridad Que Lo Ve Todo. Actúa Rápido. Escala Globalmente.",
+        "subtitle": "Diseñamos, integramos y operamos sistemas avanzados de seguridad que combinan vigilancia, inteligencia, automatización y respuesta en tiempo real."
+      },
+      "problem": {
+        "title": "Los sistemas desconectados generan puntos ciegos. Los puntos ciegos generan riesgo.",
+        "text": "Las cámaras obsoletas, alarmas aisladas y supervisión manual ya no son suficientes para entornos de amenaza modernos. GSI elimina la fragmentación integrando ecosistemas de seguridad impulsados por inteligencia."
+      },
+      "value": {
+        "title": "Sistemas de seguridad de extremo a extremo diseñados para control y visibilidad.",
+        "text1": "Arquitectamos soluciones que combinan seguridad física, inteligencia digital y comando centralizado, adaptadas al perfil de riesgo de cada sitio.",
+        "text2": "Desde el diseño y despliegue hasta el monitoreo y optimización, GSI controla todo el ciclo de vida."
+      },
+      "capabilities": {
+        "cctv": {
+          "title": "CCTV y Cámaras Inteligentes",
+          "text": "Sistemas HD, térmicos, de baja luz y detección con IA."
+        },
+        "ai": {
+          "title": "Analítica de Video con IA",
+          "text": "Detección de comportamiento, alertas de anomalías, reconocimiento facial y de objetos."
+        },
+        "drones": {
+          "title": "Vigilancia con Drones",
+          "text": "Despliegue rápido, patrullaje perimetral y validación de incidentes."
+        },
+        "perimeter": {
+          "title": "Protección Perimetral",
+          "text": "Sensores, cercas, detección de movimiento y alertas de intrusión."
+        },
+        "access": {
+          "title": "Sistemas de Control de Acceso",
+          "text": "Autenticación biométrica, RFID y multifactor."
+        },
+        "alarm": {
+          "title": "Integración de Alarmas y Respuesta",
+          "text": "Alertas unificadas conectadas a centros de monitoreo."
+        },
+        "command": {
+          "title": "Plataformas de Monitoreo Centralizado",
+          "text": "Paneles únicos para visibilidad y control multisede."
+        }
+      },
+      "process": {
+        "step1": {
+          "title": "Evaluación de Riesgo y Análisis del Sitio",
+          "text": "Mapeo de amenazas y evaluación de infraestructura."
+        },
+        "step2": {
+          "title": "Diseño y Arquitectura del Sistema",
+          "text": "Selección de stack tecnológico a medida."
+        },
+        "step3": {
+          "title": "Implementación e Integración",
+          "text": "Integración de hardware, software y red."
+        },
+        "step4": {
+          "title": "Monitoreo y Optimización",
+          "text": "Supervisión en vivo, ajustes y mejoras."
+        }
+      },
+      "metrics": {
+        "monitoring": "Monitoreo Inteligente 24/7",
+        "visibility": "Visibilidad multisede",
+        "alerts": "Alertas con IA en segundos",
+        "scalable": "Escalable a nivel regional"
+      },
+      "industries": [
+        "Infraestructura Crítica",
+        "Campus Corporativos",
+        "Logística y Almacenaje",
+        "Instituciones Financieras",
+        "Instalaciones Industriales",
+        "Sitios Gubernamentales"
+      ],
+      "cta": {
+        "title": "Actualice su Infraestructura de Seguridad Hoy",
+        "text": "Diseñe e implemente un sistema de seguridad preparado para el futuro con GSI."
+      }
+    },
+    "consulting": {
+      "hero": {
+        "title": "La Seguridad No es Intuición. Es Estrategia.",
+        "subtitle": "Analizamos riesgos, diseñamos modelos de protección y construimos estrategias de seguridad que escalan con su operación."
+      },
+      "problem": {
+        "title": "Las fallas de seguridad suelen comenzar mucho antes del primer incidente.",
+        "text": "El análisis de riesgo deficiente, responsabilidades fragmentadas y planes reactivos exponen a las organizaciones a pérdidas evitables. GSI reemplaza la improvisación con una estrategia de seguridad estructurada y basada en datos."
+      },
+      "value": {
+        "title": "Estrategia de seguridad de extremo a extremo diseñada para amenazas reales.",
+        "text1": "Evaluamos activos, personal, rutas, instalaciones y operaciones para identificar vulnerabilidades y definir controles.",
+        "text2": "Nuestros consultores convierten el riesgo en modelos de seguridad accionables, desde la política hasta la ejecución."
+      },
+      "capabilities": {
+        "risk": {
+          "title": "Evaluación de Riesgos y Análisis de Amenazas",
+          "text": "Mapeo de activos, escenarios de amenaza y evaluación de vulnerabilidades."
+        },
+        "audits": {
+          "title": "Auditorías de Seguridad y Análisis de Brechas",
+          "text": "Revisión de controles actuales, procedimientos y cumplimiento."
+        },
+        "design": {
+          "title": "Diseño de Seguridad Operativa",
+          "text": "Modelos de guardias, seguridad de rutas, control de accesos, lógica de monitoreo."
+        },
+        "crisis": {
+          "title": "Planeación de Crisis y Respuesta a Incidentes",
+          "text": "Protocolos de escalamiento, planes de contingencia y simulacros."
+        },
+        "compliance": {
+          "title": "Cumplimiento Normativo y Regulatorio",
+          "text": "Alineación con estándares de la industria y regulaciones locales."
+        }
+      },
+      "process": {
+        "step1": {
+          "title": "Descubrimiento y Análisis del Contexto",
+          "text": "Objetivos de negocio, activos y tolerancia al riesgo."
+        },
+        "step2": {
+          "title": "Mapeo y Análisis de Riesgos",
+          "text": "Escenarios de amenaza y modelado de exposición."
+        },
+        "step3": {
+          "title": "Diseño de Estrategia y Controles",
+          "text": "Políticas, sistemas y marcos operativos."
+        },
+        "step4": {
+          "title": "Implementación y Validación",
+          "text": "Soporte en despliegue, pruebas y ajustes."
+        }
+      },
+      "industries": [
+        "Instituciones Financieras",
+        "Redes Logísticas y de Distribución",
+        "Operaciones Industriales y Energéticas",
+        "Retail y Campus Corporativos",
+        "Gobierno y Sector Público",
+        "Operaciones Multinacionales"
+      ],
+      "cta": {
+        "title": "Convierta el Riesgo en Control",
+        "text": "Construya una estrategia de seguridad que proteja sus activos y acompañe su crecimiento."
+      }
+    },
+    "conceptDesign": {
+      "hero": {
+        "title": "Del Concepto al Control. Seguridad Que Funciona en la Práctica.",
+        "subtitle": "Diseñamos, implementamos y operamos conceptos de seguridad integrales diseñados para entornos reales, amenazas reales y presión operativa real."
+      },
+      "problem": {
+        "title": "La mayoría de los planes de seguridad fallan en la ejecución.",
+        "text": "Los buenos conceptos colapsan cuando sistemas, personas y procedimientos no están alineados o bien implementados. GSI cierra la brecha entre estrategia y realidad controlando todo el ciclo de ejecución."
+      },
+      "value": {
+        "title": "Conceptos de seguridad de extremo a extremo diseñados para operar bajo presión.",
+        "text1": "Convertimos evaluaciones de riesgo en sistemas de seguridad físicos, digitales y operativos que funcionan como un solo modelo coordinado.",
+        "text2": "Desde infraestructura y tecnología hasta personal y procedimientos, cada elemento está diseñado para máxima confiabilidad."
+      },
+      "capabilities": {
+        "physical": {
+          "title": "Arquitectura de Seguridad Física",
+          "text": "Diseño perimetral, puntos de acceso, zonas seguras y medidas de reforzamiento."
+        },
+        "operational": {
+          "title": "Modelos de Seguridad Operativa",
+          "text": "Despliegue de guardias, lógica de rondines, control de rutas y escalamiento."
+        },
+        "technology": {
+          "title": "Integración Tecnológica",
+          "text": "CCTV, analítica con IA, alarmas, control de accesos y plataformas de monitoreo."
+        },
+        "process": {
+          "title": "Ingeniería de Procesos y Protocolos",
+          "text": "Procedimientos operativos, planes de respuesta a incidentes y flujos de crisis."
+        },
+        "testing": {
+          "title": "Pruebas y Validación",
+          "text": "Simulacros, pruebas, ejercicios de estrés y optimización."
+        }
+      },
+      "process": {
+        "step1": {
+          "title": "Definición del Concepto",
+          "text": "Definición de objetivos, restricciones y escenarios de riesgo."
+        },
+        "step2": {
+          "title": "Diseño del Sistema y Layout",
+          "text": "Diseño físico, stack tecnológico y flujos operativos."
+        },
+        "step3": {
+          "title": "Implementación e Integración",
+          "text": "Instalación, configuración y alineación del personal."
+        },
+        "step4": {
+          "title": "Puesta en Marcha y Optimización",
+          "text": "Operación en vivo, monitoreo, ajustes y mejora continua."
+        }
+      },
+      "industries": [
+        "Instalaciones de alto riesgo",
+        "Sedes corporativas",
+        "Centros logísticos",
+        "Infraestructura financiera",
+        "Plantas industriales",
+        "Activos gubernamentales y públicos"
+      ],
+      "cta": {
+        "title": "Construya un Concepto de Seguridad Que Resista la Presión",
+        "text": "Permita que GSI diseñe e implemente un sistema de seguridad en el que pueda confiar."
+      }
+    },
+    "executive": {
+      "hero": {
+        "title": "Protección Ejecutiva Sin Exposición.",
+        "subtitle": "Protección discreta e impulsada por inteligencia para ejecutivos, equipos directivos y operaciones sensibles en Latinoamérica."
+      },
+      "problem": {
+        "title": "La visibilidad incrementa el riesgo. Los traslados sin preparación lo multiplican.",
+        "text": "Los viajes ejecutivos, visitas a sitio y operaciones transfronterizas exponen a los directivos a amenazas que los modelos de seguridad tradicionales no pueden gestionar. GSI ofrece protección estructurada y de bajo perfil diseñada para integrarse, no para llamar la atención."
+      },
+      "value": {
+        "title": "Protección basada en inteligencia, planeación y disciplina.",
+        "text1": "Nuestro modelo de protección ejecutiva combina planeación anticipada, transporte seguro, inteligencia de rutas y personal de protección capacitado.",
+        "text2": "Cada despliegue se adapta al perfil del ejecutivo, al entorno y al nivel de exposición operativa."
+      },
+      "capabilities": {
+        "advance": {
+          "title": "Evaluación de Amenazas y Planeación Anticipada",
+          "text": "Perfilamiento de riesgos, revisión de sitios e inteligencia de viaje."
+        },
+        "transport": {
+          "title": "Transporte Seguro",
+          "text": "Vehículos discretos, conductores evaluados y rutas reforzadas."
+        },
+        "closeProtection": {
+          "title": "Equipos de Protección Cercana",
+          "text": "Personal capacitado que opera con discreción y disciplina."
+        },
+        "route": {
+          "title": "Control de Rutas y Desplazamientos",
+          "text": "Rutas dinámicas, monitoreo y planes de contingencia."
+        },
+        "regional": {
+          "title": "Cobertura Regional y Transfronteriza",
+          "text": "Despliegues en México, Centroamérica, Brasil y regiones aliadas."
+        }
+      },
+      "process": {
+        "step1": {
+          "title": "Análisis de Perfil y Exposición",
+          "text": "Rol del ejecutivo, visibilidad y contexto de amenazas."
+        },
+        "step2": {
+          "title": "Planeación Anticipada",
+          "text": "Selección de rutas, revisión de sitios y mapeo de contingencias."
+        },
+        "step3": {
+          "title": "Ejecución Segura",
+          "text": "Protección cercana, transporte y monitoreo en vivo."
+        },
+        "step4": {
+          "title": "Supervisión Continua",
+          "text": "Soporte de centro de comando y escalamiento de incidentes."
+        }
+      },
+      "industries": [
+        "Viajes ejecutivos y visitas a sitio",
+        "Operaciones transfronterizas",
+        "Eventos corporativos de alta visibilidad",
+        "Negociaciones sensibles",
+        "Escenarios de crisis o amenaza elevada"
+      ],
+      "cta": {
+        "title": "Proteja a su Liderazgo sin Interrupciones",
+        "text": "Despliegue protección ejecutiva adaptada a su operación."
+      }
+    },
+    "atm": {
+      "hero": {
+        "title": "Redes de Cajeros Que Nunca Se Detienen. Disponibilidad de Efectivo sin Compromisos.",
+        "subtitle": "Administramos, abastecemos y aseguramos redes de cajeros automáticos con control operativo estricto, logística blindada y monitoreo en tiempo real."
+      },
+      "problem": {
+        "title": "La inactividad de cajeros cuesta dinero, confianza y reputación.",
+        "text": "Una planeación deficiente, respuestas tardías y servicios inseguros exponen a las instituciones financieras a pérdidas e insatisfacción del cliente. GSI garantiza disponibilidad de efectivo, continuidad operativa y servicio seguro a gran escala."
+      },
+      "value": {
+        "title": "Operación integral de cajeros diseñada para confiabilidad y control.",
+        "text1": "Apoyamos a instituciones financieras con logística segura de efectivo, ciclos de abastecimiento, escolta de mantenimiento y resolución de incidencias.",
+        "text2": "Cada servicio se ejecuta bajo protocolos estrictos y es monitoreado por centros de comando."
+      },
+      "capabilities": {
+        "replenishment": {
+          "title": "Abastecimiento y Recolección de Efectivo",
+          "text": "Carga programada y bajo demanda con transporte blindado."
+        },
+        "escort": {
+          "title": "Escolta Segura de Mantenimiento",
+          "text": "Protección para equipos técnicos durante el servicio."
+        },
+        "incident": {
+          "title": "Resolución de Incidentes y Errores",
+          "text": "Respuesta rápida a atascos, discrepancias y alarmas."
+        },
+        "monitoring": {
+          "title": "Monitoreo de Redes de Cajeros",
+          "text": "Seguimiento de estado, alertas y validación de servicio."
+        },
+        "compliance": {
+          "title": "Soporte de Cumplimiento y Auditoría",
+          "text": "Documentación, reportes y trazabilidad."
+        }
+      },
+      "process": {
+        "step1": {
+          "title": "Pronóstico de Demanda",
+          "text": "Análisis de uso de efectivo y planeación de abastecimiento."
+        },
+        "step2": {
+          "title": "Despacho Seguro",
+          "text": "Despliegue blindado y validación de rutas."
+        },
+        "step3": {
+          "title": "Servicio y Verificación",
+          "text": "Carga, pruebas y confirmación."
+        },
+        "step4": {
+          "title": "Monitoreo y Reportes",
+          "text": "Visibilidad de red y bitácoras listas para auditoría."
+        }
+      },
+      "metrics": {
+        "atms": "Miles de Cajeros Atendidos",
+        "uptime": "Alta Disponibilidad Operativa",
+        "monitoring": "Cobertura de Monitoreo 24/7",
+        "sla": "Cumplimiento Estricto de SLA"
+      },
+      "industries": [
+        "Bancos e Instituciones Financieras",
+        "Redes de Banca Retail",
+        "Operadores Independientes de Cajeros",
+        "Proveedores de Servicios Financieros",
+        "Redes de Pago Gubernamentales"
+      ],
+      "cta": {
+        "title": "Mantenga su Red de Cajeros Operando al Máximo",
+        "text": "Asegure su operación de cajeros con un socio confiable."
+      }
+    },
+    "custom": {
+      "hero": {
+        "title": "Cuando la Seguridad Estándar No Es Suficiente.",
+        "subtitle": "Diseñamos y ejecutamos proyectos especiales de alta seguridad para entornos complejos, activos críticos y desafíos operativos únicos."
+      },
+      "problem": {
+        "title": "Algunos riesgos no encajan en modelos de servicio estándar.",
+        "text": "Proyectos de gran escala, operaciones sensibles o entornos no convencionales requieren arquitecturas de seguridad a medida y ejecución experta. GSI ofrece soluciones personalizadas donde la seguridad tradicional no es suficiente."
+      },
+      "value": {
+        "title": "Seguridad personalizada diseñada desde cero.",
+        "text1": "Combinamos consultoría, tecnología, logística y operación para crear modelos de seguridad adaptados a la realidad de cada proyecto.",
+        "text2": "Desde despliegues temporales hasta infraestructura permanente, GSI actúa como un solo socio responsable."
+      },
+      "capabilities": {
+        "critical": {
+          "title": "Protección de Infraestructura Crítica",
+          "text": "Instalaciones energéticas, centros de datos, servicios públicos y nodos de transporte."
+        },
+        "logistics": {
+          "title": "Operaciones Logísticas Especiales",
+          "text": "Traslados de carga sensible, de alto valor o crítica en tiempo."
+        },
+        "temporary": {
+          "title": "Despliegues Temporales de Alto Riesgo",
+          "text": "Eventos, zonas de crisis o escenarios de amenaza elevada."
+        },
+        "government": {
+          "title": "Proyectos Gubernamentales e Institucionales",
+          "text": "Operaciones del sector público con altos requerimientos normativos."
+        },
+        "pilot": {
+          "title": "Proyectos Piloto y Soluciones Emergentes",
+          "text": "Nuevas tecnologías, enfoques no convencionales y modelos experimentales."
+        }
+      },
+      "process": {
+        "step1": {
+          "title": "Definición del Problema y Alcance",
+          "text": "Objetivos, riesgos, restricciones y métricas de éxito."
+        },
+        "step2": {
+          "title": "Diseño del Concepto y Arquitectura",
+          "text": "Modelos de seguridad y arquitectura a medida."
+        },
+        "step3": {
+          "title": "Despliegue y Coordinación",
+          "text": "Personal, tecnología, logística y aliados coordinados."
+        },
+        "step4": {
+          "title": "Operación y Supervisión",
+          "text": "Monitoreo en vivo, escalamiento y optimización."
+        },
+        "step5": {
+          "title": "Revisión y Mejora Continua",
+          "text": "Análisis posterior y ajustes."
+        }
+      },
+      "industries": [
+        "Infraestructura crítica",
+        "Logística especial",
+        "Gobierno e institucional",
+        "Crisis y despliegues temporales",
+        "Programas piloto"
+      ],
+      "cta": {
+        "title": "Diseñe una Solución de Seguridad Adaptada a su Realidad",
+        "text": "Cuéntenos su desafío. Nosotros diseñamos la solución."
+      }
+    }
+  }
+}

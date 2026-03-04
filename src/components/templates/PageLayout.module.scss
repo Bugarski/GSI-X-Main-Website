@@ -1,0 +1,27 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--surface-dark);
+}
+
+.main {
+  flex: 1;
+  width: 100%;
+}
+
+.skipLink {
+  position: absolute;
+  top: -100%;
+  left: var(--space-4);
+  z-index: var(--z-toast);
+  padding: var(--space-3) var(--space-6);
+  background-color: var(--color-accent-500);
+  color: var(--surface-dark);
+  font-weight: var(--fw-semibold);
+  font-size: 14px;
+
+  &:focus {
+    top: var(--space-2);
+  }
+}

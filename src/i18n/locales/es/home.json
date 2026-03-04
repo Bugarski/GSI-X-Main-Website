@@ -1,0 +1,83 @@
+{
+  "hero": {
+    "title": "Seguridad de Alto Riesgo. Cero Margen de Error.",
+    "subtitle": "Movemos lo que otros no pueden. Efectivo, activos, personas y operaciones críticas, protegidas con tecnología avanzada, personal capacitado y precisión estratégica en toda Latinoamérica.",
+    "ctaPrimary": "Ver Servicios",
+    "ctaSecondary": "Contactar al Equipo"
+  },
+  "coreServices": {
+    "sectionTitle": "Servicios Principales",
+    "cit": {
+      "title": "Transporte de Valores (CIT)",
+      "description": "Seguro, blindado y monitoreado. Sin retrasos. Sin excusas."
+    },
+    "guards": {
+      "title": "Guardias de Seguridad",
+      "description": "Equipos capacitados, verificados y disciplinados para industria, comercio, corporativos y sitios críticos."
+    }
+  },
+  "advancedServices": {
+    "sectionTitle": "Soluciones de Seguridad Avanzadas",
+    "technology": {
+      "title": "Integración Tecnológica de Seguridad",
+      "description": "CCTV, analítica con IA, drones, sistemas perimetrales y monitoreo unificado — implementados rápido, personalizados a fondo y escalables en cualquier lugar."
+    },
+    "cargo": {
+      "title": "Monitoreo de Carga y Logística Segura",
+      "description": "Rastreo en tiempo real, escoltas y diseño de rutas críticas para envíos sensibles."
+    },
+    "consulting": {
+      "title": "Consultoría de Seguridad y Gestión de Riesgos",
+      "description": "Auditamos, diseñamos y ejecutamos arquitecturas de seguridad operativa para corporaciones en la región."
+    },
+    "executive": {
+      "title": "Protección Ejecutiva",
+      "description": "Despliegue discreto, profesional y regional para ejecutivos, equipos y operaciones sensibles."
+    }
+  },
+  "whyGsi": {
+    "sectionTitle": "Por Qué GSI",
+    "subtitle": "Operamos donde la precisión importa, el tiempo perdido es inaceptable, y la seguridad no puede fallar.",
+    "points": {
+      "coverage": "Cobertura nacional y regional",
+      "monitoring": "Centros avanzados de monitoreo y comando",
+      "personnel": "Personal certificado y operaciones estandarizadas",
+      "technology": "Escalabilidad impulsada por tecnología",
+      "trusted": "Confiado por bancos y marcas globales"
+    }
+  },
+  "testimonials": {
+    "sectionTitle": "Historias y Experiencias de Clientes",
+    "quote1": {
+      "text": "GSI ejecutó sin fallas. Sus tiempos de monitoreo y respuesta superan lo que hemos visto en la región. Esto es seguridad operativa bien hecha.",
+      "author": "Ricardo Méndez"
+    },
+    "cta": "Ver Todos los Testimonios"
+  },
+  "process": {
+    "sectionTitle": "Cómo Funciona",
+    "subtitle": "Su operación se mantiene protegida mediante un proceso rápido, estructurado y respaldado por tecnología.",
+    "steps": {
+      "step1": {
+        "title": "Solicitud del Servicio",
+        "description": "Confirmamos alcance y validamos requisitos."
+      },
+      "step2": {
+        "title": "Asignación y Preparación",
+        "description": "Rutas, personal y protocolos definidos."
+      },
+      "step3": {
+        "title": "Ejecución y Monitoreo",
+        "description": "Operado con soporte del centro de monitoreo 24/7."
+      },
+      "step4": {
+        "title": "Entrega Segura",
+        "description": "Confirmación final con el cliente."
+      }
+    }
+  },
+  "quoteSection": {
+    "title": "Dé el Primer Paso Hacia Operaciones Seguras",
+    "subtitle": "Cuéntenos lo que necesita — nuestros especialistas responden rápido y despliegan aún más rápido."
+  }
+}

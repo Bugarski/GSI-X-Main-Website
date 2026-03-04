@@ -1,0 +1,115 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-primary);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-system);
+  border-radius: var(--radius-none);
+  position: relative;
+  overflow: hidden;
+}
+
+.label {
+  position: relative;
+  z-index: 1;
+}
+
+.icon {
+  position: relative;
+  z-index: 1;
+}
+
+// --- Primary: Gold CTA — the only bright element, commands attention ---
+.primary {
+  background-color: var(--color-accent-500);
+  color: var(--color-primary-900);
+  box-shadow: var(--shadow-sm), var(--shadow-glow-gold);
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.12) 50%, transparent 100%);
+    background-size: 200% 100%;
+    animation: shimmer 4s ease-in-out infinite;
+    z-index: 0;
+  }
+
+  &:hover:not(:disabled) {
+    background-color: var(--color-accent-400);
+    box-shadow: var(--shadow-md), 0 0 32px rgba(249, 159, 37, 0.3);
+    transform: translateY(-1px);
+  }
+
+  &:active:not(:disabled) { transform: translateY(1px); }
+  &:disabled { opacity: 0.4; cursor: not-allowed; &::before { animation: none; } }
+}
+
+// --- Secondary: System control — outlined, electric blue glow ---
+.secondary {
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-glow);
+  box-shadow: var(--shadow-glow-sm);
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--color-electric-glow) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity var(--transition-system);
+    z-index: 0;
+  }
+
+  &:hover:not(:disabled) {
+    border-color: var(--color-electric);
+    box-shadow: var(--shadow-glow-md);
+    &::before { opacity: 1; }
+  }
+
+  &:active:not(:disabled) { transform: translateY(1px); }
+  &:disabled { opacity: 0.4; cursor: not-allowed; }
+}
+
+// --- Ghost: Minimal system action ---
+.ghost {
+  background-color: transparent;
+  color: var(--text-secondary);
+
+  &:hover:not(:disabled) {
+    color: var(--text-electric);
+    background-color: var(--color-electric-glow-subtle);
+  }
+
+  &:active:not(:disabled) { transform: translateY(1px); }
+  &:disabled { opacity: 0.4; cursor: not-allowed; }
+}
+
+// --- Sizes ---
+.sm {
+  padding: var(--space-2) var(--space-5);
+  font-size: 11px;
+  .icon { font-size: 10px; }
+}
+
+.md {
+  padding: var(--space-3) var(--space-7);
+  font-size: 13px;
+  .icon { font-size: 12px; }
+}
+
+.lg {
+  padding: var(--space-4) var(--space-10);
+  font-size: 14px;
+  .icon { font-size: 13px; }
+}
+
+.fullWidth { width: 100%; }

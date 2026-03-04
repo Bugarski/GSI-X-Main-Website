@@ -1,0 +1,35 @@
+.process {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+
+  @include md {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.stepWrapper {
+  min-width: 0;
+}
+
+.col1 {
+  @include md { grid-template-columns: 1fr; }
+}
+
+.col2 {
+  @include md { grid-template-columns: repeat(2, 1fr); }
+}
+
+.col3 {
+  @include md { grid-template-columns: repeat(2, 1fr); }
+  @include lg { grid-template-columns: repeat(3, 1fr); }
+}
+
+.col4 {
+  @include md { grid-template-columns: repeat(2, 1fr); }
+  @include lg { grid-template-columns: repeat(4, 1fr); }
+}
+
+.colAuto {
+  @include lg { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+}

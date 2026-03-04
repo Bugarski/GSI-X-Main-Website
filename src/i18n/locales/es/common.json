@@ -1,0 +1,33 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre Nosotros",
+    "services": "Servicios",
+    "coverage": "Cobertura",
+    "careers": "Carreras",
+    "contact": "Contáctanos"
+  },
+  "cta": {
+    "learnMore": "Más Información",
+    "requestQuote": "Solicitar Cotización",
+    "contactTeam": "Contactar al Equipo",
+    "exploreServices": "Ver Servicios",
+    "viewAll": "Ver Todos los Servicios",
+    "sendRequest": "Enviar Solicitud",
+    "seeTestimonials": "Ver Todos los Testimonios"
+  },
+  "meta": {
+    "title": "GSI — Soluciones Integrales de Seguridad",
+    "description": "Soluciones de seguridad, logística y tecnología diseñadas para operaciones críticas en Latinoamérica."
+  },
+  "language": {
+    "en": "English",
+    "es": "Español",
+    "switch": "Cambiar Idioma"
+  },
+  "accessibility": {
+    "skipToContent": "Ir al contenido principal",
+    "openMenu": "Abrir menú de navegación",
+    "closeMenu": "Cerrar menú de navegación"
+  }
+}

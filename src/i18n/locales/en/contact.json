@@ -1,0 +1,53 @@
+{
+  "hero": {
+    "title": "Let's Secure Your Operation.",
+    "subtitle": "Speak directly with security specialists. Fast response. Clear answers. Real execution."
+  },
+  "intro": {
+    "text1": "Whether you need immediate support or are planning a long-term security strategy, our team is ready to act.",
+    "text2": "Tell us what you need. We'll assess, respond, and deploy."
+  },
+  "form": {
+    "title": "Request Information or a Quote",
+    "description": "Share your requirements and one of our specialists will contact you shortly.",
+    "fields": {
+      "fullName": "Full Name",
+      "company": "Company Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "country": "Country / Region",
+      "service": "Service of Interest",
+      "message": "Message / Requirements"
+    },
+    "submit": "Send Request",
+    "success": "Your request has been sent successfully. We'll be in touch shortly.",
+    "error": "Something went wrong. Please try again or contact us directly."
+  },
+  "directContact": {
+    "title": "24/7 Operations & Support",
+    "subtitle": "Our teams operate around the clock to support critical operations.",
+    "phone": "(55) 5764 9999",
+    "tollFree": "01 800 832 7981",
+    "email": "contact@gsi.com.mx",
+    "phoneLabel": "Phone",
+    "tollFreeLabel": "Toll-Free",
+    "emailLabel": "Email"
+  },
+  "coverage": {
+    "title": "Regional Coverage. Centralized Response.",
+    "text": "We operate across Mexico, Central America, Brazil, and partner regions through coordinated teams and monitoring centers."
+  },
+  "nextSteps": {
+    "title": "What Happens After You Contact Us",
+    "steps": {
+      "step1": { "title": "Review", "text": "We assess your request and operational context." },
+      "step2": { "title": "Contact", "text": "A specialist reaches out to clarify details." },
+      "step3": { "title": "Proposal", "text": "We deliver a clear, actionable solution." },
+      "step4": { "title": "Deployment", "text": "Execution begins upon approval." }
+    }
+  },
+  "finalCta": {
+    "title": "Start the Conversation Today",
+    "subtitle": "Secure decisions start with the right partner."
+  }
+}

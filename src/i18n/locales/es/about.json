@@ -1,0 +1,54 @@
+{
+  "history": {
+    "sectionTitle": "Nuestra Historia"
+  },
+  "hero": {
+    "title": "Sobre Nosotros",
+    "subtitle": "Protegiendo el valor a través de los siglos. Avanzando la seguridad en cada región.",
+    "description": "Combinamos experiencia histórica con tecnología moderna para asegurar el movimiento de lo que más importa."
+  },
+  "intro": {
+    "title": "Durante siglos, proteger el efectivo y los valores ha significado una sola cosa",
+    "text": "Colocar personas de confianza entre los valores y los riesgos de un mundo impredecible. Desde caravanas blindadas y jinetes mensajeros hasta flotas modernas y equipos conectados por satélite, nuestra industria ha evolucionado, pero la misión sigue intacta: mover valor de forma segura en un mundo inseguro."
+  },
+  "timeline": {
+    "origins": {
+      "title": "Orígenes del Transporte de Valores",
+      "text": "Desde mensajeros romanos hasta los carros blindados medievales y los primeros mensajeros bancarios, mover dinero siempre ha requerido ingenio. La seguridad dependía de escoltas, armamento y reputación más que de sistemas."
+    },
+    "armored": {
+      "title": "El Siglo Blindado",
+      "text": "En los últimos cien años, los servicios blindados se convirtieron en un estándar industrial. Operadores altamente capacitados, vehículos blindados, bóvedas seguras, planeación de rutas, comunicaciones y protocolos estrictos definieron una nueva era del transporte de valores. Estas innovaciones permitieron mover valor de forma segura para bancos, comercios, empresas y gobiernos."
+    },
+    "intelligent": {
+      "title": "La Ruta Inteligente del Futuro",
+      "text": "Hoy y mañana, la logística de valores depende de rutas inteligentes, monitoreo en tiempo real, supervisión digital y equipos de respuesta coordinada. La tecnología refuerza cada etapa, desde el rastreo satelital de vehículos hasta centros de comando centralizados."
+    },
+    "cash": {
+      "title": "El Efectivo: La Última Capa de Libertad Offline",
+      "text": "En un mundo donde cada transacción deja un rastro digital, el efectivo sigue siendo la última forma offline de libertad económica. A medida que las sociedades se digitalizan, la logística de valores adquiere aún más importancia. Para millones, el efectivo es estabilidad, autonomía y resiliencia. Protegerlo es proteger su bienestar."
+    }
+  },
+  "corporate": {
+    "title": "Quiénes Somos Hoy",
+    "text": "GSI es una red multinacional de seguridad y logística que opera en México, Centroamérica, Brasil, España y Estados Unidos mediante alianzas estratégicas. Combinamos fortaleza operativa, tecnología avanzada y décadas de experiencia para ofrecer servicios de alta confiabilidad.",
+    "mission": {
+      "title": "Nuestra Misión",
+      "text": "Brindar soluciones seguras, eficientes e innovadoras que apoyen al sistema financiero, el comercio, la industria y la sociedad."
+    },
+    "vision": {
+      "title": "Nuestra Visión",
+      "text": "Liderar la transformación de América Latina hacia servicios de seguridad modernos habilitados por tecnología."
+    }
+  },
+  "strengths": {
+    "title": "Nuestras Fortalezas",
+    "items": {
+      "footprint": "Cobertura nacional y regional",
+      "command": "Sistemas avanzados de comando y monitoreo",
+      "personnel": "Personal especializado y equipos certificados",
+      "portfolio": "Portafolio integral de servicios",
+      "trusted": "Confiado por grandes bancos y marcas globales"
+    }
+  }
+}

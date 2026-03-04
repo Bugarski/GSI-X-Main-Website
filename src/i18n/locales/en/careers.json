@@ -1,0 +1,28 @@
+{
+  "hero": {
+    "title": "Build Your Career in Security",
+    "subtitle": "Join one of Latin America's leading security organizations. We're always looking for disciplined, skilled, and committed professionals."
+  },
+  "intro": {
+    "text": "GSI offers career paths in armed transport, physical security, technology, logistics, and corporate operations. We invest in training, safety, and professional development."
+  },
+  "openings": {
+    "title": "Current Openings",
+    "placeholder": "We are currently updating our job listings. Please check back soon or contact our HR team directly."
+  },
+  "benefits": {
+    "title": "Why Work at GSI",
+    "items": {
+      "training": "Continuous professional training and certification programs",
+      "stability": "Job stability with one of Mexico's leading security groups",
+      "growth": "Career growth opportunities across multiple business units",
+      "safety": "Industry-leading safety standards and protocols",
+      "benefits": "Competitive compensation and employee benefits"
+    }
+  },
+  "cta": {
+    "title": "Interested in joining GSI?",
+    "subtitle": "Send your resume to our recruitment team.",
+    "email": "rrhh@gsi.com.mx"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "hero": {
+    "title": "Asegure su Operación Hoy.",
+    "subtitle": "Hable directamente con especialistas en seguridad. Respuesta rápida. Respuestas claras. Ejecución real."
+  },
+  "intro": {
+    "text1": "Ya sea que necesite apoyo inmediato o esté planificando una estrategia de seguridad a largo plazo, nuestro equipo está listo para actuar.",
+    "text2": "Cuéntenos qué necesita. Evaluamos, respondemos y desplegamos."
+  },
+  "form": {
+    "title": "Solicite Información o una Cotización",
+    "description": "Comparta sus requerimientos y uno de nuestros especialistas se pondrá en contacto a la brevedad.",
+    "fields": {
+      "fullName": "Nombre Completo",
+      "company": "Empresa",
+      "email": "Correo Electrónico",
+      "phone": "Teléfono",
+      "country": "País / Región",
+      "service": "Servicio de Interés",
+      "message": "Mensaje / Requerimientos"
+    },
+    "submit": "Enviar Solicitud",
+    "success": "Su solicitud ha sido enviada exitosamente. Nos pondremos en contacto a la brevedad.",
+    "error": "Algo salió mal. Por favor intente de nuevo o contáctenos directamente."
+  },
+  "directContact": {
+    "title": "Atención y Operación 24/7",
+    "subtitle": "Nuestros equipos operan las 24 horas para apoyar operaciones críticas.",
+    "phone": "(55) 5764 9999",
+    "tollFree": "01 800 832 7981",
+    "email": "contacto@gsi.com.mx",
+    "phoneLabel": "Teléfono",
+    "tollFreeLabel": "Línea Gratuita",
+    "emailLabel": "Correo"
+  },
+  "coverage": {
+    "title": "Cobertura Regional. Respuesta Centralizada.",
+    "text": "Operamos en México, Centroamérica, Brasil y regiones aliadas mediante equipos coordinados y centros de monitoreo."
+  },
+  "nextSteps": {
+    "title": "Qué Sucede Después de Contactarnos",
+    "steps": {
+      "step1": { "title": "Revisión", "text": "Analizamos su solicitud y contexto operativo." },
+      "step2": { "title": "Contacto", "text": "Un especialista se comunica para aclarar detalles." },
+      "step3": { "title": "Propuesta", "text": "Entregamos una solución clara y accionable." },
+      "step4": { "title": "Despliegue", "text": "Iniciamos la ejecución tras la aprobación." }
+    }
+  },
+  "finalCta": {
+    "title": "Inicie la Conversación Hoy",
+    "subtitle": "Las decisiones seguras comienzan con el socio correcto."
+  }
+}

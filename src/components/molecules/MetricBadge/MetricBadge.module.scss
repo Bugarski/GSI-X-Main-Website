@@ -1,0 +1,54 @@
+.badge {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  padding: var(--space-6) var(--space-7);
+  background-color: var(--surface-panel);
+  border: 1px solid var(--border-panel);
+  position: relative;
+  transition: border-color var(--transition-system);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--color-electric), transparent);
+  }
+
+  &:hover {
+    border-color: var(--border-medium);
+  }
+}
+
+.icon {
+  font-size: 20px;
+  color: var(--text-electric);
+  flex-shrink: 0;
+}
+
+.textGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.value {
+  font-family: var(--font-primary);
+  font-size: 26px;
+  font-weight: var(--fw-extrabold);
+  color: var(--text-primary);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.label {
+  font-family: var(--font-primary);
+  font-size: 10px;
+  font-weight: var(--fw-semibold);
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}

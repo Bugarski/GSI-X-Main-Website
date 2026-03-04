@@ -1,0 +1,143 @@
+// ============================================================
+// GSI Design System — Typography Classes
+// ============================================================
+
+@use 'variables' as *;
+
+.display-1 {
+  font-size: 48px;
+  line-height: 120%;
+  font-weight: var(--fw-extrabold);
+  letter-spacing: -0.02em;
+
+  @include md { font-size: 72px; }
+  @include lg { font-size: 96px; }
+}
+
+.display-2 {
+  font-size: 40px;
+  line-height: 120%;
+  font-weight: var(--fw-extrabold);
+  letter-spacing: -0.02em;
+
+  @include md { font-size: 56px; }
+  @include lg { font-size: 76px; }
+}
+
+.display-3 {
+  font-size: 36px;
+  line-height: 120%;
+  font-weight: var(--fw-bold);
+  letter-spacing: -0.01em;
+
+  @include md { font-size: 48px; }
+  @include lg { font-size: 64px; }
+}
+
+.h1 {
+  font-size: 32px;
+  line-height: 140%;
+  font-weight: var(--fw-bold);
+  letter-spacing: -0.01em;
+
+  @include md { font-size: 44px; }
+  @include lg { font-size: 56px; }
+}
+
+.h2 {
+  font-size: 28px;
+  line-height: 140%;
+  font-weight: var(--fw-bold);
+
+  @include md { font-size: 36px; }
+  @include lg { font-size: 48px; }
+}
+
+.h3 {
+  font-size: 24px;
+  line-height: 140%;
+  font-weight: var(--fw-bold);
+
+  @include md { font-size: 32px; }
+  @include lg { font-size: 40px; }
+}
+
+.h4 {
+  font-size: 22px;
+  line-height: 140%;
+  font-weight: var(--fw-semibold);
+
+  @include md { font-size: 28px; }
+  @include lg { font-size: 32px; }
+}
+
+.h5 {
+  font-size: 20px;
+  line-height: 140%;
+  font-weight: var(--fw-semibold);
+
+  @include md { font-size: 22px; }
+  @include lg { font-size: 24px; }
+}
+
+.h6 {
+  font-size: 18px;
+  line-height: 140%;
+  font-weight: var(--fw-semibold);
+
+  @include md { font-size: 20px; }
+}
+
+.subheading {
+  font-size: 14px;
+  line-height: 100%;
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+
+  @include md { font-size: 16px; }
+  @include lg { font-size: 18px; }
+}
+
+.body-1 {
+  font-size: 18px;
+  line-height: 160%;
+  font-weight: var(--fw-regular);
+}
+
+.body-2 {
+  font-size: 16px;
+  line-height: 160%;
+  font-weight: var(--fw-regular);
+}
+
+.body-3 {
+  font-size: 14px;
+  line-height: 160%;
+  font-weight: var(--fw-regular);
+}
+
+.caption-1 {
+  font-size: 12px;
+  line-height: 140%;
+  font-weight: var(--fw-regular);
+}
+
+.caption-2 {
+  font-size: 10px;
+  line-height: 140%;
+  font-weight: var(--fw-regular);
+}
+
+.text-button {
+  font-size: 18px;
+  line-height: 100%;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.02em;
+}
+
+.text-nav {
+  font-size: 16px;
+  line-height: 100%;
+  font-weight: var(--fw-medium);
+}

@@ -1,0 +1,87 @@
+.form {
+  width: 100%;
+  max-width: 640px;
+}
+
+.card {
+  background-color: var(--surface-panel);
+  border: 1px solid var(--border-panel);
+  padding: var(--space-8);
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--color-electric-glow-strong) 50%, transparent 100%);
+  }
+
+  @include md {
+    padding: var(--space-10);
+  }
+}
+
+.title {
+  font-family: var(--font-primary);
+  font-size: 22px;
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+  margin: 0 0 var(--space-2);
+}
+
+.description {
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: var(--fw-regular);
+  color: var(--text-muted);
+  margin: 0 0 var(--space-6);
+  line-height: 1.6;
+}
+
+.errorBanner {
+  font-family: var(--font-primary);
+  font-size: 13px;
+  font-weight: var(--fw-medium);
+  color: var(--color-status-critical);
+  background-color: rgba(255, 59, 59, 0.06);
+  border: 1px solid rgba(255, 59, 59, 0.15);
+  padding: var(--space-3) var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.messageField {
+  grid-column: 1 / -1;
+}
+
+.submitBtn {
+  width: 100%;
+
+  @include md {
+    width: auto;
+    min-width: 200px;
+  }
+}
+
+.successMessage {
+  padding: var(--space-8);
+  text-align: center;
+}
+
+.successText {
+  font-family: var(--font-primary);
+  font-size: 18px;
+  font-weight: var(--fw-medium);
+  color: var(--color-status-active);
+  margin: 0;
+  text-shadow: 0 0 10px rgba(0, 204, 106, 0.2);
+}

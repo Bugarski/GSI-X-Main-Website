@@ -1,0 +1,167 @@
+// ============================================================
+// GSI Design System — SCSS Variables & CSS Custom Properties
+// Command Center / Cybersecurity / Armored Operations
+// ============================================================
+
+// Breakpoints
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+$bp-xxl: 1440px;
+
+// Container widths
+$container-sm: 640px;
+$container-md: 768px;
+$container-lg: 1024px;
+$container-xl: 1280px;
+$container-xxl: 1440px;
+$container-max: 1600px;
+
+// Mixins
+@mixin sm { @media (min-width: $bp-sm) { @content; } }
+@mixin md { @media (min-width: $bp-md) { @content; } }
+@mixin lg { @media (min-width: $bp-lg) { @content; } }
+@mixin xl { @media (min-width: $bp-xl) { @content; } }
+@mixin xxl { @media (min-width: $bp-xxl) { @content; } }
+
+:root {
+  // ---- Primary Blue ----
+  --color-primary-50: #e6eaee;
+  --color-primary-100: #b0becb;
+  --color-primary-200: #8a9eb2;
+  --color-primary-300: #54728f;
+  --color-primary-400: #335679;
+  --color-primary-500: #002c58;
+  --color-primary-600: #002850;
+  --color-primary-700: #001f3e;
+  --color-primary-800: #001830;
+  --color-primary-900: #001225;
+
+  // ---- Accent Gold (CTAs, metallic highlights) ----
+  --color-accent-50: #fef5e9;
+  --color-accent-100: #fde1bb;
+  --color-accent-200: #fcd39b;
+  --color-accent-300: #fbbf6d;
+  --color-accent-400: #fab251;
+  --color-accent-500: #f99f25;
+  --color-accent-600: #e39122;
+  --color-accent-700: #b1711a;
+  --color-accent-800: #895714;
+  --color-accent-900: #694310;
+
+  // ---- Electric Blue (operational systems, HUD, active states) ----
+  --color-electric: #0088ff;
+  --color-electric-dim: #0066cc;
+  --color-electric-bright: #33a0ff;
+  --color-electric-glow: rgba(0, 136, 255, 0.18);
+  --color-electric-glow-strong: rgba(0, 136, 255, 0.35);
+  --color-electric-glow-subtle: rgba(0, 136, 255, 0.06);
+
+  // ---- Status Colors (operational) ----
+  --color-status-active: #00cc6a;
+  --color-status-warning: #ffaa00;
+  --color-status-critical: #ff3b3b;
+  --color-status-standby: #0088ff;
+
+  // ---- Gray ----
+  --color-gray-50: #ebebeb;
+  --color-gray-100: #c0c0c0;
+  --color-gray-200: #a1a1a1;
+  --color-gray-300: #767676;
+  --color-gray-400: #5c5c5c;
+  --color-gray-500: #333333;
+  --color-gray-600: #2e2e2e;
+  --color-gray-700: #242424;
+  --color-gray-800: #1c1c1c;
+  --color-gray-900: #151515;
+
+  // ---- Surfaces (deep navy, layered command center) ----
+  --surface-dark: #000a18;
+  --surface-dark-elevated: #001020;
+  --surface-dark-card: #001428;
+  --surface-panel: #001830;
+  --surface-primary: #002040;
+  --surface-glass: rgba(0, 16, 32, 0.7);
+  --surface-glass-heavy: rgba(0, 10, 24, 0.92);
+  --surface-steel: rgba(0, 20, 40, 0.85);
+
+  // ---- Borders (operational) ----
+  --border-subtle: rgba(0, 136, 255, 0.08);
+  --border-medium: rgba(0, 136, 255, 0.15);
+  --border-glow: rgba(0, 136, 255, 0.3);
+  --border-active: rgba(0, 136, 255, 0.5);
+  --border-panel: rgba(138, 158, 178, 0.1);
+
+  // ---- Text on dark (hierarchy) ----
+  --text-primary: #ffffff;
+  --text-secondary: #b0becb;
+  --text-muted: #7a8fa3;
+  --text-faint: #4a6278;
+  --text-electric: #0088ff;
+  --text-gold: #f99f25;
+
+  // ---- Typography ----
+  --font-primary: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+
+  // ---- Spacing ----
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 28px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-14: 56px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+
+  // ---- Section padding ----
+  --section-padding-mobile: 56px 16px;
+  --section-padding-tablet: 72px 24px;
+  --section-padding-desktop: 100px 40px;
+
+  // ---- Border ----
+  --radius-none: 0px;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+
+  // ---- Shadows (operational glow) ----
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.6);
+  --shadow-glow-sm: 0 0 10px rgba(0, 136, 255, 0.15);
+  --shadow-glow-md: 0 0 24px rgba(0, 136, 255, 0.12);
+  --shadow-glow-lg: 0 0 48px rgba(0, 136, 255, 0.1);
+  --shadow-glow-gold: 0 0 24px rgba(249, 159, 37, 0.2);
+  --shadow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+
+  // ---- Transitions ----
+  --transition-fast: 120ms ease-out;
+  --transition-base: 220ms ease-out;
+  --transition-slow: 400ms ease-out;
+  --transition-system: 300ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  // ---- Z-index ----
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-overlay: 300;
+  --z-modal: 400;
+  --z-toast: 500;
+
+  // ---- Grid pattern (command center) ----
+  --grid-color: rgba(0, 136, 255, 0.035);
+  --grid-size: 64px;
+}

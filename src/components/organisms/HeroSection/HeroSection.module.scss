@@ -1,0 +1,319 @@
+.hero {
+  position: relative;
+  background-color: var(--surface-dark);
+  background-size: cover;
+  background-position: center;
+  padding: var(--space-20) var(--space-5);
+  min-height: 500px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+
+  &.fullHeight {
+    min-height: 100vh;
+  }
+
+  @include md {
+    padding: var(--space-24) var(--space-8);
+    min-height: 600px;
+  }
+
+  @include lg {
+    padding: var(--space-32) var(--space-10);
+    min-height: 700px;
+  }
+}
+
+// ---- Video background layer ----
+.videoBg {
+  z-index: 0;
+}
+
+// ---- Dark gradient overlay ----
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    170deg,
+    rgba(0, 10, 24, 0.6) 0%,
+    rgba(0, 10, 24, 0.8) 40%,
+    rgba(0, 20, 40, 0.92) 100%
+  );
+}
+
+// ---- Perspective grid (command center floor) ----
+.gridPattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: var(--grid-size) var(--grid-size);
+  mask-image: radial-gradient(ellipse 90% 60% at 50% 60%, rgba(0,0,0,0.6) 0%, transparent 70%);
+  z-index: 0;
+  animation: grid-pulse 6s ease-in-out infinite;
+}
+
+// ---- Horizontal scan line ----
+.scanLine {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(0, 136, 255, 0.15) 20%,
+    rgba(0, 136, 255, 0.4) 50%,
+    rgba(0, 136, 255, 0.15) 80%,
+    transparent 100%
+  );
+  animation: scan-line 6s linear infinite;
+  z-index: 1;
+}
+
+// ---- HUD corner brackets ----
+.cornerDecor {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    background-color: rgba(0, 136, 255, 0.25);
+  }
+
+  &.topLeft {
+    top: var(--space-6);
+    left: var(--space-6);
+
+    &::before { width: 40px; height: 1px; top: 0; left: 0; }
+    &::after { width: 1px; height: 40px; top: 0; left: 0; }
+
+    @include lg {
+      top: var(--space-10);
+      left: var(--space-10);
+      &::before { width: 60px; }
+      &::after { height: 60px; }
+    }
+  }
+
+  &.topRight {
+    top: var(--space-6);
+    right: var(--space-6);
+
+    &::before { width: 40px; height: 1px; top: 0; right: 0; }
+    &::after { width: 1px; height: 40px; top: 0; right: 0; }
+
+    @include lg {
+      top: var(--space-10);
+      right: var(--space-10);
+      &::before { width: 60px; }
+      &::after { height: 60px; }
+    }
+  }
+
+  &.bottomLeft {
+    bottom: var(--space-6);
+    left: var(--space-6);
+
+    &::before { width: 40px; height: 1px; bottom: 0; left: 0; }
+    &::after { width: 1px; height: 40px; bottom: 0; left: 0; }
+
+    @include lg {
+      bottom: var(--space-10);
+      left: var(--space-10);
+      &::before { width: 60px; }
+      &::after { height: 60px; }
+    }
+  }
+
+  &.bottomRight {
+    bottom: var(--space-6);
+    right: var(--space-6);
+
+    &::before { width: 40px; height: 1px; bottom: 0; right: 0; }
+    &::after { width: 1px; height: 40px; bottom: 0; right: 0; }
+
+    @include lg {
+      bottom: var(--space-10);
+      right: var(--space-10);
+      &::before { width: 60px; }
+      &::after { height: 60px; }
+    }
+  }
+}
+
+// ---- Horizontal divider lines (HUD) ----
+.hudLine {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  z-index: 1;
+
+  &.hudLineTop {
+    top: 0;
+    background: linear-gradient(90deg, transparent 0%, var(--border-medium) 50%, transparent 100%);
+  }
+
+  &.hudLineBottom {
+    bottom: 0;
+    background: linear-gradient(90deg, transparent 0%, var(--border-medium) 50%, transparent 100%);
+  }
+}
+
+// ---- Status bar (top-right HUD readout) ----
+.statusBar {
+  position: absolute;
+  top: var(--space-6);
+  right: var(--space-6);
+  display: none;
+  align-items: center;
+  gap: var(--space-3);
+  z-index: 3;
+  font-family: var(--font-primary);
+  font-size: 10px;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+
+  @include lg {
+    display: flex;
+    top: var(--space-10);
+    right: var(--space-10);
+  }
+}
+
+.statusDot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-status-active);
+  box-shadow: 0 0 6px var(--color-status-active);
+  animation: status-blink 3s ease-in-out infinite;
+}
+
+// ---- Main content ----
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  width: 100%;
+
+  &.left {
+    text-align: left;
+    margin-right: auto;
+  }
+
+  &.center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.title {
+  font-family: var(--font-primary);
+  font-size: 36px;
+  font-weight: var(--fw-extrabold);
+  color: var(--text-primary);
+  line-height: 1.08;
+  margin: 0 0 var(--space-5);
+  letter-spacing: -0.03em;
+
+  @include md {
+    font-size: 52px;
+    margin-bottom: var(--space-6);
+  }
+
+  @include lg {
+    font-size: 64px;
+    margin-bottom: var(--space-7);
+  }
+
+  @include xl {
+    font-size: 72px;
+  }
+}
+
+.subtitle {
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: var(--fw-regular);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0 0 var(--space-10);
+  max-width: 600px;
+
+  @include md {
+    font-size: 18px;
+  }
+
+  .center & {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+
+  .center & {
+    justify-content: center;
+  }
+}
+
+.ctaPrimary,
+.ctaSecondary {
+  display: inline-block;
+}
+
+.secondaryLink {
+  text-decoration: none;
+}
+
+// ---- Metrics strip under hero CTAs ----
+.metricsStrip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+  margin-top: var(--space-12);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--border-subtle);
+
+  .center & {
+    justify-content: center;
+  }
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.metricValue {
+  font-family: var(--font-primary);
+  font-size: 28px;
+  font-weight: var(--fw-extrabold);
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  line-height: 1;
+
+  @include md {
+    font-size: 36px;
+  }
+}
+
+.metricLabel {
+  font-family: var(--font-primary);
+  font-size: 10px;
+  font-weight: var(--fw-semibold);
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}

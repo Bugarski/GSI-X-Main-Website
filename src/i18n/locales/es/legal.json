@@ -1,0 +1,18 @@
+{
+  "privacy": {
+    "title": "Aviso de Privacidad",
+    "placeholder": "Esta página está en preparación. El aviso de privacidad completo de GSI se publicará aquí en cumplimiento con la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP) y estándares internacionales aplicables."
+  },
+  "terms": {
+    "title": "Términos y Condiciones",
+    "placeholder": "Esta página está en preparación. Los términos y condiciones de GSI para la contratación de servicios y uso del sitio web se detallarán aquí."
+  },
+  "legalNotice": {
+    "title": "Aviso Legal",
+    "placeholder": "Esta página está en preparación. La información legal sobre Grupo Seguridad Integral (GSI) y sus subsidiarias se publicará aquí."
+  },
+  "compliance": {
+    "title": "Cumplimiento y Ética",
+    "placeholder": "Esta página está en preparación. El código de ética, políticas contra el lavado de dinero y marcos de cumplimiento de GSI se detallarán aquí."
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "privacy": {
+    "title": "Privacy Policy",
+    "placeholder": "This page is under preparation. GSI's full privacy policy will be published here in compliance with Mexican Federal Law on Protection of Personal Data (LFPDPPP) and applicable international standards."
+  },
+  "terms": {
+    "title": "Terms & Conditions",
+    "placeholder": "This page is under preparation. GSI's terms and conditions for service engagement and website usage will be detailed here."
+  },
+  "legalNotice": {
+    "title": "Legal Notice",
+    "placeholder": "This page is under preparation. Legal information regarding Grupo Seguridad Integral (GSI) and its subsidiaries will be published here."
+  },
+  "compliance": {
+    "title": "Compliance & Ethics",
+    "placeholder": "This page is under preparation. GSI's code of ethics, anti-money laundering policies, and compliance frameworks will be detailed here."
+  }
+}

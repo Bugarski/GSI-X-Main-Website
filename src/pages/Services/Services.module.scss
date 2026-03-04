@@ -1,0 +1,75 @@
+.services {
+  background-color: var(--surface-dark);
+}
+
+.section {
+  padding: var(--section-padding-mobile);
+
+  @include md { padding: var(--section-padding-tablet); }
+  @include lg { padding: var(--section-padding-desktop); }
+}
+
+.sectionAlt {
+  background-color: var(--surface-dark-elevated);
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--border-medium) 50%, transparent 100%);
+  }
+}
+
+.serviceGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+  margin-top: var(--space-8);
+
+  @include md { grid-template-columns: repeat(2, 1fr); }
+}
+
+.sectionAlt .serviceGrid {
+  @include lg { grid-template-columns: repeat(4, 1fr); }
+}
+
+.specialGrid {
+  @include lg { grid-template-columns: repeat(3, 1fr); }
+}
+
+.whyGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+  margin-top: var(--space-8);
+
+  @include md { grid-template-columns: repeat(2, 1fr); }
+  @include lg { grid-template-columns: repeat(5, 1fr); }
+}
+
+.whyCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--space-6);
+  background-color: var(--surface-panel);
+  border: 1px solid var(--border-panel);
+  border-left: 2px solid var(--color-electric-dim);
+  transition: all var(--transition-system);
+
+  &:hover {
+    border-color: var(--border-medium);
+    border-left-color: var(--color-electric);
+    box-shadow: var(--shadow-glow-sm);
+  }
+}
+
+.whyIcon {
+  color: var(--text-electric);
+  font-size: 24px;
+  margin-bottom: var(--space-4);
+}

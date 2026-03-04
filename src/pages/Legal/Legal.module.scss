@@ -1,0 +1,18 @@
+.legal {
+  background-color: var(--surface-dark);
+}
+
+.section {
+  padding: var(--section-padding-mobile);
+
+  @include md {
+    padding: var(--section-padding-tablet);
+  }
+  @include lg {
+    padding: var(--section-padding-desktop);
+  }
+}
+
+.content {
+  max-width: 800px;
+}

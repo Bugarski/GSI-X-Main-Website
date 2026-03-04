@@ -1,0 +1,28 @@
+{
+  "hero": {
+    "title": "Construya su Carrera en Seguridad",
+    "subtitle": "Únase a una de las organizaciones de seguridad líderes en Latinoamérica. Siempre buscamos profesionales disciplinados, capacitados y comprometidos."
+  },
+  "intro": {
+    "text": "GSI ofrece trayectorias profesionales en transporte blindado, seguridad física, tecnología, logística y operaciones corporativas. Invertimos en capacitación, seguridad y desarrollo profesional."
+  },
+  "openings": {
+    "title": "Vacantes Actuales",
+    "placeholder": "Estamos actualizando nuestras ofertas laborales. Por favor regrese pronto o contacte directamente a nuestro equipo de Recursos Humanos."
+  },
+  "benefits": {
+    "title": "Por Qué Trabajar en GSI",
+    "items": {
+      "training": "Programas continuos de capacitación profesional y certificación",
+      "stability": "Estabilidad laboral en uno de los grupos de seguridad líderes de México",
+      "growth": "Oportunidades de crecimiento profesional en múltiples unidades de negocio",
+      "safety": "Estándares de seguridad líderes en la industria",
+      "benefits": "Compensación competitiva y beneficios para empleados"
+    }
+  },
+  "cta": {
+    "title": "¿Interesado en unirse a GSI?",
+    "subtitle": "Envíe su currículum a nuestro equipo de reclutamiento.",
+    "email": "rrhh@gsi.com.mx"
+  }
+}

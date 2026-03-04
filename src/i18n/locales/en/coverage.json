@@ -1,0 +1,28 @@
+{
+  "hero": {
+    "title": "Operational Coverage Across the Americas",
+    "subtitle": "Coordinated security operations spanning Mexico, Central America, Brazil, and strategic international partnerships."
+  },
+  "regions": {
+    "mexico": {
+      "title": "Mexico",
+      "description": "Nationwide operations covering all major cities and high-risk corridors with dedicated command centers."
+    },
+    "centralAmerica": {
+      "title": "Central America",
+      "description": "Regional coverage through coordinated operations and strategic alliances across Guatemala, Honduras, El Salvador, Costa Rica, and Panama."
+    },
+    "brazil": {
+      "title": "Brazil",
+      "description": "Growing operational presence supporting cash-in-transit and security services in key metropolitan areas."
+    },
+    "global": {
+      "title": "Strategic Global Partners",
+      "description": "International alliances enabling coordinated security operations in Spain, the United States, and select markets worldwide."
+    }
+  },
+  "cta": {
+    "title": "Need coverage in your region?",
+    "subtitle": "Contact our team to discuss operational availability and deployment timelines."
+  }
+}
