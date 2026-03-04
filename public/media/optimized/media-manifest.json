@@ -1,0 +1,472 @@
+{
+  "images": {
+    "logos/gsi-logo-white": {
+      "sizes": [
+        400
+      ],
+      "formats": [
+        "png",
+        "webp",
+        "avif"
+      ],
+      "basePath": "/media/optimized/logos/gsi-logo-white"
+    },
+    "photos/about/armored-blueprints": {
+      "sizes": [
+        400,
+        800
+      ],
+      "formats": [
+        "png",
+        "webp",
+        "avif"
+      ],
+      "basePath": "/media/optimized/photos/about/armored-blueprints"
+    },
+    "photos/about/armored-truck": {
+      "sizes": [
+        400,
+        800
+      ],
+      "formats": [
+        "png",
+        "webp",
+        "avif"
+      ],
+      "basePath": "/media/optimized/photos/about/armored-truck"
+    },
+    "photos/about/cash-freedom": {
+      "sizes": [
+        400,
+        800
+      ],
+      "formats": [
+        "png",
+        "webp",
+        "avif"
+      ],
+      "basePath": "/media/optimized/photos/about/cash-freedom"
+    },
+    "photos/about/hero-evolution": {
+      "sizes": [
+        400,
+        800
+      ],
+      "formats": [
+        "png",
+        "webp",
+        "avif"
+      ],
+      "basePath": "/media/optimized/photos/about/hero-evolution"
+    },
+    "photos/about/intelligent-hud": {
+      "sizes": [
+        400,
+        800
+      ],
+      "formats": [
+        "png",
+        "webp",
+        "avif"
+      ],
+      "basePath": "/media/optimized/photos/about/intelligent-hud"
+    },
+    "photos/about/origins-medieval": {
+      "sizes": [
+        400,
+        800
+      ],
+      "formats": [
+        "png",
+        "webp",
+        "avif"
+      ],
+      "basePath": "/media/optimized/photos/about/origins-medieval"
+    },
+    "photos/about/origins-roman": {
+      "sizes": [
+        400,
+        800
+      ],
+      "formats": [
+        "png",
+        "webp",
+        "avif"
+      ],
+      "basePath": "/media/optimized/photos/about/origins-roman"
+    },
+    "photos/about/who-we-are": {
+      "sizes": [
+        400,
+        800
+      ],
+      "formats": [
+        "png",
+        "webp",
+        "avif"
+      ],
+      "basePath": "/media/optimized/photos/about/who-we-are"
+    },
+    "photos/careers/team-culture": {
+      "sizes": [
+        400,
+        800
+      ],
+      "formats": [
+        "png",
+        "webp",
+        "avif"
+      ],
+      "basePath": "/media/optimized/photos/careers/team-culture"
+    },
+    "photos/heroes/careers-hero": {
+      "sizes": [
+        400,
+        800
+      ],
+      "formats": [
+        "png",
+        "webp",
+        "avif"
+      ],
+      "basePath": "/media/optimized/photos/heroes/careers-hero"
+    },
+    "photos/heroes/contact-hero": {
+      "sizes": [
+        400,
+        800
+      ],
+      "formats": [
+        "png",
+        "webp",
+        "avif"
+      ],
+      "basePath": "/media/optimized/photos/heroes/contact-hero"
+    },
+    "photos/heroes/coverage-hero": {
+      "sizes": [
+        400,
+        800
+      ],
+      "formats": [
+        "png",
+        "webp",
+        "avif"
+      ],
+      "basePath": "/media/optimized/photos/heroes/coverage-hero"
+    },
+    "photos/heroes/guard-radio-cap": {
+      "sizes": [
+        400,
+        800
+      ],
+      "formats": [
+        "png",
+        "webp",
+        "avif"
+      ],
+      "basePath": "/media/optimized/photos/heroes/guard-radio-cap"
+    },
+    "photos/heroes/services-hero": {
+      "sizes": [
+        400,
+        800
+      ],
+      "formats": [
+        "png",
+        "webp",
+        "avif"
+      ],
+      "basePath": "/media/optimized/photos/heroes/services-hero"
+    },
+    "photos/home/cctv-monitors": {
+      "sizes": [
+        400,
+        800
+      ],
+      "formats": [
+        "png",
+        "webp",
+        "avif"
+      ],
+      "basePath": "/media/optimized/photos/home/cctv-monitors"
+    },
+    "photos/home/cta-bg": {
+      "sizes": [
+        400,
+        800
+      ],
+      "formats": [
+        "png",
+        "webp",
+        "avif"
+      ],
+      "basePath": "/media/optimized/photos/home/cta-bg"
+    },
+    "photos/services/asset-protection": {
+      "sizes": [
+        400,
+        800
+      ],
+      "formats": [
+        "png",
+        "webp",
+        "avif"
+      ],
+      "basePath": "/media/optimized/photos/services/asset-protection"
+    },
+    "photos/services/atm-hero": {
+      "sizes": [
+        400,
+        800
+      ],
+      "formats": [
+        "png",
+        "webp",
+        "avif"
+      ],
+      "basePath": "/media/optimized/photos/services/atm-hero"
+    },
+    "photos/services/atm-operation": {
+      "sizes": [
+        400,
+        800
+      ],
+      "formats": [
+        "png",
+        "webp",
+        "avif"
+      ],
+      "basePath": "/media/optimized/photos/services/atm-operation"
+    },
+    "photos/services/bodyguard-radio": {
+      "sizes": [
+        400,
+        800
+      ],
+      "formats": [
+        "png",
+        "webp",
+        "avif"
+      ],
+      "basePath": "/media/optimized/photos/services/bodyguard-radio"
+    },
+    "photos/services/cargo-hero": {
+      "sizes": [
+        400,
+        800
+      ],
+      "formats": [
+        "png",
+        "webp",
+        "avif"
+      ],
+      "basePath": "/media/optimized/photos/services/cargo-hero"
+    },
+    "photos/services/cash-counting": {
+      "sizes": [
+        400,
+        800
+      ],
+      "formats": [
+        "png",
+        "webp",
+        "avif"
+      ],
+      "basePath": "/media/optimized/photos/services/cash-counting"
+    },
+    "photos/services/cit-hero": {
+      "sizes": [
+        400,
+        800
+      ],
+      "formats": [
+        "png",
+        "webp",
+        "avif"
+      ],
+      "basePath": "/media/optimized/photos/services/cit-hero"
+    },
+    "photos/services/concept-design-hero": {
+      "sizes": [
+        400,
+        800
+      ],
+      "formats": [
+        "png",
+        "webp",
+        "avif"
+      ],
+      "basePath": "/media/optimized/photos/services/concept-design-hero"
+    },
+    "photos/services/consulting-hero": {
+      "sizes": [
+        400,
+        800
+      ],
+      "formats": [
+        "png",
+        "webp",
+        "avif"
+      ],
+      "basePath": "/media/optimized/photos/services/consulting-hero"
+    },
+    "photos/services/custom-hero": {
+      "sizes": [
+        400,
+        800
+      ],
+      "formats": [
+        "png",
+        "webp",
+        "avif"
+      ],
+      "basePath": "/media/optimized/photos/services/custom-hero"
+    },
+    "photos/services/executive-hero": {
+      "sizes": [
+        400,
+        800
+      ],
+      "formats": [
+        "png",
+        "webp",
+        "avif"
+      ],
+      "basePath": "/media/optimized/photos/services/executive-hero"
+    },
+    "photos/services/guard-checkpoint": {
+      "sizes": [
+        400,
+        800
+      ],
+      "formats": [
+        "png",
+        "webp",
+        "avif"
+      ],
+      "basePath": "/media/optimized/photos/services/guard-checkpoint"
+    },
+    "photos/services/guard-equipment": {
+      "sizes": [
+        400,
+        800
+      ],
+      "formats": [
+        "png",
+        "webp",
+        "avif"
+      ],
+      "basePath": "/media/optimized/photos/services/guard-equipment"
+    },
+    "photos/services/guard-monitoring": {
+      "sizes": [
+        400,
+        800
+      ],
+      "formats": [
+        "png",
+        "webp",
+        "avif"
+      ],
+      "basePath": "/media/optimized/photos/services/guard-monitoring"
+    },
+    "photos/services/guard-portrait": {
+      "sizes": [
+        400,
+        800
+      ],
+      "formats": [
+        "png",
+        "webp",
+        "avif"
+      ],
+      "basePath": "/media/optimized/photos/services/guard-portrait"
+    },
+    "photos/services/guard-profile": {
+      "sizes": [
+        400,
+        800
+      ],
+      "formats": [
+        "png",
+        "webp",
+        "avif"
+      ],
+      "basePath": "/media/optimized/photos/services/guard-profile"
+    },
+    "photos/services/guards-hero": {
+      "sizes": [
+        400,
+        800
+      ],
+      "formats": [
+        "png",
+        "webp",
+        "avif"
+      ],
+      "basePath": "/media/optimized/photos/services/guards-hero"
+    },
+    "photos/services/mexican-pesos": {
+      "sizes": [
+        400,
+        800
+      ],
+      "formats": [
+        "png",
+        "webp",
+        "avif"
+      ],
+      "basePath": "/media/optimized/photos/services/mexican-pesos"
+    },
+    "photos/services/radio-operator": {
+      "sizes": [
+        400,
+        800
+      ],
+      "formats": [
+        "png",
+        "webp",
+        "avif"
+      ],
+      "basePath": "/media/optimized/photos/services/radio-operator"
+    },
+    "photos/services/security-tech": {
+      "sizes": [
+        400,
+        800
+      ],
+      "formats": [
+        "png",
+        "webp",
+        "avif"
+      ],
+      "basePath": "/media/optimized/photos/services/security-tech"
+    },
+    "photos/services/tactical-officer": {
+      "sizes": [
+        400,
+        800
+      ],
+      "formats": [
+        "png",
+        "webp",
+        "avif"
+      ],
+      "basePath": "/media/optimized/photos/services/tactical-officer"
+    },
+    "photos/services/technology-hero": {
+      "sizes": [
+        400,
+        800
+      ],
+      "formats": [
+        "png",
+        "webp",
+        "avif"
+      ],
+      "basePath": "/media/optimized/photos/services/technology-hero"
+    }
+  },
+  "videos": {}
+}

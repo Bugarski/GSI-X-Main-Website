@@ -12,6 +12,30 @@ import { motion } from 'framer-motion';
 import placeholders from '../../utils/placeholders';
 import styles from './ServiceDetailLayout.module.scss';
 
+const SERVICE_ACCENT_IMAGES = {
+  cit: placeholders.sections.mexicanPesos,
+  guards: placeholders.sections.guardEquipment,
+  cargo: placeholders.sections.radioOperator,
+  technology: placeholders.sections.guardMonitoring,
+  consulting: placeholders.sections.securityTech,
+  conceptDesign: placeholders.sections.cctvMonitors,
+  executive: placeholders.sections.tacticalOfficer,
+  atm: placeholders.sections.cashCounting,
+  custom: placeholders.sections.bodyguardRadio,
+};
+
+const SERVICE_CTA_IMAGES = {
+  cit: placeholders.sections.cashCounting,
+  guards: placeholders.sections.guardCheckpoint,
+  cargo: placeholders.sections.guardRadioCap,
+  technology: placeholders.sections.cctvMonitors,
+  consulting: placeholders.sections.guardPortrait,
+  conceptDesign: placeholders.sections.guardMonitoring,
+  executive: placeholders.sections.bodyguardRadio,
+  atm: placeholders.sections.atmOperation,
+  custom: placeholders.sections.assetProtection,
+};
+
 const panelReveal = {
   hidden: { opacity: 0, y: 20 },
   visible: (i = 0) => ({
@@ -74,6 +98,17 @@ export default function ServiceDetailLayout({ serviceKey }) {
           </motion.div>
         </Container>
       </section>
+
+      {/* Accent Image */}
+      {SERVICE_ACCENT_IMAGES[serviceKey] && (
+        <section className={styles.accentStrip}>
+          <div
+            className={styles.accentImage}
+            style={{ backgroundImage: `url(${SERVICE_ACCENT_IMAGES[serviceKey]})` }}
+          />
+          <div className={styles.accentOverlay} />
+        </section>
+      )}
 
       {/* Capabilities */}
       <section className={styles.section}>
@@ -162,6 +197,13 @@ export default function ServiceDetailLayout({ serviceKey }) {
 
       {/* CTA */}
       <section className={styles.ctaSection}>
+        {SERVICE_CTA_IMAGES[serviceKey] && (
+          <div
+            className={styles.ctaBgImage}
+            style={{ backgroundImage: `url(${SERVICE_CTA_IMAGES[serviceKey]})` }}
+            aria-hidden="true"
+          />
+        )}
         <Container size="lg">
           <motion.div
             className={styles.ctaContent}

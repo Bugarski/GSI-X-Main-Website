@@ -220,21 +220,29 @@
   font-weight: var(--fw-extrabold);
   color: var(--text-primary);
   line-height: 1.08;
-  margin: 0 0 var(--space-5);
+  margin: 0 0 var(--space-6);
   letter-spacing: -0.03em;
+  text-wrap: balance;
+  max-width: 14ch;
 
   @include md {
     font-size: 52px;
-    margin-bottom: var(--space-6);
+    margin-bottom: var(--space-8);
+    max-width: 16ch;
   }
 
   @include lg {
     font-size: 64px;
-    margin-bottom: var(--space-7);
+    margin-bottom: var(--space-8);
   }
 
   @include xl {
     font-size: 72px;
+  }
+
+  .center & {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -245,10 +253,11 @@
   color: var(--text-secondary);
   line-height: 1.7;
   margin: 0 0 var(--space-10);
-  max-width: 600px;
+  max-width: 520px;
+  text-wrap: balance;
 
   @include md {
-    font-size: 18px;
+    font-size: 17px;
   }
 
   .center & {

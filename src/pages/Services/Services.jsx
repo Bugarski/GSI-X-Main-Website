@@ -93,6 +93,7 @@ export default function Services() {
                 title={t(`cards.${key}.title`)}
                 description={t(`cards.${key}.description`)}
                 icon={icon}
+                image={placeholders.services[key]}
                 href={getServiceHref(key)}
                 index={i}
               />
@@ -118,6 +119,7 @@ export default function Services() {
                 title={t(`cards.${key}.title`)}
                 description={t(`cards.${key}.description`)}
                 icon={icon}
+                image={placeholders.services[key]}
                 href={getServiceHref(key)}
                 index={i}
               />
@@ -143,6 +145,7 @@ export default function Services() {
                 title={t(`cards.${key}.title`)}
                 description={t(`cards.${key}.description`)}
                 icon={icon}
+                image={placeholders.services[key]}
                 href={getServiceHref(key)}
                 index={i}
               />

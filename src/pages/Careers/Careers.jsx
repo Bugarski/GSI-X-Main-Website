@@ -113,6 +113,11 @@ export default function Careers() {
       </section>
 
       <section className={`${styles.section} ${styles.sectionCta}`}>
+        <div
+          className={styles.ctaBgImage}
+          style={{ backgroundImage: `url(${placeholders.sections.teamCulture})` }}
+          aria-hidden="true"
+        />
         <Container size="lg">
           <motion.div
             className={styles.ctaContent}

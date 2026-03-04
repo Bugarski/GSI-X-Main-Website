@@ -114,6 +114,7 @@ export default function Home() {
                 title={t(`coreServices.${key}.title`)}
                 description={t(`coreServices.${key}.description`)}
                 icon={icon}
+                image={placeholders.services[key]}
                 href={`/${lang}${routeConfig.serviceDetail[key][lang]}`}
                 index={i}
               />
@@ -139,6 +140,7 @@ export default function Home() {
                 title={t(`advancedServices.${key}.title`)}
                 description={t(`advancedServices.${key}.description`)}
                 icon={icon}
+                image={placeholders.services[key]}
                 href={`/${lang}${routeConfig.serviceDetail[key][lang]}`}
                 index={i}
               />
@@ -237,6 +239,11 @@ export default function Home() {
       </section>
 
       <section className={`${styles.section} ${styles.sectionCta}`}>
+        <div
+          className={styles.ctaBgImage}
+          style={{ backgroundImage: `url(${placeholders.sections.ctaBg})` }}
+          aria-hidden="true"
+        />
         <Container size="lg">
           <motion.div
             className={styles.quoteContent}

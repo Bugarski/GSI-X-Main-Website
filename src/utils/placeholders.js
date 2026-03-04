@@ -1,39 +1,52 @@
 /**
- * Placeholder media URLs — curated from Unsplash.
+ * Media paths — optimized local images for all pages.
  *
- * These are used until real images are dropped into public/media/
- * and processed by the optimization script. Once optimized images
- * exist, remove these fallbacks from each page.
+ * All images are processed via scripts/optimize-images.js
+ * into JPEG + WebP at multiple breakpoints under public/media/optimized/.
  */
 
-const UQ = 'auto=format&fit=crop&q=80';
+const O = '/media/optimized';
 
 const placeholders = {
   heroes: {
-    home: `https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&${UQ}`,
-    about: `https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&${UQ}`,
-    services: `https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1920&${UQ}`,
-    coverage: `https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1920&${UQ}`,
-    careers: `https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1920&${UQ}`,
-    contact: `https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&${UQ}`,
+    home: `${O}/home/cctv-monitors-lg.jpg`,
+    about: `${O}/about/hero-evolution-lg.jpg`,
+    services: `${O}/heroes/services-hero-lg.jpg`,
+    coverage: `${O}/heroes/coverage-hero-lg.jpg`,
+    careers: `${O}/heroes/careers-hero-lg.jpg`,
+    contact: `${O}/heroes/contact-hero-lg.jpg`,
   },
 
   services: {
-    cit: '/media/optimized/services/cit-hero-lg.jpg',
-    guards: `https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=1920&${UQ}`,
-    cargo: `https://images.unsplash.com/photo-1586528116022-ab763d075f20?w=1920&${UQ}`,
-    technology: `https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1920&${UQ}`,
-    consulting: `https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1920&${UQ}`,
-    conceptDesign: `https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1920&${UQ}`,
-    executiveProtection: `https://images.unsplash.com/photo-1521791055366-0d553872125f?w=1920&${UQ}`,
-    atm: `https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1920&${UQ}`,
-    customProjects: `https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&${UQ}`,
+    cit: `${O}/services/cit-hero-lg.jpg`,
+    guards: `${O}/services/guards-hero-lg.jpg`,
+    cargo: `${O}/services/cargo-hero-lg.jpg`,
+    technology: `${O}/services/technology-hero-lg.jpg`,
+    consulting: `${O}/services/consulting-hero-lg.jpg`,
+    conceptDesign: `${O}/services/concept-design-hero-lg.jpg`,
+    executive: `${O}/services/executive-hero-lg.jpg`,
+    atm: `${O}/services/atm-hero-lg.jpg`,
+    custom: `${O}/services/custom-hero-lg.jpg`,
   },
 
-  dividers: {
-    fleetConvoy: `https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1920&${UQ}`,
-    surveillanceRoom: `https://images.unsplash.com/photo-1551808525-51a94da548ce?w=1920&${UQ}`,
-    infrastructure: `https://images.unsplash.com/photo-1504384764586-bb4ceeafeef8?w=1920&${UQ}`,
+  sections: {
+    ctaBg: `${O}/home/cta-bg-lg.jpg`,
+    cctvMonitors: `${O}/home/cctv-monitors-lg.jpg`,
+    teamCulture: `${O}/careers/team-culture-lg.jpg`,
+    guardEquipment: `${O}/services/guard-equipment-lg.jpg`,
+    guardCheckpoint: `${O}/services/guard-checkpoint-lg.jpg`,
+    guardMonitoring: `${O}/services/guard-monitoring-lg.jpg`,
+    mexicanPesos: `${O}/services/mexican-pesos-lg.jpg`,
+    securityTech: `${O}/services/security-tech-lg.jpg`,
+    radioOperator: `${O}/services/radio-operator-lg.jpg`,
+    tacticalOfficer: `${O}/services/tactical-officer-lg.jpg`,
+    bodyguardRadio: `${O}/services/bodyguard-radio-lg.jpg`,
+    guardProfile: `${O}/services/guard-profile-lg.jpg`,
+    cashCounting: `${O}/services/cash-counting-lg.jpg`,
+    guardPortrait: `${O}/services/guard-portrait-lg.jpg`,
+    atmOperation: `${O}/services/atm-operation-lg.jpg`,
+    assetProtection: `${O}/services/asset-protection-lg.jpg`,
+    guardRadioCap: `${O}/heroes/guard-radio-cap-lg.jpg`,
   },
 };
 

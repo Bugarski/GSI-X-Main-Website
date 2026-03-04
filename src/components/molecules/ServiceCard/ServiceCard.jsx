@@ -13,7 +13,7 @@ import ThinIcon from '../../../utils/ThinIcon';
 import { motion } from 'framer-motion';
 import styles from './ServiceCard.module.scss';
 
-function ServiceCard({ title, description, icon, href, index = 0 }) {
+function ServiceCard({ title, description, icon, href, image, index = 0 }) {
   const { t } = useTranslation('common');
 
   return (
@@ -25,13 +25,21 @@ function ServiceCard({ title, description, icon, href, index = 0 }) {
       className={styles.cardWrapper}
     >
       <Link to={href} className={styles.card}>
-        <span className={styles.accentLine} />
-        <span className={styles.icon}>
-          <ThinIcon icon={icon} />
-        </span>
-        <h3 className={styles.title}>{title}</h3>
-        <p className={styles.description}>{description}</p>
-        <span className={styles.cta}>{t('cta.learnMore')}</span>
+        {image && (
+          <div className={styles.imageWrap}>
+            <img src={image} alt="" className={styles.image} loading="lazy" />
+            <div className={styles.imageOverlay} />
+          </div>
+        )}
+        <div className={styles.body}>
+          <span className={styles.accentLine} />
+          <span className={styles.icon}>
+            <ThinIcon icon={icon} />
+          </span>
+          <h3 className={styles.title}>{title}</h3>
+          <p className={styles.description}>{description}</p>
+          <span className={styles.cta}>{t('cta.learnMore')}</span>
+        </div>
       </Link>
     </motion.div>
   );
