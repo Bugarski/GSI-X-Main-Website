@@ -25,6 +25,11 @@
     "es": "Español",
     "switch": "Switch Language"
   },
+  "labels": {
+    "challenge": "The Challenge",
+    "solution": "GSI Response",
+    "industries": "Industries We Serve"
+  },
   "accessibility": {
     "skipToContent": "Skip to main content",
     "openMenu": "Open navigation menu",

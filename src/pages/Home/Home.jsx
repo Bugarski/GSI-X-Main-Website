@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import ThinIcon from '../../utils/ThinIcon';
@@ -97,7 +97,22 @@ export default function Home() {
         statusLabel={t('hero.statusLabel', { defaultValue: 'Systems Operational' })}
       />
 
-      <section className={styles.section}>
+      <section className={styles.coreShowcase}>
+        {/* Circuit board background */}
+        <div className={styles.showcaseBg}>
+          <div className={styles.showcaseGrid} />
+          <div className={styles.showcaseTraceH} />
+          <div className={styles.showcaseTraceH2} />
+          <div className={styles.showcaseTraceV} />
+          <div className={styles.showcaseTraceV2} />
+          <div className={styles.showcaseNode} style={{ top: '15%', left: '10%' }} />
+          <div className={styles.showcaseNode} style={{ top: '50%', left: '50%' }} />
+          <div className={styles.showcaseNode} style={{ top: '85%', right: '12%' }} />
+          <div className={styles.showcaseNode} style={{ top: '35%', right: '25%' }} />
+          <div className={styles.showcaseOrb} />
+          <div className={styles.showcaseOrb2} />
+        </div>
+
         <Container size="lg">
           <motion.div
             initial="hidden"
@@ -107,20 +122,60 @@ export default function Home() {
           >
             <SectionTitle title={t('coreServices.sectionTitle')} />
           </motion.div>
-          <div className={styles.serviceGrid}>
-            {coreServices.map(({ key, icon }, i) => (
-              <ServiceCard
-                key={key}
-                title={t(`coreServices.${key}.title`)}
-                description={t(`coreServices.${key}.description`)}
-                icon={icon}
-                image={placeholders.services[key]}
-                href={`/${lang}${routeConfig.serviceDetail[key][lang]}`}
-                index={i}
-              />
-            ))}
-          </div>
         </Container>
+
+        {/* Full-width service panels with heritage photos */}
+        {coreServices.map(({ key, icon }, i) => {
+          const heritageImages = {
+            cit: '/media/optimized/services/cit-hero-lg.jpg',
+            guards: '/media/optimized/services/tactical-officer-lg.jpg',
+          };
+
+          return (
+            <motion.div
+              key={key}
+              className={`${styles.showcasePanel} ${i % 2 !== 0 ? styles.showcasePanelFlip : ''}`}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <div className={styles.showcaseImageSide}>
+                <img
+                  src={heritageImages[key] || placeholders.services[key]}
+                  alt=""
+                  className={styles.showcaseImage}
+                  loading="lazy"
+                />
+                <div className={styles.showcaseImageOverlay} />
+                <span className={styles.showcaseImageScan} />
+                <span className={styles.showcaseIdx}>{String(i + 1).padStart(2, '0')}</span>
+              </div>
+
+              <div className={styles.showcaseContent}>
+                <div className={styles.showcaseContentInner}>
+                  <span className={styles.showcaseIcon}>
+                    <ThinIcon icon={icon} />
+                  </span>
+                  <h3 className={styles.showcaseTitle}>
+                    {t(`coreServices.${key}.title`)}
+                  </h3>
+                  <div className={styles.showcaseDivider} />
+                  <p className={styles.showcaseDesc}>
+                    {t(`coreServices.${key}.description`)}
+                  </p>
+                  <Link
+                    to={`/${lang}${routeConfig.serviceDetail[key][lang]}`}
+                    className={styles.showcaseCta}
+                  >
+                    {t('common:cta.learnMore')}
+                    <span className={styles.showcaseCtaDot} />
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+          );
+        })}
       </section>
 
       <section className={`${styles.section} ${styles.sectionAlt}`}>

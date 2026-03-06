@@ -25,6 +25,11 @@
     "es": "Español",
     "switch": "Cambiar Idioma"
   },
+  "labels": {
+    "challenge": "El Desafío",
+    "solution": "Respuesta GSI",
+    "industries": "Industrias que Servimos"
+  },
   "accessibility": {
     "skipToContent": "Ir al contenido principal",
     "openMenu": "Abrir menú de navegación",

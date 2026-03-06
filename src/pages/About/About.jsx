@@ -131,31 +131,11 @@ export default function About() {
   return (
     <div className={styles.about}>
       <HeroSection
-        title={t('hero.title')}
-        subtitle={t('hero.subtitle')}
+        title={t('intro.title')}
+        subtitle={t('intro.text')}
         backgroundImage={`${BASE}/hero-evolution-lg.jpg`}
         align="center"
       />
-
-      {/* Intro */}
-      <section className={styles.section}>
-        <Container size="lg">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={panelReveal}
-          >
-            <Text variant="body1" color="secondary" className={styles.heroDescription}>
-              {t('hero.description')}
-            </Text>
-            <SectionTitle title={t('intro.title')} align="center" />
-            <Text variant="body1" color="muted" className={styles.introText}>
-              {t('intro.text')}
-            </Text>
-          </motion.div>
-        </Container>
-      </section>
 
       {/* History — alternating left/right layout */}
       <section className={`${styles.section} ${styles.sectionAlt}`}>

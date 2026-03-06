@@ -37,15 +37,33 @@
 // =============================================
 
 .heroDescription {
-  max-width: 800px;
-  margin-bottom: var(--space-10);
+  max-width: 720px;
+  margin: 0 auto var(--space-14);
   font-size: var(--text-lg);
-  line-height: 1.6;
+  line-height: 1.7;
+  text-align: center;
+  text-wrap: balance;
+  color: var(--text-secondary);
+}
+
+.introWrap {
+  text-align: center;
+}
+
+.introDivider {
+  display: block;
+  width: 48px;
+  height: 2px;
+  margin: 0 auto var(--space-10);
+  background: linear-gradient(90deg, transparent, var(--color-electric), transparent);
+  border: none;
 }
 
 .introText {
-  margin-top: var(--space-6);
-  max-width: 800px;
+  margin: var(--space-6) auto 0;
+  max-width: 760px;
+  text-align: center;
+  line-height: 1.7;
 }
 
 // =============================================

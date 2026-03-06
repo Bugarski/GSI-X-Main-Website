@@ -1,35 +1,196 @@
-.process {
+// ═══════════════════════════════════════════════
+// Pipeline — Process Steps
+// ═══════════════════════════════════════════════
+
+.pipeline {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-5);
+  gap: var(--space-6);
 
   @include md {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  @include lg {
+    grid-template-columns: repeat(var(--step-count, 4), 1fr);
+    gap: 0;
+  }
 }
 
-.stepWrapper {
-  min-width: 0;
+// ── Individual step column ────────────────────
+
+.stepCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.col1 {
-  @include md { grid-template-columns: 1fr; }
+// ── Node row: line—node—line (desktop) ────────
+
+.nodeRow {
+  display: none;
+
+  @include lg {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 48px;
+  }
 }
 
-.col2 {
-  @include md { grid-template-columns: repeat(2, 1fr); }
+.node {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
 }
 
-.col3 {
-  @include md { grid-template-columns: repeat(2, 1fr); }
-  @include lg { grid-template-columns: repeat(3, 1fr); }
+.nodeNumber {
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: var(--fw-extrabold);
+  color: var(--text-electric);
+  position: relative;
+  z-index: 2;
+  transition: all 0.4s ease;
 }
 
-.col4 {
-  @include md { grid-template-columns: repeat(2, 1fr); }
-  @include lg { grid-template-columns: repeat(4, 1fr); }
+.nodeRing {
+  position: absolute;
+  inset: 0;
+  border: 2px solid var(--border-panel);
+  border-radius: 50%;
+  background-color: var(--surface-dark-elevated);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.colAuto {
-  @include lg { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.stepActive {
+  .nodeRing {
+    border-color: var(--color-electric);
+    box-shadow: 0 0 16px var(--color-electric-glow);
+    background-color: rgba(0, 120, 255, 0.08);
+  }
+
+  .stepContent {
+    border-top-color: var(--color-electric);
+  }
+}
+
+// ── Horizontal line segments ──────────────────
+
+.lineSegment {
+  flex: 1;
+  height: 2px;
+  position: relative;
+  background-color: var(--border-panel);
+  overflow: hidden;
+}
+
+.lineFill {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-electric), var(--color-electric-dim));
+  transform-origin: left center;
+}
+
+.lineBlank {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+// ── Vertical connector from node to card ──────
+
+.connector {
+  display: none;
+
+  @include lg {
+    display: flex;
+    justify-content: center;
+    height: 20px;
+    width: 100%;
+  }
+}
+
+.connectorLine {
+  display: block;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--color-electric-dim), var(--border-panel));
+  transform-origin: top center;
+}
+
+// ── Step content card ─────────────────────────
+
+.stepContent {
+  padding: var(--space-6) var(--space-5);
+  background-color: var(--surface-panel);
+  border: 1px solid var(--border-panel);
+  border-top: 2px solid var(--color-electric-dim);
+  position: relative;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 100%;
+  flex: 1;
+
+  @include lg {
+    margin: 0 var(--space-2);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      ellipse at top center,
+      rgba(0, 120, 255, 0.03) 0%,
+      transparent 60%
+    );
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  &:hover {
+    border-top-color: var(--color-electric);
+    box-shadow: var(--shadow-glow-sm);
+    &::before { opacity: 1; }
+  }
+}
+
+.mobileIndex {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-4);
+  font-family: var(--font-primary);
+  font-size: 36px;
+  font-weight: var(--fw-extrabold);
+  color: var(--text-electric);
+  opacity: 0.1;
+  line-height: 1;
+  pointer-events: none;
+
+  @include lg { display: none; }
+}
+
+.stepTitle {
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+  line-height: 1.3;
+  margin-bottom: var(--space-3);
+}
+
+.stepDesc {
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: var(--fw-regular);
+  color: var(--text-muted);
+  line-height: 1.7;
 }

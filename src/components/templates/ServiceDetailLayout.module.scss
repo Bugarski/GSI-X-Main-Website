@@ -1,3 +1,7 @@
+// =============================================
+// Service Detail — Command Center Layout
+// =============================================
+
 .servicePage {
   background-color: var(--surface-dark);
 }
@@ -5,7 +9,6 @@
 .section {
   padding: var(--section-padding-mobile);
   position: relative;
-
   @include md { padding: var(--section-padding-tablet); }
   @include lg { padding: var(--section-padding-desktop); }
 }
@@ -13,6 +16,994 @@
 .sectionAlt {
   background-color: var(--surface-dark-elevated);
   position: relative;
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--border-medium) 50%, transparent 100%);
+  }
+  &::before { top: 0; }
+  &::after { bottom: 0; }
+}
+
+.sectionLine {
+  height: 2px;
+  margin-bottom: var(--space-10);
+  background: linear-gradient(90deg, var(--color-electric), var(--color-electric-dim), transparent);
+  transform-origin: left center;
+}
+
+// ═══════════════════════════════════════════════
+// Briefing — Problem + Value combined
+// ═══════════════════════════════════════════════
+
+.briefingSection {
+  position: relative;
+  padding: var(--space-24) var(--space-4);
+  overflow: hidden;
+  background-color: var(--surface-dark);
+
+  @include md { padding: var(--space-28) var(--space-6); }
+  @include lg { padding: var(--space-32) var(--space-8); }
+}
+
+// ── Circuit board background ─────────────────
+
+.circuitBoard {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.circuitGrid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 120, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 120, 255, 0.06) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 85% 75% at 50% 50%, black 0%, transparent 70%);
+}
+
+// Horizontal traces with energy packets
+.circuitTraceH,
+.circuitTraceH2 {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  overflow: visible;
+}
+
+.circuitTraceH {
+  top: 22%;
+  background: linear-gradient(90deg, transparent 5%, rgba(0, 120, 255, 0.15) 20%, rgba(0, 120, 255, 0.15) 80%, transparent 95%);
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: 0;
+    width: 120px;
+    height: 5px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, transparent, rgba(0, 160, 255, 1), rgba(0, 200, 255, 0.8), transparent);
+    box-shadow: 0 0 20px 4px rgba(0, 140, 255, 0.6), 0 0 60px 8px rgba(0, 120, 255, 0.2);
+    animation: energy-right 4s linear infinite;
+    will-change: transform;
+  }
+}
+
+.circuitTraceH2 {
+  top: 78%;
+  background: linear-gradient(90deg, transparent 10%, rgba(0, 120, 255, 0.12) 25%, rgba(0, 120, 255, 0.12) 75%, transparent 90%);
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    right: 0;
+    width: 100px;
+    height: 5px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, transparent, rgba(0, 180, 255, 0.9), rgba(0, 140, 255, 1), transparent);
+    box-shadow: 0 0 18px 3px rgba(0, 140, 255, 0.5), 0 0 50px 6px rgba(0, 120, 255, 0.15);
+    animation: energy-left 5s linear infinite;
+    will-change: transform;
+  }
+}
+
+// Vertical traces with energy packets
+.circuitTraceV,
+.circuitTraceV2 {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  overflow: visible;
+}
+
+.circuitTraceV {
+  left: 18%;
+  background: linear-gradient(180deg, transparent 5%, rgba(0, 120, 255, 0.12) 20%, rgba(0, 120, 255, 0.12) 80%, transparent 95%);
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: 0;
+    width: 5px;
+    height: 100px;
+    border-radius: 3px;
+    background: linear-gradient(180deg, transparent, rgba(0, 160, 255, 1), rgba(0, 200, 255, 0.8), transparent);
+    box-shadow: 0 0 18px 3px rgba(0, 140, 255, 0.5), 0 0 50px 6px rgba(0, 120, 255, 0.15);
+    animation: energy-down 5.5s linear infinite;
+    will-change: transform;
+  }
+}
+
+.circuitTraceV2 {
+  right: 16%;
+  background: linear-gradient(180deg, transparent 10%, rgba(0, 120, 255, 0.1) 30%, rgba(0, 120, 255, 0.1) 70%, transparent 90%);
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: -2px;
+    bottom: 0;
+    width: 5px;
+    height: 80px;
+    border-radius: 3px;
+    background: linear-gradient(180deg, transparent, rgba(0, 180, 255, 0.9), rgba(0, 140, 255, 1), transparent);
+    box-shadow: 0 0 16px 3px rgba(0, 140, 255, 0.4), 0 0 40px 6px rgba(0, 120, 255, 0.12);
+    animation: energy-up 6.5s linear infinite;
+    will-change: transform;
+  }
+}
+
+// Junction nodes — pulsing intersections
+.circuitNode {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(0, 140, 255, 0.6);
+  box-shadow: 0 0 8px 2px rgba(0, 120, 255, 0.4);
+  animation: node-beat 2.5s ease-in-out infinite;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 140, 255, 0.3);
+    animation: node-ring-expand 2.5s ease-out infinite;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: -16px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 140, 255, 0.15);
+    animation: node-ring-expand 2.5s ease-out infinite 0.4s;
+  }
+}
+
+// Stagger node animations via inline style delays in JSX won't work for
+// keyframes, so we use nth-of-type on the DOM order within .circuitBoard
+.circuitBoard > .circuitNode:nth-of-type(2) { animation-delay: 0.4s; &::before { animation-delay: 0.4s; } &::after { animation-delay: 0.8s; } }
+.circuitBoard > .circuitNode:nth-of-type(3) { animation-delay: 0.8s; &::before { animation-delay: 0.8s; } &::after { animation-delay: 1.2s; } }
+.circuitBoard > .circuitNode:nth-of-type(4) { animation-delay: 1.2s; &::before { animation-delay: 1.2s; } &::after { animation-delay: 1.6s; } }
+.circuitBoard > .circuitNode:nth-of-type(5) { animation-delay: 1.6s; &::before { animation-delay: 1.6s; } &::after { animation-delay: 2.0s; } }
+.circuitBoard > .circuitNode:nth-of-type(6) { animation-delay: 2.0s; &::before { animation-delay: 2.0s; } &::after { animation-delay: 2.4s; } }
+
+// Ambient glow orbs
+.circuitPulse {
+  position: absolute;
+  top: 15%;
+  left: 10%;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 120, 255, 0.08) 0%, transparent 70%);
+  animation: orb-breathe 4s ease-in-out infinite;
+
+  @include lg { width: 550px; height: 550px; }
+}
+
+.circuitPulse2 {
+  position: absolute;
+  bottom: 10%;
+  right: 8%;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 120, 255, 0.06) 0%, transparent 70%);
+  animation: orb-breathe 6s ease-in-out infinite 1.5s;
+
+  @include lg { width: 450px; height: 450px; }
+}
+
+// Central glow
+.circuitGlow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 50% 40% at 50% 50%,
+    rgba(0, 120, 255, 0.05) 0%,
+    transparent 100%
+  );
+  animation: core-pulse 3s ease-in-out infinite;
+}
+
+// ── Circuit keyframes ────────────────────────
+
+@keyframes energy-right {
+  0%   { transform: translateX(-120px); opacity: 0; }
+  5%   { opacity: 1; }
+  95%  { opacity: 1; }
+  100% { transform: translateX(calc(100vw + 120px)); opacity: 0; }
+}
+
+@keyframes energy-left {
+  0%   { transform: translateX(120px); opacity: 0; }
+  5%   { opacity: 1; }
+  95%  { opacity: 1; }
+  100% { transform: translateX(calc(-100vw - 120px)); opacity: 0; }
+}
+
+@keyframes energy-down {
+  0%   { transform: translateY(-100px); opacity: 0; }
+  5%   { opacity: 1; }
+  95%  { opacity: 1; }
+  100% { transform: translateY(calc(100vh + 100px)); opacity: 0; }
+}
+
+@keyframes energy-up {
+  0%   { transform: translateY(100px); opacity: 0; }
+  5%   { opacity: 1; }
+  95%  { opacity: 1; }
+  100% { transform: translateY(calc(-100vh - 100px)); opacity: 0; }
+}
+
+@keyframes node-beat {
+  0%, 100% {
+    background: rgba(0, 140, 255, 0.3);
+    box-shadow: 0 0 6px 1px rgba(0, 120, 255, 0.2);
+    transform: scale(1);
+  }
+  50% {
+    background: rgba(0, 180, 255, 0.9);
+    box-shadow: 0 0 20px 6px rgba(0, 140, 255, 0.7), 0 0 40px 10px rgba(0, 120, 255, 0.2);
+    transform: scale(1.3);
+  }
+}
+
+@keyframes node-ring-expand {
+  0%   { transform: scale(0.8); opacity: 0.6; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+@keyframes orb-breathe {
+  0%, 100% { transform: scale(1);   opacity: 0.5; }
+  50%      { transform: scale(1.2); opacity: 1; }
+}
+
+@keyframes core-pulse {
+  0%, 100% { opacity: 0.4; }
+  50%      { opacity: 0.8; }
+}
+
+.briefingInner {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.briefingProblem,
+.briefingValue {
+  text-align: center;
+}
+
+.briefingTag {
+  display: inline-block;
+  font-family: var(--font-primary);
+  font-size: 10px;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-electric);
+  padding: var(--space-1) var(--space-4);
+  border: 1px solid rgba(0, 120, 255, 0.25);
+  background: rgba(0, 120, 255, 0.06);
+  margin-bottom: var(--space-5);
+}
+
+.briefingTitle {
+  font-family: var(--font-primary);
+  font-size: 26px;
+  font-weight: var(--fw-extrabold);
+  color: var(--text-primary);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-5);
+  text-wrap: balance;
+
+  @include md { font-size: 32px; }
+  @include lg { font-size: 38px; }
+}
+
+.briefingText {
+  font-family: var(--font-primary);
+  font-size: 16px;
+  color: var(--text-muted);
+  line-height: 1.8;
+  max-width: 720px;
+  margin: 0 auto;
+  text-wrap: balance;
+
+  @include md { font-size: 17px; }
+}
+
+.briefingDivider {
+  height: 2px;
+  max-width: 120px;
+  margin: var(--space-12) auto;
+  background: linear-gradient(90deg, transparent, var(--color-electric), transparent);
+  transform-origin: center;
+}
+
+.briefingCards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+
+  @include md { grid-template-columns: 1fr 1fr; }
+}
+
+.briefingCard {
+  position: relative;
+  padding: var(--space-6) var(--space-6) var(--space-6) var(--space-7);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-panel);
+  backdrop-filter: blur(8px);
+  text-align: left;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &:hover {
+    border-color: var(--border-glow);
+    box-shadow: var(--shadow-glow-sm);
+    background: rgba(255, 255, 255, 0.05);
+  }
+}
+
+.briefingCardNum {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-4);
+  font-family: var(--font-primary);
+  font-size: 40px;
+  font-weight: var(--fw-extrabold);
+  color: var(--color-electric);
+  opacity: 0.08;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.briefingCardText {
+  font-family: var(--font-primary);
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.7;
+
+  @include md { font-size: 16px; }
+}
+
+// ═══════════════════════════════════════════════
+// Capabilities — Preview + List
+// ═══════════════════════════════════════════════
+
+.capSection {
+  padding: var(--section-padding-mobile);
+  position: relative;
+  @include md { padding: var(--section-padding-tablet); }
+  @include lg { padding: var(--section-padding-desktop); }
+}
+
+.capGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+
+  @include lg {
+    grid-template-columns: 1.2fr 1fr;
+    gap: var(--space-4);
+  }
+}
+
+// ── Preview card ─────────────────────────────
+
+.capPreview {
+  position: relative;
+  overflow: hidden;
+  min-height: 320px;
+  border: 1px solid var(--border-glow);
+  box-shadow: var(--shadow-glow-sm);
+
+  @include lg {
+    min-height: 100%;
+  }
+}
+
+.capPreviewBg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: saturate(0.5);
+  transition: opacity 0.6s ease;
+}
+
+.capPreviewOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 8, 20, 0.35) 0%,
+    rgba(0, 8, 20, 0.5) 40%,
+    rgba(0, 8, 20, 0.92) 100%
+  );
+}
+
+.capPreviewScan {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(0, 120, 255, 0.03) 49%,
+    rgba(0, 120, 255, 0.06) 50%,
+    rgba(0, 120, 255, 0.03) 51%,
+    transparent 100%
+  );
+  animation: scan-line 6s linear infinite;
+  pointer-events: none;
+}
+
+.capPreviewContent {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--space-8) var(--space-7);
+}
+
+.capPreviewIdx {
+  font-family: var(--font-primary);
+  font-size: 64px;
+  font-weight: var(--fw-extrabold);
+  color: var(--color-electric);
+  opacity: 0.2;
+  line-height: 1;
+  margin-bottom: auto;
+
+  @include md { font-size: 80px; }
+}
+
+.capPreviewTitle {
+  font-family: var(--font-primary);
+  font-size: 22px;
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+  line-height: 1.25;
+
+  @include md { font-size: 26px; }
+}
+
+.capPreviewDivider {
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-electric), transparent);
+  margin: var(--space-4) 0;
+}
+
+.capPreviewText {
+  font-family: var(--font-primary);
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+  max-width: 440px;
+  margin-bottom: var(--space-3);
+
+  @include md { font-size: 16px; }
+}
+
+.capPreviewContext {
+  font-family: var(--font-primary);
+  font-size: 13px;
+  font-weight: var(--fw-medium);
+  color: var(--text-muted);
+  line-height: 1.5;
+  font-style: italic;
+  max-width: 400px;
+  margin-bottom: var(--space-5);
+  padding-left: var(--space-4);
+  border-left: 2px solid var(--color-electric-dim);
+}
+
+.capPreviewCta {
+  align-self: flex-start;
+}
+
+// ── Item list ────────────────────────────────
+
+.capList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.capItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  background-color: var(--surface-panel);
+  border: 1px solid var(--border-panel);
+  border-left: 3px solid transparent;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &:hover:not(.capItemActive) {
+    background-color: var(--surface-dark-elevated);
+    border-color: var(--border-medium);
+    border-left-color: var(--color-electric-dim);
+  }
+}
+
+.capItemActive {
+  border-left-color: var(--color-electric);
+  background-color: var(--surface-dark-elevated);
+  box-shadow: var(--shadow-glow-sm);
+  border-color: var(--border-glow);
+
+  .capItemIdx {
+    color: var(--color-electric);
+    opacity: 1;
+  }
+
+  .capItemTitle {
+    color: var(--text-primary);
+  }
+}
+
+.capItemIdx {
+  font-family: var(--font-primary);
+  font-size: 13px;
+  font-weight: var(--fw-bold);
+  color: var(--text-muted);
+  opacity: 0.4;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+  flex-shrink: 0;
+  min-width: 24px;
+  transition: all 0.35s ease;
+}
+
+.capItemBody {
+  flex: 1;
+  min-width: 0;
+}
+
+.capItemTitle {
+  font-family: var(--font-primary);
+  font-size: 15px;
+  font-weight: var(--fw-semibold);
+  color: var(--text-secondary);
+  line-height: 1.35;
+  margin-bottom: var(--space-1);
+  transition: color 0.35s ease;
+}
+
+.capItemText {
+  font-family: var(--font-primary);
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+// ═══════════════════════════════════════════════
+// Metrics — Radial glow + shimmer
+// ═══════════════════════════════════════════════
+
+// ═══════════════════════════════════════════════
+// Photo Break — Cinematic strip
+// ═══════════════════════════════════════════════
+
+.photoBreak {
+  position: relative;
+  height: 340px;
+  overflow: hidden;
+
+  @include md { height: 420px; }
+  @include lg { height: 500px; }
+}
+
+.photoBreakImg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: saturate(0.5);
+}
+
+.photoBreakOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 8, 20, 0.65);
+}
+
+.photoBreakScan {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(0, 120, 255, 0.03) 49%,
+    rgba(0, 120, 255, 0.06) 50%,
+    rgba(0, 120, 255, 0.03) 51%,
+    transparent 100%
+  );
+  animation: scan-line 6s linear infinite;
+  pointer-events: none;
+}
+
+.photoBreakContent {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8) var(--space-6);
+  text-align: center;
+
+  @include md { padding: var(--space-10) var(--space-10); }
+}
+
+.photoBreakLabel {
+  font-family: var(--font-primary);
+  font-size: 11px;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-electric);
+  margin-bottom: var(--space-4);
+}
+
+.photoBreakLine {
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-electric), transparent);
+  margin-bottom: var(--space-5);
+  transform-origin: center;
+
+  @include md { width: 120px; }
+}
+
+.photoBreakQuote {
+  font-family: var(--font-primary);
+  font-size: 22px;
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+  line-height: 1.3;
+  max-width: 700px;
+  text-wrap: balance;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
+
+  @include md {
+    font-size: 30px;
+    max-width: 800px;
+  }
+
+  @include lg {
+    font-size: 36px;
+    max-width: 900px;
+  }
+}
+
+// ═══════════════════════════════════════════════
+// Metrics — System Status Dashboard
+// ═══════════════════════════════════════════════
+
+.metricsSection {
+  padding: var(--space-16) var(--space-4);
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    var(--surface-dark) 0%,
+    var(--surface-dark-elevated) 50%,
+    var(--surface-dark) 100%
+  );
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--grid-color) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+    background-size: var(--grid-size) var(--grid-size);
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 0%, transparent 80%);
+    pointer-events: none;
+  }
+
+  @include md { padding: var(--space-20) var(--space-6); }
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-5);
+  @include md { grid-template-columns: repeat(4, 1fr); }
+}
+
+.metricCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-10) var(--space-5);
+  background-color: var(--surface-panel);
+  border: 1px solid var(--border-panel);
+  text-align: center;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  gap: var(--space-2);
+
+  @include md { padding: var(--space-12) var(--space-5); }
+
+  &:hover {
+    border-color: var(--border-glow);
+    box-shadow: var(--shadow-glow-md);
+
+    .metricPulse { opacity: 1; }
+
+    .metricIdx {
+      color: var(--color-electric);
+      opacity: 0.3;
+    }
+  }
+}
+
+.metricShimmer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-electric) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 4s ease-in-out infinite;
+}
+
+.metricIdx {
+  position: absolute;
+  top: var(--space-3);
+  left: var(--space-4);
+  font-family: var(--font-primary);
+  font-size: 11px;
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+  opacity: 0.08;
+  letter-spacing: 0.06em;
+  transition: all 0.4s ease;
+  pointer-events: none;
+}
+
+.metricNumber {
+  font-family: var(--font-primary);
+  font-size: 36px;
+  font-weight: var(--fw-extrabold);
+  color: var(--text-primary);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  position: relative;
+  z-index: 1;
+
+  @include md { font-size: 44px; }
+}
+
+.metricLabel {
+  font-family: var(--font-primary);
+  font-size: 11px;
+  font-weight: var(--fw-semibold);
+  color: var(--text-muted);
+  line-height: 1.35;
+  text-align: center;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  max-width: 160px;
+  position: relative;
+  z-index: 1;
+}
+
+// ── Text-only metric variant ──────────────────
+
+.metricText {
+  border-left: 2px solid var(--color-electric-dim);
+  align-items: flex-start;
+  text-align: left;
+
+  &:hover {
+    border-left-color: var(--color-electric);
+  }
+}
+
+.metricTextValue {
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+  line-height: 1.35;
+  position: relative;
+  z-index: 1;
+
+  @include md { font-size: 17px; }
+}
+
+.metricPulse {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 120, 255, 0.06) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+// ═══════════════════════════════════════════════
+// Differentiators — Split with photo
+// ═══════════════════════════════════════════════
+
+.diffSection {
+  padding: var(--section-padding-mobile);
+  position: relative;
+  background-color: var(--surface-dark-elevated);
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--border-medium) 50%, transparent 100%);
+  }
+  &::before { top: 0; }
+  &::after { bottom: 0; }
+
+  @include md { padding: var(--section-padding-tablet); }
+  @include lg { padding: var(--section-padding-desktop); }
+}
+
+.diffSplit {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+
+  @include lg {
+    grid-template-columns: 5fr 7fr;
+    gap: var(--space-12);
+    align-items: center;
+  }
+}
+
+.diffPhotoCol {
+  order: 2;
+  @include lg { order: 1; }
+}
+
+.diffPhotoWrap {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid var(--border-panel);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  @include lg { aspect-ratio: 3 / 4; }
+}
+
+.diffPhoto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.7);
+}
+
+.diffPhotoOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 40, 100, 0.25) 0%,
+    rgba(0, 8, 20, 0.5) 100%
+  );
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.diffListCol {
+  order: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+
+  @include lg { order: 2; }
+}
+
+.diffItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  background-color: var(--surface-panel);
+  border: 1px solid var(--border-panel);
+  border-left: 2px solid transparent;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &:hover {
+    border-color: var(--border-medium);
+    border-left-color: var(--color-electric);
+    background-color: rgba(0, 120, 255, 0.03);
+    box-shadow: var(--shadow-glow-sm);
+  }
+}
+
+.diffCheckSvg {
+  flex-shrink: 0;
+}
+
+.diffCircle {
+  fill: none;
+}
+
+.diffCheckPath {
+  fill: none;
+}
+
+// ═══════════════════════════════════════════════
+// Industries — Dual Marquee Data Stream
+// ═══════════════════════════════════════════════
+
+.industriesSection {
+  padding: var(--space-14) 0;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--surface-dark);
 
   &::before,
   &::after {
@@ -26,133 +1017,109 @@
 
   &::before { top: 0; }
   &::after { bottom: 0; }
+
+  @include md { padding: var(--space-16) 0; }
 }
 
-.problemText {
-  max-width: 800px;
-  margin-top: var(--space-6);
+.industriesTitle {
+  font-family: var(--font-primary);
+  font-size: 11px;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-electric);
+  text-align: center;
+  margin-bottom: var(--space-8);
 }
 
-.mt4 {
-  margin-top: var(--space-4);
-}
-
-.accentStrip {
+.marqueeWrap {
   position: relative;
-  height: 200px;
-  overflow: hidden;
-
-  @include md { height: 280px; }
-  @include lg { height: 320px; }
-}
-
-.accentImage {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-}
-
-.accentOverlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    var(--surface-dark) 0%,
-    rgba(0, 20, 40, 0.55) 30%,
-    rgba(0, 20, 40, 0.55) 70%,
-    var(--surface-dark) 100%
-  );
-}
-
-.capabilitiesGrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-5);
-
-  @include md { grid-template-columns: repeat(2, 1fr); }
-  @include lg { grid-template-columns: repeat(3, 1fr); }
-}
-
-.capabilityCard {
-  padding: var(--space-6);
-  background-color: var(--surface-panel);
-  border: 1px solid var(--border-panel);
-  border-left: 2px solid var(--color-electric-dim);
-  transition: all var(--transition-system);
-
-  &:hover {
-    border-color: var(--border-medium);
-    border-left-color: var(--color-electric);
-    box-shadow: var(--shadow-glow-sm);
-  }
-}
-
-.capTitle {
-  margin-bottom: var(--space-3);
-}
-
-.metricsGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-5);
-
-  @include md { grid-template-columns: repeat(4, 1fr); }
-}
-
-.differentiatorGrid {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   gap: var(--space-4);
-
-  @include md { grid-template-columns: repeat(2, 1fr); }
-  @include lg { grid-template-columns: repeat(3, 1fr); }
 }
 
-.differentiatorItem {
+.marqueeFade {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, var(--surface-dark) 0%, transparent 12%, transparent 88%, var(--surface-dark) 100%);
+}
+
+.marqueeScan {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 120, 255, 0.04) 45%,
+    rgba(0, 120, 255, 0.08) 50%,
+    rgba(0, 120, 255, 0.04) 55%,
+    transparent 100%
+  );
+  animation: marquee-scan 8s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes marquee-scan {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(200%); }
+}
+
+.marqueeTrack {
+  overflow: hidden;
+  width: 100%;
+}
+
+.marqueeRow {
   display: flex;
-  align-items: center;
-  gap: var(--space-3);
-  padding: var(--space-4) var(--space-5);
-  background-color: var(--surface-panel);
-  border: 1px solid var(--border-panel);
-  transition: all var(--transition-system);
+  gap: var(--space-4);
+  width: max-content;
+  animation: marquee-scroll 40s linear infinite;
+  animation-direction: var(--marquee-dir, normal);
 
   &:hover {
-    border-color: var(--border-medium);
+    animation-play-state: paused;
   }
 }
 
-.differentiatorCheck {
-  flex-shrink: 0;
-  width: 8px;
-  height: 8px;
-  background-color: var(--color-electric);
-  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
-}
-
-.industriesGrid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-3);
+@keyframes marquee-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 .industryTag {
-  padding: var(--space-2) var(--space-4);
+  flex-shrink: 0;
+  padding: var(--space-3) var(--space-6);
   background-color: var(--surface-panel);
-  border: 1px solid var(--border-panel);
+  font-family: var(--font-primary);
   font-size: 12px;
   font-weight: var(--fw-semibold);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--text-secondary);
-  transition: all var(--transition-system);
+  white-space: nowrap;
+  border: 1px solid var(--border-panel);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: default;
 
   &:hover {
-    border-color: var(--border-medium);
-    color: var(--text-primary);
+    border-color: var(--color-electric);
+    color: var(--text-electric);
+    box-shadow: var(--shadow-glow-sm);
+    background-color: rgba(0, 120, 255, 0.04);
   }
 }
+
+// ═══════════════════════════════════════════════
+// CTA
+// ═══════════════════════════════════════════════
 
 .ctaSection {
   padding: var(--space-20) var(--space-4);
@@ -160,7 +1127,6 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-
   &::before {
     content: '';
     position: absolute;
@@ -171,7 +1137,6 @@
     background-size: var(--grid-size) var(--grid-size);
     mask-image: radial-gradient(ellipse 60% 80% at 50% 50%, black 10%, transparent 70%);
   }
-
   @include md { padding: var(--space-24) var(--space-6); }
 }
 
@@ -182,6 +1147,14 @@
   background-position: center;
   opacity: 0.1;
   filter: saturate(0.3);
+}
+
+.ctaLine {
+  height: 2px;
+  width: 60px;
+  margin: 0 auto var(--space-8);
+  background: linear-gradient(90deg, transparent, var(--color-electric), transparent);
+  transform-origin: center;
 }
 
 .ctaContent {

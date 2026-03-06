@@ -6,7 +6,8 @@
   background-color: var(--surface-panel);
   border: 1px solid var(--border-panel);
   position: relative;
-  transition: border-color var(--transition-system);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
 
   &::before {
     content: '';
@@ -18,8 +19,25 @@
     background: linear-gradient(180deg, var(--color-electric), transparent);
   }
 
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      ellipse at bottom left,
+      rgba(0, 120, 255, 0.05) 0%,
+      transparent 60%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+  }
+
   &:hover {
-    border-color: var(--border-medium);
+    border-color: var(--border-glow);
+    box-shadow: var(--shadow-glow-sm);
+
+    &::after { opacity: 1; }
   }
 }
 
