@@ -186,9 +186,53 @@ $gold-bright: #fbbf6d;
   }
 }
 
-.showcaseBg > .showcaseNode:nth-of-type(2) { animation-delay: 0.6s; &::before { animation-delay: 0.6s; } }
-.showcaseBg > .showcaseNode:nth-of-type(3) { animation-delay: 1.2s; &::before { animation-delay: 1.2s; } }
-.showcaseBg > .showcaseNode:nth-of-type(4) { animation-delay: 1.8s; &::before { animation-delay: 1.8s; } }
+.showcaseBg > .showcaseNode:nth-of-type(2) { animation-delay: 0.8s; &::before { animation-delay: 0.8s; } }
+
+.showcaseTruck {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(249, 159, 37, 0.25);
+  box-shadow: 0 0 14px 4px rgba(249, 159, 37, 0.4), 0 0 40px 8px rgba(249, 159, 37, 0.12);
+  animation: sc-truck-pulse 2.5s ease-in-out infinite;
+  color: #f99f25;
+  font-size: 12px;
+
+  &::before {
+    border-color: rgba(249, 159, 37, 0.3);
+    inset: -12px;
+    animation: sc-truck-ring 2.5s ease-out infinite;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: -20px;
+    border-radius: 50%;
+    border: 1px solid rgba(249, 159, 37, 0.1);
+    animation: sc-truck-ring 2.5s ease-out infinite 0.4s;
+  }
+}
+
+@keyframes sc-truck-pulse {
+  0%, 100% {
+    background: rgba(249, 159, 37, 0.15);
+    box-shadow: 0 0 10px 3px rgba(249, 159, 37, 0.3), 0 0 30px 6px rgba(249, 159, 37, 0.08);
+    transform: scale(1);
+  }
+  50% {
+    background: rgba(249, 159, 37, 0.4);
+    box-shadow: 0 0 20px 6px rgba(249, 159, 37, 0.6), 0 0 50px 12px rgba(249, 159, 37, 0.15);
+    transform: scale(1.15);
+  }
+}
+
+@keyframes sc-truck-ring {
+  0%   { transform: scale(0.8); opacity: 0.6; }
+  100% { transform: scale(2.8); opacity: 0; }
+}
 
 .showcaseOrb {
   position: absolute;
@@ -294,63 +338,82 @@ $gold-bright: #fbbf6d;
   }
 }
 
-// ── Service cards — text over circuit board ──
+// ── Service cards — ghost photo + text on circuit ──
 
 .showcaseServices {
   position: relative;
   z-index: 1;
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-12);
+  gap: var(--space-6);
   padding: var(--space-10) 0 var(--space-6);
 
   @include md {
     grid-template-columns: 1fr 1fr;
-    gap: var(--space-16);
+    gap: var(--space-6);
     padding: var(--space-14) 0 var(--space-8);
   }
 }
 
 .showcaseCard {
   position: relative;
-  padding: var(--space-10) var(--space-2) var(--space-6);
+  overflow: hidden;
+  min-height: 420px;
+  display: flex;
+  align-items: flex-end;
+
+  @include md { min-height: 480px; }
+  @include lg { min-height: 520px; }
 
   &:hover {
+    .showcaseCardPhoto { transform: scale(1.04); opacity: 0.15; }
     .showcaseDivider { width: 80px; }
     .showcaseCtaDot { opacity: 1; }
-    .showcaseIdx { opacity: 0.12; color: $gold; text-shadow: 0 0 30px rgba(249, 159, 37, 0.3); }
+    .showcaseIdx { opacity: 0.15; color: rgba(0, 180, 255, 0.15); text-shadow: 0 0 40px rgba(0, 140, 255, 0.2); }
   }
+}
+
+.showcaseCardPhoto {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  opacity: 0.08;
+  transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.showcaseCardOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(0, 8, 24, 0.6) 100%);
+  pointer-events: none;
+  mix-blend-mode: color;
+}
+
+.showcaseCardContent {
+  position: relative;
+  z-index: 1;
+  padding: var(--space-8) var(--space-6);
+
+  @include md { padding: var(--space-10) var(--space-8); }
 }
 
 .showcaseIdx {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: var(--space-4);
+  right: var(--space-4);
   font-family: var(--font-primary);
-  font-size: 100px;
+  font-size: 90px;
   font-weight: var(--fw-extrabold);
-  color: rgba(0, 140, 255, 0.08);
+  color: rgba(0, 140, 255, 0.06);
   line-height: 1;
   pointer-events: none;
   transition: all 0.6s ease;
-  text-shadow: 0 0 20px rgba(0, 120, 255, 0.1);
 
-  @include md { font-size: 120px; }
-  @include lg { font-size: 140px; }
-}
-
-.showcaseIcon {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 52px;
-  height: 52px;
-  margin-bottom: var(--space-5);
-  color: $gold;
-  font-size: 22px;
-  border: 1px solid rgba(249, 159, 37, 0.2);
-  background: rgba(249, 159, 37, 0.04);
+  @include md { font-size: 110px; top: var(--space-6); right: var(--space-6); }
+  @include lg { font-size: 130px; }
 }
 
 .showcaseTitle {
@@ -360,7 +423,7 @@ $gold-bright: #fbbf6d;
   color: var(--text-primary);
   line-height: 1.15;
   margin-bottom: var(--space-4);
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.7);
 
   @include md { font-size: 30px; }
   @include lg { font-size: 34px; }
@@ -377,11 +440,11 @@ $gold-bright: #fbbf6d;
 .showcaseDesc {
   font-family: var(--font-primary);
   font-size: 16px;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.7);
   line-height: 1.7;
   max-width: 480px;
   margin-bottom: var(--space-8);
-  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 1px 16px rgba(0, 0, 0, 0.6);
 
   @include md { font-size: 17px; }
 }

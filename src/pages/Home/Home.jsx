@@ -105,10 +105,11 @@ export default function Home() {
           <div className={styles.showcaseTraceH2} />
           <div className={styles.showcaseTraceV} />
           <div className={styles.showcaseTraceV2} />
-          <div className={styles.showcaseNode} style={{ top: '15%', left: '10%' }} />
-          <div className={styles.showcaseNode} style={{ top: '50%', left: '50%' }} />
-          <div className={styles.showcaseNode} style={{ top: '85%', right: '12%' }} />
-          <div className={styles.showcaseNode} style={{ top: '35%', right: '25%' }} />
+          <div className={styles.showcaseNode} style={{ top: '38%', left: '28%' }} />
+          <div className={styles.showcaseNode} style={{ top: '40%', right: '52%' }} />
+          <div className={`${styles.showcaseNode} ${styles.showcaseTruck}`} style={{ top: '55%', left: '42%' }}>
+            <ThinIcon icon="truck" />
+          </div>
           <div className={styles.showcaseOrb} />
           <div className={styles.showcaseOrb2} />
         </div>
@@ -126,35 +127,47 @@ export default function Home() {
 
         <Container size="lg">
           <div className={styles.showcaseServices}>
-            {coreServices.map(({ key, icon }, i) => (
-              <motion.div
-                key={key}
-                className={styles.showcaseCard}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-80px' }}
-                transition={{ duration: 0.6, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] }}
-              >
-                <span className={styles.showcaseIdx}>{String(i + 1).padStart(2, '0')}</span>
-                <span className={styles.showcaseIcon}>
-                  <ThinIcon icon={icon} />
-                </span>
-                <h3 className={styles.showcaseTitle}>
-                  {t(`coreServices.${key}.title`)}
-                </h3>
-                <div className={styles.showcaseDivider} />
-                <p className={styles.showcaseDesc}>
-                  {t(`coreServices.${key}.description`)}
-                </p>
-                <Link
-                  to={`/${lang}${routeConfig.serviceDetail[key][lang]}`}
-                  className={styles.showcaseCta}
+            {coreServices.map(({ key, icon }, i) => {
+              const cardPhotos = {
+                cit: '/media/optimized/services/cit-hero-lg.jpg',
+                guards: '/media/optimized/services/tactical-officer-lg.jpg',
+              };
+              return (
+                <motion.div
+                  key={key}
+                  className={styles.showcaseCard}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-80px' }}
+                  transition={{ duration: 0.6, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] }}
                 >
-                  {t('common:cta.learnMore')}
-                  <span className={styles.showcaseCtaDot} />
-                </Link>
-              </motion.div>
-            ))}
+                  <img
+                    src={cardPhotos[key]}
+                    alt=""
+                    className={styles.showcaseCardPhoto}
+                    loading="lazy"
+                  />
+                  <div className={styles.showcaseCardOverlay} />
+                  <div className={styles.showcaseCardContent}>
+                    <span className={styles.showcaseIdx}>{String(i + 1).padStart(2, '0')}</span>
+                    <h3 className={styles.showcaseTitle}>
+                      {t(`coreServices.${key}.title`)}
+                    </h3>
+                    <div className={styles.showcaseDivider} />
+                    <p className={styles.showcaseDesc}>
+                      {t(`coreServices.${key}.description`)}
+                    </p>
+                    <Link
+                      to={`/${lang}${routeConfig.serviceDetail[key][lang]}`}
+                      className={styles.showcaseCta}
+                    >
+                      {t('common:cta.learnMore')}
+                      <span className={styles.showcaseCtaDot} />
+                    </Link>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </Container>
       </section>
