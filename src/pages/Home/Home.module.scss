@@ -294,181 +294,58 @@ $gold-bright: #fbbf6d;
   }
 }
 
-// ── Service panels ───────────────────────────
+// ── Service cards — text over circuit board ──
 
-.showcasePanel {
+.showcaseServices {
   position: relative;
   z-index: 1;
   display: grid;
   grid-template-columns: 1fr;
-  margin: var(--space-10) var(--space-4) 0;
+  gap: var(--space-12);
+  padding: var(--space-10) 0 var(--space-6);
 
-  @include md { margin: var(--space-10) var(--space-6) 0; }
-
-  @include lg {
+  @include md {
     grid-template-columns: 1fr 1fr;
-    min-height: 420px;
-    margin: var(--space-12) var(--space-6) 0;
+    gap: var(--space-16);
+    padding: var(--space-14) 0 var(--space-8);
   }
+}
+
+.showcaseCard {
+  position: relative;
+  padding: var(--space-10) var(--space-2) var(--space-6);
 
   &:hover {
-    .showcaseImage { transform: scale(1.06); }
-    .showcaseImageOverlay { opacity: 0.3; }
-    .showcaseImageScan { opacity: 1; }
-    .showcaseIdx { opacity: 0.25; color: $gold; }
     .showcaseDivider { width: 80px; }
     .showcaseCtaDot { opacity: 1; }
+    .showcaseIdx { opacity: 0.12; color: $gold; text-shadow: 0 0 30px rgba(249, 159, 37, 0.3); }
   }
-}
-
-.showcasePanelFlip {
-  @include lg {
-    .showcaseImageSide { order: 2; }
-    .showcaseContent { order: 1; }
-  }
-}
-
-// ── Image side ───────────────────────────────
-
-.showcaseImageSide {
-  position: relative;
-  overflow: hidden;
-  min-height: 280px;
-
-  @include md { min-height: 360px; }
-  @include lg { min-height: 100%; }
-}
-
-.showcaseImage {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: saturate(0.5);
-  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.showcaseImageOverlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 8, 20, 0.1) 0%,
-    rgba(0, 8, 20, 0.55) 100%
-  );
-  opacity: 0.5;
-  transition: opacity 0.5s ease;
-  pointer-events: none;
-
-  @include lg {
-    background: linear-gradient(
-      90deg,
-      rgba(0, 8, 20, 0.55) 0%,
-      rgba(0, 8, 20, 0.15) 40%,
-      transparent 100%
-    );
-
-    .showcasePanelFlip & {
-      background: linear-gradient(
-        270deg,
-        rgba(0, 8, 20, 0.55) 0%,
-        rgba(0, 8, 20, 0.15) 40%,
-        transparent 100%
-      );
-    }
-  }
-}
-
-.showcaseImageScan {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    rgba(0, 140, 255, 0.04) 48%,
-    rgba(0, 140, 255, 0.1) 50%,
-    rgba(0, 140, 255, 0.04) 52%,
-    transparent 100%
-  );
-  animation: sc-card-scan 5s linear infinite;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  pointer-events: none;
-}
-
-@keyframes sc-card-scan {
-  0%   { transform: translateY(-100%); }
-  100% { transform: translateY(100%); }
 }
 
 .showcaseIdx {
   position: absolute;
-  bottom: var(--space-6);
-  left: var(--space-6);
+  top: 0;
+  left: 0;
   font-family: var(--font-primary);
-  font-size: 80px;
+  font-size: 100px;
   font-weight: var(--fw-extrabold);
-  color: var(--text-primary);
-  opacity: 0.06;
+  color: rgba(0, 140, 255, 0.08);
   line-height: 1;
   pointer-events: none;
-  transition: all 0.5s ease;
+  transition: all 0.6s ease;
+  text-shadow: 0 0 20px rgba(0, 120, 255, 0.1);
 
-  @include md { font-size: 100px; }
-  @include lg { font-size: 120px; }
-
-  .showcasePanelFlip & {
-    left: auto;
-    right: var(--space-6);
-  }
-}
-
-// ── Content side — glassmorphism ─────────────
-
-.showcaseContent {
-  display: flex;
-  align-items: center;
-  padding: var(--space-10) var(--space-6);
-  position: relative;
-
-  background: rgba(0, 12, 28, 0.5);
-  backdrop-filter: blur(24px) saturate(1.2);
-  -webkit-backdrop-filter: blur(24px) saturate(1.2);
-  border: 1px solid rgba(0, 120, 255, 0.1);
-
-  @include md { padding: var(--space-12) var(--space-8); }
-  @include lg { padding: var(--space-14) var(--space-12); }
-
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at top left, rgba(0, 120, 255, 0.03) 0%, transparent 60%);
-    pointer-events: none;
-
-    .showcasePanelFlip & {
-      background: radial-gradient(ellipse at top right, rgba(0, 120, 255, 0.03) 0%, transparent 60%);
-    }
-  }
-
-  .showcasePanel:hover & {
-    border-color: rgba(249, 159, 37, 0.2);
-    box-shadow: inset 0 0 40px rgba(249, 159, 37, 0.02);
-  }
-}
-
-.showcaseContentInner {
-  position: relative;
-  z-index: 1;
+  @include md { font-size: 120px; }
+  @include lg { font-size: 140px; }
 }
 
 .showcaseIcon {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
   margin-bottom: var(--space-5);
   color: $gold;
   font-size: 22px;
@@ -478,14 +355,15 @@ $gold-bright: #fbbf6d;
 
 .showcaseTitle {
   font-family: var(--font-primary);
-  font-size: 24px;
+  font-size: 26px;
   font-weight: var(--fw-bold);
   color: var(--text-primary);
-  line-height: 1.2;
+  line-height: 1.15;
   margin-bottom: var(--space-4);
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
 
-  @include md { font-size: 28px; }
-  @include lg { font-size: 32px; }
+  @include md { font-size: 30px; }
+  @include lg { font-size: 34px; }
 }
 
 .showcaseDivider {
@@ -503,6 +381,7 @@ $gold-bright: #fbbf6d;
   line-height: 1.7;
   max-width: 480px;
   margin-bottom: var(--space-8);
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.4);
 
   @include md { font-size: 17px; }
 }
@@ -526,7 +405,7 @@ $gold-bright: #fbbf6d;
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  .showcasePanel:hover & {
+  &:hover {
     color: $gold-bright;
     &::after { transform: translateX(6px); }
   }

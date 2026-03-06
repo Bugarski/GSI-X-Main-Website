@@ -124,58 +124,39 @@ export default function Home() {
           </motion.div>
         </Container>
 
-        {/* Full-width service panels with heritage photos */}
-        {coreServices.map(({ key, icon }, i) => {
-          const heritageImages = {
-            cit: '/media/optimized/services/cit-hero-lg.jpg',
-            guards: '/media/optimized/services/tactical-officer-lg.jpg',
-          };
-
-          return (
-            <motion.div
-              key={key}
-              className={`${styles.showcasePanel} ${i % 2 !== 0 ? styles.showcasePanelFlip : ''}`}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-80px' }}
-              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <div className={styles.showcaseImageSide}>
-                <img
-                  src={heritageImages[key] || placeholders.services[key]}
-                  alt=""
-                  className={styles.showcaseImage}
-                  loading="lazy"
-                />
-                <div className={styles.showcaseImageOverlay} />
-                <span className={styles.showcaseImageScan} />
+        <Container size="lg">
+          <div className={styles.showcaseServices}>
+            {coreServices.map(({ key, icon }, i) => (
+              <motion.div
+                key={key}
+                className={styles.showcaseCard}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-80px' }}
+                transition={{ duration: 0.6, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] }}
+              >
                 <span className={styles.showcaseIdx}>{String(i + 1).padStart(2, '0')}</span>
-              </div>
-
-              <div className={styles.showcaseContent}>
-                <div className={styles.showcaseContentInner}>
-                  <span className={styles.showcaseIcon}>
-                    <ThinIcon icon={icon} />
-                  </span>
-                  <h3 className={styles.showcaseTitle}>
-                    {t(`coreServices.${key}.title`)}
-                  </h3>
-                  <div className={styles.showcaseDivider} />
-                  <p className={styles.showcaseDesc}>
-                    {t(`coreServices.${key}.description`)}
-                  </p>
-                  <Link
-                    to={`/${lang}${routeConfig.serviceDetail[key][lang]}`}
-                    className={styles.showcaseCta}
-                  >
-                    {t('common:cta.learnMore')}
-                    <span className={styles.showcaseCtaDot} />
-                  </Link>
-                </div>
-              </div>
-            </motion.div>
-          );
-        })}
+                <span className={styles.showcaseIcon}>
+                  <ThinIcon icon={icon} />
+                </span>
+                <h3 className={styles.showcaseTitle}>
+                  {t(`coreServices.${key}.title`)}
+                </h3>
+                <div className={styles.showcaseDivider} />
+                <p className={styles.showcaseDesc}>
+                  {t(`coreServices.${key}.description`)}
+                </p>
+                <Link
+                  to={`/${lang}${routeConfig.serviceDetail[key][lang]}`}
+                  className={styles.showcaseCta}
+                >
+                  {t('common:cta.learnMore')}
+                  <span className={styles.showcaseCtaDot} />
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </Container>
       </section>
 
       <section className={`${styles.section} ${styles.sectionAlt}`}>
