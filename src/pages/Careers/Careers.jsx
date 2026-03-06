@@ -12,6 +12,7 @@ import {
 } from '@fortawesome/pro-light-svg-icons';
 import HeroSection from '../../components/organisms/HeroSection/HeroSection';
 import Container from '../../components/atoms/Container/Container';
+import GlowCard from '../../components/atoms/GlowCard/GlowCard';
 import SectionTitle from '../../components/atoms/SectionTitle/SectionTitle';
 import Text from '../../components/atoms/Text/Text';
 import placeholders from '../../utils/placeholders';
@@ -93,7 +94,7 @@ export default function Careers() {
           </motion.div>
           <div className={styles.benefitsGrid}>
             {BENEFIT_KEYS.map((key, i) => (
-              <motion.div
+              <GlowCard
                 key={key}
                 className={styles.benefitCard}
                 initial="hidden"
@@ -106,7 +107,7 @@ export default function Careers() {
                   <ThinIcon icon={BENEFIT_ICONS[key]} />
                 </span>
                 <Text variant="body1">{t(`benefits.items.${key}`)}</Text>
-              </motion.div>
+              </GlowCard>
             ))}
           </div>
         </Container>

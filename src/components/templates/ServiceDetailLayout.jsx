@@ -9,6 +9,7 @@ import Button from '../atoms/Button/Button';
 import { getLocalizedPath } from '../../router/routes';
 import { motion, useInView, animate } from 'framer-motion';
 import placeholders from '../../utils/placeholders';
+import GlowCard from '../atoms/GlowCard/GlowCard';
 import styles from './ServiceDetailLayout.module.scss';
 
 /* ── Image maps ───────────────────────────────── */
@@ -320,15 +321,15 @@ export default function ServiceDetailLayout({ serviceKey }) {
               </span>
               <h2 className={styles.briefingTitle}>{detail.value.title}</h2>
               <div className={styles.briefingCards}>
-                <div className={styles.briefingCard}>
+                <GlowCard className={styles.briefingCard}>
                   <span className={styles.briefingCardNum}>01</span>
                   <p className={styles.briefingCardText}>{detail.value.text1}</p>
-                </div>
+                </GlowCard>
                 {detail.value.text2 && (
-                  <div className={styles.briefingCard}>
+                  <GlowCard className={styles.briefingCard}>
                     <span className={styles.briefingCardNum}>02</span>
                     <p className={styles.briefingCardText}>{detail.value.text2}</p>
-                  </div>
+                  </GlowCard>
                 )}
               </div>
             </motion.div>

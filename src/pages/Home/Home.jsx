@@ -18,6 +18,7 @@ import Container from '../../components/atoms/Container/Container';
 import SectionTitle from '../../components/atoms/SectionTitle/SectionTitle';
 import Text from '../../components/atoms/Text/Text';
 import Button from '../../components/atoms/Button/Button';
+import GlowCard from '../../components/atoms/GlowCard/GlowCard';
 import placeholders from '../../utils/placeholders';
 import { getLocalizedPath, routeConfig } from '../../router/routes';
 import styles from './Home.module.scss';
@@ -133,7 +134,7 @@ export default function Home() {
                 guards: '/media/optimized/services/tactical-officer-lg.jpg',
               };
               return (
-                <motion.div
+                <GlowCard
                   key={key}
                   className={styles.showcaseCard}
                   initial={{ opacity: 0, y: 40 }}
@@ -165,7 +166,7 @@ export default function Home() {
                       <span className={styles.showcaseCtaDot} />
                     </Link>
                   </div>
-                </motion.div>
+                </GlowCard>
               );
             })}
           </div>
@@ -213,7 +214,7 @@ export default function Home() {
           </motion.div>
           <div className={styles.whyGrid}>
             {whyGsiPoints.map((key, i) => (
-              <motion.div
+              <GlowCard
                 key={key}
                 className={styles.whyCard}
                 initial="hidden"
@@ -226,7 +227,7 @@ export default function Home() {
                   <ThinIcon icon={WHY_GSI_ICONS[key]} />
                 </span>
                 <Text variant="body1">{t(`whyGsi.points.${key}`)}</Text>
-              </motion.div>
+              </GlowCard>
             ))}
           </div>
         </Container>
@@ -259,7 +260,7 @@ export default function Home() {
           >
             <SectionTitle title={t('testimonials.sectionTitle')} />
           </motion.div>
-          <motion.div
+          <GlowCard
             className={styles.testimonialCard}
             initial="hidden"
             whileInView="visible"
@@ -272,7 +273,7 @@ export default function Home() {
             <Text variant="subheading" className={styles.author}>
               — {t('testimonials.quote1.author')}
             </Text>
-          </motion.div>
+          </GlowCard>
           <motion.div
             className={styles.testimonialCtaWrap}
             initial="hidden"

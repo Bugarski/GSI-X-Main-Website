@@ -14,6 +14,7 @@ import HeroSection from '../../components/organisms/HeroSection/HeroSection';
 import Container from '../../components/atoms/Container/Container';
 import SectionTitle from '../../components/atoms/SectionTitle/SectionTitle';
 import Text from '../../components/atoms/Text/Text';
+import GlowCard from '../../components/atoms/GlowCard/GlowCard';
 import styles from './About.module.scss';
 
 const BASE = '/media/optimized/about';
@@ -205,7 +206,7 @@ export default function About() {
 
           {/* Mission + Vision cards */}
           <div className={styles.mvGrid}>
-            <motion.div
+            <GlowCard
               className={styles.mvCard}
               initial="hidden"
               whileInView="visible"
@@ -219,8 +220,8 @@ export default function About() {
               <Text variant="body1" color="muted">
                 {t('corporate.mission.text')}
               </Text>
-            </motion.div>
-            <motion.div
+            </GlowCard>
+            <GlowCard
               className={styles.mvCard}
               initial="hidden"
               whileInView="visible"
@@ -234,7 +235,7 @@ export default function About() {
               <Text variant="body1" color="muted">
                 {t('corporate.vision.text')}
               </Text>
-            </motion.div>
+            </GlowCard>
           </div>
         </Container>
       </section>
@@ -252,7 +253,7 @@ export default function About() {
           </motion.div>
           <div className={styles.strengthsGrid}>
             {Object.keys(STRENGTH_ICONS).map((key, i) => (
-              <motion.div
+              <GlowCard
                 key={key}
                 className={styles.strengthCard}
                 initial="hidden"
@@ -265,7 +266,7 @@ export default function About() {
                   <ThinIcon icon={STRENGTH_ICONS[key]} />
                 </span>
                 <Text variant="body1">{t(`strengths.items.${key}`)}</Text>
-              </motion.div>
+              </GlowCard>
             ))}
           </div>
         </Container>

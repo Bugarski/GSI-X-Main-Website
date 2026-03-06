@@ -5,6 +5,7 @@
 // ── Card shell ───────────────────────────────
 
 .card {
+  --start: 0;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -16,13 +17,14 @@
   overflow: hidden;
 
   &:hover {
-    border-color: var(--color-electric-glow);
+    border-color: transparent;
     box-shadow:
       var(--shadow-glow-md),
       inset 0 0 30px rgba(0, 120, 255, 0.03);
     transform: translateY(-4px);
 
-    .borderGlow { opacity: 1; }
+    .glowBorder { opacity: 0.65; }
+    .glowBlur::before { opacity: 1; }
     .image { transform: scale(1.08); }
     .imageOverlay { opacity: 0.4; }
     .imageScan { opacity: 1; }
@@ -35,43 +37,64 @@
   }
 }
 
-// ── Animated conic border ────────────────────
+// ── Mouse-tracked conic gradient border ──────
 
-.borderGlow {
+$glow-gradient: conic-gradient(
+  from 90deg at 50% 50%,
+  rgba(0, 100, 220, 0.9),
+  rgba(0, 180, 255, 1),
+  rgba(249, 159, 37, 1),
+  rgba(255, 200, 80, 1),
+  rgba(249, 159, 37, 1),
+  rgba(0, 180, 255, 1),
+  rgba(0, 100, 220, 0.9)
+);
+
+.glowBorder {
   position: absolute;
-  inset: -1px;
+  inset: 0;
   z-index: 0;
+  pointer-events: none;
+  border: 1px solid transparent;
+  background: $glow-gradient;
+  background-attachment: fixed;
+  mask:
+    linear-gradient(#0000, #0000),
+    conic-gradient(
+      from calc((var(--start) - (20 * 1.1)) * 1deg),
+      #ffffff1f 0deg, white, #ffffff00 100deg
+    );
+  mask-composite: intersect;
+  mask-clip: padding-box, border-box;
   opacity: 0;
   transition: opacity 0.5s ease;
-  background: conic-gradient(
-    from var(--border-angle, 0deg),
-    transparent 0%,
-    rgba(0, 140, 255, 0.5) 10%,
-    transparent 20%,
-    transparent 80%,
-    rgba(0, 140, 255, 0.3) 90%,
-    transparent 100%
-  );
-  animation: spin-border 4s linear infinite;
-  pointer-events: none;
+}
 
-  &::after {
+.glowBlur {
+  position: absolute;
+  inset: -2px;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(14px);
+
+  &::before {
     content: '';
     position: absolute;
-    inset: 1px;
-    background-color: var(--surface-panel);
+    inset: 2px;
+    border: 8px solid transparent;
+    background: $glow-gradient;
+    background-attachment: fixed;
+    mask:
+      linear-gradient(#0000, #0000),
+      conic-gradient(
+        from calc((var(--start) - (20 * 1.1)) * 1deg),
+        #000 0deg, #fff, rgba(0, 0, 0, 0) 100deg
+      );
+    mask-composite: intersect;
+    mask-clip: padding-box, border-box;
+    opacity: 0;
+    transition: opacity 0.8s ease;
   }
-}
-
-@keyframes spin-border {
-  0%   { --border-angle: 0deg; }
-  100% { --border-angle: 360deg; }
-}
-
-@property --border-angle {
-  syntax: '<angle>';
-  initial-value: 0deg;
-  inherits: false;
 }
 
 // ── Image area ───────────────────────────────

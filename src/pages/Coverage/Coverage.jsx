@@ -6,6 +6,7 @@ import ThinIcon from '../../utils/ThinIcon';
 import { faMapMarkerAlt, faGlobe } from '@fortawesome/pro-light-svg-icons';
 import HeroSection from '../../components/organisms/HeroSection/HeroSection';
 import Container from '../../components/atoms/Container/Container';
+import GlowCard from '../../components/atoms/GlowCard/GlowCard';
 import SectionTitle from '../../components/atoms/SectionTitle/SectionTitle';
 import Text from '../../components/atoms/Text/Text';
 import Button from '../../components/atoms/Button/Button';
@@ -47,7 +48,7 @@ export default function Coverage() {
         <Container size="lg">
           <div className={styles.regionGrid}>
             {REGION_KEYS.map((key, i) => (
-              <motion.div
+              <GlowCard
                 key={key}
                 className={styles.regionCard}
                 initial="hidden"
@@ -65,7 +66,7 @@ export default function Coverage() {
                 <Text variant="body1" color="muted">
                   {t(`regions.${key}.description`)}
                 </Text>
-              </motion.div>
+              </GlowCard>
             ))}
           </div>
         </Container>

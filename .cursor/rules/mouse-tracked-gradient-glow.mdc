@@ -1,0 +1,105 @@
+---
+description: Mouse-tracked conic gradient border glow technique — use when adding interactive glow borders to cards, panels, or title frames
+globs: "**/*.scss,**/*.jsx"
+alwaysApply: false
+---
+
+# Mouse-Tracked Conic Gradient Border Glow
+
+Premium UI technique: a conic gradient border that follows the user's cursor, with a blurred glow layer behind it.
+
+## Core Concept
+
+1. **CSS variable `--start`** controls the conic gradient's rotation angle
+2. **JavaScript `mousemove`** calculates the angle from element center to cursor and updates `--start`
+3. **`::before` pseudo-element** renders the gradient border using `mask-composite: intersect` with `mask-clip: padding-box, border-box` to restrict the gradient to the border only
+4. **`.glow` div** duplicates the same masked gradient but with `filter: blur()` for a soft ambient glow outside the border
+
+## CSS Pattern
+
+```css
+.container {
+  --start: 0;
+  position: relative;
+}
+
+/* Gradient border — masked conic gradient */
+.container::before {
+  position: absolute;
+  content: '';
+  width: 100%; height: 100%;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid transparent;
+  background: var(--gradient);
+  background-attachment: fixed;
+  mask:
+    linear-gradient(#0000, #0000),
+    conic-gradient(
+      from calc((var(--start) - (20 * 1.1)) * 1deg),
+      #ffffff1f 0deg, white, #ffffff00 100deg
+    );
+  mask-composite: intersect;
+  mask-clip: padding-box, border-box;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.container:hover::before { opacity: 0.7; }
+
+/* Blur glow layer */
+.glow {
+  pointer-events: none;
+  position: absolute;
+  width: 100%; height: 100%;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  filter: blur(16px);
+}
+
+.glow::before {
+  /* Same mask technique but with thicker border for glow spread */
+  border: 10px solid transparent;
+  /* Same mask/background as container::before */
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.container:hover .glow::before { opacity: 1; }
+```
+
+## JavaScript (React)
+
+```jsx
+const handleMouseMove = useCallback((e) => {
+  const el = ref.current;
+  if (!el) return;
+  const rect = el.getBoundingClientRect();
+  const mx = e.clientX - rect.left - rect.width / 2;
+  const my = e.clientY - rect.top - rect.height / 2;
+  let angle = Math.atan2(my, mx) * (180 / Math.PI);
+  angle = (angle + 360) % 360;
+  el.style.setProperty('--start', angle + 60);
+}, []);
+```
+
+## Key Details
+
+- `background-attachment: fixed` ensures gradient position is consistent across elements
+- The `+60` offset on angle adjusts the gradient's resting position
+- `mask-composite: intersect` is critical — it restricts the visible gradient to only the border area
+- The `conic-gradient` in the mask creates the "spotlight" effect that follows the cursor
+- `100deg` controls how wide the visible arc is (smaller = tighter spotlight)
+
+## Color Adaptation
+
+Replace the `--gradient` variable to match any palette:
+
+```css
+/* Electric blue + gold (GSI) */
+--gradient: conic-gradient(from 90deg at 50% 50%,
+  rgba(0, 100, 220, 0.9), rgba(0, 180, 255, 1),
+  rgba(249, 159, 37, 1), rgba(255, 200, 80, 1),
+  rgba(249, 159, 37, 1), rgba(0, 180, 255, 1),
+  rgba(0, 100, 220, 0.9));
+```

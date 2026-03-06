@@ -1,0 +1,76 @@
+// ═══════════════════════════════════════════════
+// GlowCard — mouse-tracked conic gradient border
+// ═══════════════════════════════════════════════
+
+.glowCard {
+  --start: 0;
+  --glow-gradient: conic-gradient(
+    from 90deg at 50% 50%,
+    rgba(0, 100, 220, 0.9),
+    rgba(0, 180, 255, 1),
+    rgba(249, 159, 37, 1),
+    rgba(255, 200, 80, 1),
+    rgba(249, 159, 37, 1),
+    rgba(0, 180, 255, 1),
+    rgba(0, 100, 220, 0.9)
+  );
+  position: relative;
+
+  // Sharp border line — follows cursor
+  > .glowBorder {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    border: 1px solid transparent;
+    background: var(--glow-gradient);
+    background-attachment: fixed;
+    mask:
+      linear-gradient(#0000, #0000),
+      conic-gradient(
+        from calc((var(--start) - (20 * 1.1)) * 1deg),
+        #ffffff1f 0deg,
+        white,
+        #ffffff00 100deg
+      );
+    mask-composite: intersect;
+    mask-clip: padding-box, border-box;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  // Soft blur glow — ambient light spill
+  > .glowBlur {
+    position: absolute;
+    inset: -2px;
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(14px);
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 2px;
+      border: 8px solid transparent;
+      background: var(--glow-gradient);
+      background-attachment: fixed;
+      mask:
+        linear-gradient(#0000, #0000),
+        conic-gradient(
+          from calc((var(--start) - (20 * 1.1)) * 1deg),
+          #000 0deg,
+          #fff,
+          rgba(0, 0, 0, 0) 100deg
+        );
+      mask-composite: intersect;
+      mask-clip: padding-box, border-box;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+    }
+  }
+
+  &:hover {
+    > .glowBorder { opacity: 0.65; }
+    > .glowBlur::before { opacity: 1; }
+  }
+}

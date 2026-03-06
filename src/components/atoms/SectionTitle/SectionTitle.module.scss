@@ -31,10 +31,7 @@
 
   .center & {
     padding-left: 0;
-
-    &::before {
-      display: none;
-    }
+    &::before { display: none; }
   }
 }
 
@@ -42,17 +39,28 @@
   font-family: var(--font-primary);
   font-size: 32px;
   font-weight: var(--fw-extrabold);
-  color: var(--text-primary);
   line-height: 1.1;
   letter-spacing: -0.02em;
+  display: inline-block;
 
-  @include md {
-    font-size: 40px;
-  }
+  background: linear-gradient(
+    170deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(220, 230, 240, 0.95) 25%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(200, 215, 235, 0.9) 75%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter:
+    drop-shadow(0 1px 0 rgba(255, 255, 255, 0.12))
+    drop-shadow(0 -1px 0 rgba(0, 10, 30, 0.5))
+    drop-shadow(0 2px 8px rgba(0, 0, 0, 0.35));
 
-  @include lg {
-    font-size: 48px;
-  }
+  @include md { font-size: 40px; }
+  @include lg { font-size: 48px; }
 }
 
 .accentBar {

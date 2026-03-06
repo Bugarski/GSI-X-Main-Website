@@ -1,3 +1,4 @@
+import { useRef, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import ThinIcon from '../../../utils/ThinIcon';
@@ -7,6 +8,18 @@ import styles from './ServiceCard.module.scss';
 function ServiceCard({ title, description, icon, href, image, index = 0 }) {
   const { t } = useTranslation('common');
   const idx = String(index + 1).padStart(2, '0');
+  const cardRef = useRef(null);
+
+  const handleMouseMove = useCallback((e) => {
+    const el = cardRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const mx = e.clientX - rect.left - rect.width / 2;
+    const my = e.clientY - rect.top - rect.height / 2;
+    let angle = Math.atan2(my, mx) * (180 / Math.PI);
+    angle = (angle + 360) % 360;
+    el.style.setProperty('--start', angle + 60);
+  }, []);
 
   return (
     <motion.div
@@ -16,11 +29,15 @@ function ServiceCard({ title, description, icon, href, image, index = 0 }) {
       transition={{ duration: 0.5, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
       className={styles.cardWrapper}
     >
-      <Link to={href} className={styles.card}>
-        {/* Animated conic gradient border */}
-        <span className={styles.borderGlow} />
+      <Link
+        to={href}
+        className={styles.card}
+        ref={cardRef}
+        onMouseMove={handleMouseMove}
+      >
+        <span className={styles.glowBorder} />
+        <span className={styles.glowBlur} />
 
-        {/* Image with overlays */}
         {image && (
           <div className={styles.imageWrap}>
             <img src={image} alt="" className={styles.image} loading="lazy" />
@@ -30,7 +47,6 @@ function ServiceCard({ title, description, icon, href, image, index = 0 }) {
           </div>
         )}
 
-        {/* Content */}
         <div className={styles.body}>
           <div className={styles.bodyTop}>
             <span className={styles.icon}>
@@ -46,7 +62,6 @@ function ServiceCard({ title, description, icon, href, image, index = 0 }) {
           </span>
         </div>
 
-        {/* Corner accents */}
         <span className={styles.cornerTL} />
         <span className={styles.cornerBR} />
       </Link>

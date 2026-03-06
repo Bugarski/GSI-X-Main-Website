@@ -8,6 +8,7 @@ import HeroSection from '../../components/organisms/HeroSection/HeroSection';
 import ContactForm from '../../components/organisms/ContactForm/ContactForm';
 import StepProcess from '../../components/organisms/StepProcess/StepProcess';
 import Container from '../../components/atoms/Container/Container';
+import GlowCard from '../../components/atoms/GlowCard/GlowCard';
 import SectionTitle from '../../components/atoms/SectionTitle/SectionTitle';
 import Text from '../../components/atoms/Text/Text';
 import Button from '../../components/atoms/Button/Button';
@@ -66,7 +67,7 @@ export default function Contact() {
             >
               <ContactForm />
             </motion.div>
-            <motion.div
+            <GlowCard
               className={styles.directColumn}
               initial="hidden"
               whileInView="visible"
@@ -105,7 +106,7 @@ export default function Contact() {
                   </a>
                 </div>
               </div>
-            </motion.div>
+            </GlowCard>
           </div>
         </Container>
       </section>

@@ -10,3 +10,4 @@ export { default as Input } from './Input/Input';
 export { default as Badge } from './Badge/Badge';
 export { default as Container } from './Container/Container';
 export { default as SectionTitle } from './SectionTitle/SectionTitle';
+export { default as GlowCard } from './GlowCard/GlowCard';

@@ -20,6 +20,7 @@ import ServiceCard from '../../components/molecules/ServiceCard/ServiceCard';
 import Container from '../../components/atoms/Container/Container';
 import SectionTitle from '../../components/atoms/SectionTitle/SectionTitle';
 import Text from '../../components/atoms/Text/Text';
+import GlowCard from '../../components/atoms/GlowCard/GlowCard';
 import { routeConfig } from '../../router/routes';
 import placeholders from '../../utils/placeholders';
 import styles from './Services.module.scss';
@@ -169,7 +170,7 @@ export default function Services() {
           </motion.div>
           <div className={styles.whyGrid}>
             {Object.keys(WHY_CHOOSE_ICONS).map((key, i) => (
-              <motion.div
+              <GlowCard
                 key={key}
                 className={styles.whyCard}
                 initial="hidden"
@@ -182,7 +183,7 @@ export default function Services() {
                   <ThinIcon icon={WHY_CHOOSE_ICONS[key]} />
                 </span>
                 <Text variant="body1">{t(`whyChoose.points.${key}`)}</Text>
-              </motion.div>
+              </GlowCard>
             ))}
           </div>
         </Container>
