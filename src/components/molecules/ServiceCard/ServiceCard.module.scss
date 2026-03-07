@@ -122,9 +122,9 @@ $glow-gradient: conic-gradient(
   background: linear-gradient(
     180deg,
     transparent 0%,
-    rgba(0, 8, 24, 0.2) 45%,
-    rgba(0, 8, 24, 0.85) 65%,
-    rgba(0, 8, 24, 0.95) 80%,
+    rgba(0, 8, 24, 0.15) 52%,
+    rgba(0, 8, 24, 0.8) 72%,
+    rgba(0, 8, 24, 0.95) 85%,
     var(--surface-panel) 100%
   );
   pointer-events: none;
