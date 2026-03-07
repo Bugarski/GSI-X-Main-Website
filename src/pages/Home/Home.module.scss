@@ -189,8 +189,8 @@ $gold-bright: #fbbf6d;
 .showcaseBg > .showcaseNode:nth-of-type(2) { animation-delay: 0.8s; &::before { animation-delay: 0.8s; } }
 
 .showcaseTruck {
-  width: 28px;
-  height: 28px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -198,7 +198,11 @@ $gold-bright: #fbbf6d;
   box-shadow: 0 0 14px 4px rgba(249, 159, 37, 0.4), 0 0 40px 8px rgba(249, 159, 37, 0.12);
   animation: sc-truck-pulse 2.5s ease-in-out infinite;
   color: #f99f25;
-  font-size: 12px;
+  font-size: 18px;
+  transform: scaleX(-1);
+  top: 35%;
+  left: 50%;
+  z-index: 2;
 
   &::before {
     border-color: rgba(249, 159, 37, 0.3);
@@ -220,12 +224,12 @@ $gold-bright: #fbbf6d;
   0%, 100% {
     background: rgba(249, 159, 37, 0.15);
     box-shadow: 0 0 10px 3px rgba(249, 159, 37, 0.3), 0 0 30px 6px rgba(249, 159, 37, 0.08);
-    transform: scale(1);
+    transform: scaleX(-1) scale(1);
   }
   50% {
     background: rgba(249, 159, 37, 0.4);
     box-shadow: 0 0 20px 6px rgba(249, 159, 37, 0.6), 0 0 50px 12px rgba(249, 159, 37, 0.15);
-    transform: scale(1.15);
+    transform: scaleX(-1) scale(1.15);
   }
 }
 
@@ -375,9 +379,9 @@ $gold-bright: #fbbf6d;
 
 .showcaseCardPhoto {
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+  inset: -8px;
+  width: calc(100% + 16px);
+  height: calc(100% + 16px);
   object-fit: cover;
   object-position: center 20%;
   opacity: 0.08;

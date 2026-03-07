@@ -106,11 +106,6 @@ export default function Home() {
           <div className={styles.showcaseTraceH2} />
           <div className={styles.showcaseTraceV} />
           <div className={styles.showcaseTraceV2} />
-          <div className={styles.showcaseNode} style={{ top: '43%', left: '24%' }} />
-          <div className={styles.showcaseNode} style={{ top: '40%', right: '52%' }} />
-          <div className={`${styles.showcaseNode} ${styles.showcaseTruck}`} style={{ top: '55%', left: '42%' }}>
-            <ThinIcon icon="truck" />
-          </div>
           <div className={styles.showcaseOrb} />
           <div className={styles.showcaseOrb2} />
         </div>
@@ -149,12 +144,20 @@ export default function Home() {
                     loading="lazy"
                   />
                   <div className={styles.showcaseCardOverlay} />
+                  {key === 'cit' && (
+                    <>
+                      <div className={styles.showcaseNode} style={{ top: '38%', left: '25%' }} />
+                      <div className={styles.showcaseNode} style={{ top: '22%', right: '18%' }} />
+                      <div className={`${styles.showcaseNode} ${styles.showcaseTruck}`}>
+                        <ThinIcon icon={faTruck} />
+                      </div>
+                    </>
+                  )}
                   <span className={styles.showcaseIdx}>{String(i + 1).padStart(2, '0')}</span>
                   <div className={styles.showcaseCardContent}>
                     <h3 className={styles.showcaseTitle}>
                       {t(`coreServices.${key}.title`)}
                     </h3>
-                    <div className={styles.showcaseDivider} />
                     <p className={styles.showcaseDesc}>
                       {t(`coreServices.${key}.description`)}
                     </p>
@@ -163,7 +166,6 @@ export default function Home() {
                       className={styles.showcaseCta}
                     >
                       {t('common:cta.learnMore')}
-                      <span className={styles.showcaseCtaDot} />
                     </Link>
                   </div>
                 </GlowCard>
