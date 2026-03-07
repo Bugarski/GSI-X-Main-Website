@@ -402,8 +402,8 @@ $gold-bright: #fbbf6d;
 
 .showcaseIdx {
   position: absolute;
-  top: var(--space-4);
-  right: var(--space-4);
+  bottom: 16px;
+  right: 16px;
   font-family: var(--font-primary);
   font-size: 90px;
   font-weight: var(--fw-extrabold);
@@ -414,6 +414,24 @@ $gold-bright: #fbbf6d;
 
   @include md { font-size: 110px; top: var(--space-6); right: var(--space-6); }
   @include lg { font-size: 130px; }
+}
+
+.showcaseIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  color: var(--text-electric);
+  font-size: 18px;
+  margin-bottom: var(--space-3);
+  opacity: 0.6;
+  transition: all 0.4s ease;
+
+  .showcaseCard:hover & {
+    opacity: 1;
+    color: rgba(0, 180, 255, 1);
+  }
 }
 
 .showcaseTitle {

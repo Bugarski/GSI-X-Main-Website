@@ -106,7 +106,7 @@ export default function Home() {
           <div className={styles.showcaseTraceH2} />
           <div className={styles.showcaseTraceV} />
           <div className={styles.showcaseTraceV2} />
-          <div className={styles.showcaseNode} style={{ top: '38%', left: '28%' }} />
+          <div className={styles.showcaseNode} style={{ top: '43%', left: '24%' }} />
           <div className={styles.showcaseNode} style={{ top: '40%', right: '52%' }} />
           <div className={`${styles.showcaseNode} ${styles.showcaseTruck}`} style={{ top: '55%', left: '42%' }}>
             <ThinIcon icon="truck" />
@@ -149,8 +149,8 @@ export default function Home() {
                     loading="lazy"
                   />
                   <div className={styles.showcaseCardOverlay} />
+                  <span className={styles.showcaseIdx}>{String(i + 1).padStart(2, '0')}</span>
                   <div className={styles.showcaseCardContent}>
-                    <span className={styles.showcaseIdx}>{String(i + 1).padStart(2, '0')}</span>
                     <h3 className={styles.showcaseTitle}>
                       {t(`coreServices.${key}.title`)}
                     </h3>

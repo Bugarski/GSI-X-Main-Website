@@ -63,83 +63,31 @@
   @include lg { font-size: 48px; }
 }
 
-// ── Mouse-tracked glow bar under title ───────
-
-$bar-gradient: conic-gradient(
-  from 90deg at 50% 50%,
-  rgba(0, 100, 220, 0.9),
-  rgba(0, 180, 255, 1),
-  rgba(249, 159, 37, 1),
-  rgba(255, 200, 80, 1),
-  rgba(249, 159, 37, 1),
-  rgba(0, 180, 255, 1),
-  rgba(0, 100, 220, 0.9)
-);
+// ── Proximity-reactive glow bar ──────────────
 
 .glowBar {
-  --start: 0;
+  --glow-intensity: 0;
   position: relative;
   width: 120px;
   height: 2px;
   margin-top: var(--space-5);
-  background: rgba(0, 140, 255, 0.3);
-  overflow: visible;
-
-  .center & {
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-.glowBarBorder {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: $bar-gradient;
-  background-attachment: fixed;
-  mask:
-    linear-gradient(#0000, #0000),
-    conic-gradient(
-      from calc((var(--start) - (20 * 1.1)) * 1deg),
-      #ffffff1f 0deg, white, #ffffff00 100deg
-    );
-  mask-composite: intersect;
-  mask-clip: padding-box, border-box;
-  border: 1px solid transparent;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-
-  .sectionTitle:hover & {
-    opacity: 1;
-  }
-}
-
-.glowBarBlur {
-  position: absolute;
-  inset: -4px;
-  pointer-events: none;
-  filter: blur(10px);
+  background: rgba(0, 140, 255, 0.25);
+  transition: background 0.3s ease;
 
   &::before {
     content: '';
     position: absolute;
-    inset: 4px;
-    background: $bar-gradient;
-    background-attachment: fixed;
-    border: 6px solid transparent;
-    mask:
-      linear-gradient(#0000, #0000),
-      conic-gradient(
-        from calc((var(--start) - (20 * 1.1)) * 1deg),
-        #000 0deg, #fff, rgba(0, 0, 0, 0) 100deg
-      );
-    mask-composite: intersect;
-    mask-clip: padding-box, border-box;
-    opacity: 0;
-    transition: opacity 0.8s ease;
+    inset: -1px;
+    background: rgba(0, 160, 255, calc(var(--glow-intensity) * 0.9));
+    box-shadow:
+      0 0 calc(var(--glow-intensity) * 6px) calc(var(--glow-intensity) * 2px) rgba(0, 140, 255, calc(var(--glow-intensity) * 0.6)),
+      0 0 calc(var(--glow-intensity) * 16px) calc(var(--glow-intensity) * 4px) rgba(0, 120, 255, calc(var(--glow-intensity) * 0.3)),
+      0 0 calc(var(--glow-intensity) * 30px) calc(var(--glow-intensity) * 8px) rgba(0, 100, 255, calc(var(--glow-intensity) * 0.12));
+    pointer-events: none;
   }
 
-  .sectionTitle:hover &::before {
-    opacity: 1;
+  .center & {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
