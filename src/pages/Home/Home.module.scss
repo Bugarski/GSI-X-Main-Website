@@ -494,7 +494,7 @@ $gold-bright: #fbbf6d;
   50%      { box-shadow: 0 0 14px 5px rgba(249, 159, 37, 0.6); }
 }
 
-// ── Service grid (kept for advanced section) ─
+// ── Service grid — asymmetric 2×2 flipped rows ─
 
 .serviceGrid {
   display: grid;
@@ -504,11 +504,27 @@ $gold-bright: #fbbf6d;
   position: relative;
   z-index: 1;
 
-  @include md { grid-template-columns: repeat(2, 1fr); }
+  @include md {
+    grid-template-columns: repeat(5, 1fr);
+  }
 }
 
 .sectionAlt .serviceGrid {
-  @include lg { grid-template-columns: repeat(4, 1fr); }
+  @include md {
+    > :nth-child(1) { grid-column: span 3; min-height: 380px; }
+    > :nth-child(2) { grid-column: span 2; min-height: 380px; }
+    > :nth-child(3) { grid-column: span 2; min-height: 380px; }
+    > :nth-child(4) { grid-column: span 3; min-height: 380px; }
+  }
+
+  @include lg {
+    gap: var(--space-6);
+
+    > :nth-child(1) { min-height: 420px; }
+    > :nth-child(2) { min-height: 420px; }
+    > :nth-child(3) { min-height: 420px; }
+    > :nth-child(4) { min-height: 420px; }
+  }
 }
 
 .whyGrid {

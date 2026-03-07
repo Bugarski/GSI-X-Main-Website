@@ -48,18 +48,17 @@ function ServiceCard({ title, description, icon, href, image, index = 0 }) {
         )}
 
         <div className={styles.body}>
-          <div className={styles.bodyTop}>
+          <h3 className={styles.title}>{title}</h3>
+          <p className={styles.description}>{description}</p>
+          <div className={styles.signalRow}>
             <span className={styles.icon}>
               <ThinIcon icon={icon} />
             </span>
             <span className={styles.accentLine} />
+            <span className={styles.cta}>
+              {t('cta.learnMore')}
+            </span>
           </div>
-          <h3 className={styles.title}>{title}</h3>
-          <p className={styles.description}>{description}</p>
-          <span className={styles.cta}>
-            {t('cta.learnMore')}
-            <span className={styles.ctaPulse} />
-          </span>
         </div>
 
         <span className={styles.cornerTL} />

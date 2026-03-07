@@ -8,7 +8,9 @@
   --start: 0;
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
   height: 100%;
+  min-height: 320px;
   text-decoration: none;
   position: relative;
   background-color: var(--surface-panel);
@@ -25,14 +27,11 @@
 
     .glowBorder { opacity: 0.65; }
     .glowBlur::before { opacity: 1; }
-    .image { transform: scale(1.08); }
-    .imageOverlay { opacity: 0.4; }
-    .imageScan { opacity: 1; }
-    .imageIdx { opacity: 0.25; color: var(--color-electric); }
-    .accentLine { width: 40px; background: var(--color-electric); }
-    .icon { color: var(--color-electric-bright); transform: scale(1.1); }
+    .image { transform: scale(1.04); opacity: 0.45; }
+    .imageIdx { opacity: 0.15; color: var(--color-electric); }
+    .accentLine { transform: scaleX(1); background: var(--color-electric); box-shadow: 0 0 8px 1px rgba(0, 140, 255, 0.4); }
+    .icon { color: var(--color-electric-bright); opacity: 1; transform: scale(1.05); }
     .title { color: var(--text-primary); }
-    .ctaPulse { opacity: 1; }
     .cornerTL, .cornerBR { opacity: 1; }
   }
 }
@@ -53,7 +52,7 @@ $glow-gradient: conic-gradient(
 .glowBorder {
   position: absolute;
   inset: 0;
-  z-index: 0;
+  z-index: 3;
   pointer-events: none;
   border: 1px solid transparent;
   background: $glow-gradient;
@@ -74,7 +73,7 @@ $glow-gradient: conic-gradient(
   position: absolute;
   inset: -2px;
   pointer-events: none;
-  z-index: 0;
+  z-index: 3;
   filter: blur(14px);
 
   &::before {
@@ -97,25 +96,24 @@ $glow-gradient: conic-gradient(
   }
 }
 
-// ── Image area ───────────────────────────────
+// ── Ghost image background ──────────────────
 
 .imageWrap {
-  position: relative;
-  width: 100%;
-  height: 180px;
+  position: absolute;
+  inset: 0;
   overflow: hidden;
-  flex-shrink: 0;
-
-  @include md { height: 200px; }
+  z-index: 0;
 }
 
 .image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 20%;
   display: block;
-  filter: saturate(0.7);
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0.35;
+  filter: saturate(0.4);
+  transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .imageOverlay {
@@ -123,47 +121,30 @@ $glow-gradient: conic-gradient(
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(0, 8, 20, 0.1) 0%,
-    rgba(0, 8, 20, 0.7) 100%
+    transparent 0%,
+    rgba(0, 8, 24, 0.2) 45%,
+    rgba(0, 8, 24, 0.85) 65%,
+    rgba(0, 8, 24, 0.95) 80%,
+    var(--surface-panel) 100%
   );
-  opacity: 0.6;
-  transition: opacity 0.5s ease;
   pointer-events: none;
 }
 
 .imageScan {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    rgba(0, 120, 255, 0.04) 48%,
-    rgba(0, 120, 255, 0.08) 50%,
-    rgba(0, 120, 255, 0.04) 52%,
-    transparent 100%
-  );
-  animation: card-scan 5s linear infinite;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  pointer-events: none;
-}
-
-@keyframes card-scan {
-  0%   { transform: translateY(-100%); }
-  100% { transform: translateY(100%); }
+  display: none;
 }
 
 .imageIdx {
   position: absolute;
-  bottom: var(--space-3);
+  top: var(--space-4);
   right: var(--space-4);
   font-family: var(--font-primary);
-  font-size: 48px;
+  font-size: 64px;
   font-weight: var(--fw-extrabold);
-  color: var(--text-primary);
-  opacity: 0.08;
+  color: rgba(0, 140, 255, 0.06);
   line-height: 1;
   pointer-events: none;
+  z-index: 0;
   transition: all 0.5s ease;
 
   @include md { font-size: 56px; }
@@ -175,37 +156,9 @@ $glow-gradient: conic-gradient(
   display: flex;
   flex-direction: column;
   padding: var(--space-5) var(--space-6) var(--space-6);
-  flex: 1;
+  margin-top: auto;
   position: relative;
   z-index: 1;
-}
-
-.bodyTop {
-  display: flex;
-  align-items: center;
-  gap: var(--space-4);
-  margin-bottom: var(--space-4);
-}
-
-.accentLine {
-  display: block;
-  width: 24px;
-  height: 2px;
-  background: var(--color-electric-dim);
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  flex-shrink: 0;
-}
-
-.icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  color: var(--text-electric);
-  font-size: 18px;
-  flex-shrink: 0;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .title {
@@ -224,58 +177,71 @@ $glow-gradient: conic-gradient(
   font-weight: var(--fw-regular);
   color: var(--text-muted);
   line-height: 1.6;
-  flex: 1;
 }
 
-// ── CTA with pulse dot ──────────────────────
+// ── Signal row: icon → bar → CTA ────────────
+
+.signalRow {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-top: var(--space-5);
+  width: 100%;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  color: var(--text-electric);
+  font-size: 14px;
+  flex-shrink: 0;
+  opacity: 0.3;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.accentLine {
+  display: block;
+  height: 2px;
+  background: rgba(0, 120, 255, 0.15);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  flex: 1;
+  margin: 0 var(--space-5);
+  max-width: 100%;
+  transform: scaleX(0.15);
+  transform-origin: left center;
+
+  .card:hover & {
+    transform: scaleX(1);
+    background: var(--color-electric);
+    box-shadow: 0 0 8px 1px rgba(0, 140, 255, 0.4);
+  }
+}
 
 .cta {
   display: inline-flex;
   align-items: center;
-  margin-top: var(--space-5);
   font-family: var(--font-primary);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: var(--fw-bold);
   color: var(--text-electric);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  transition: color 0.4s ease;
+  transition: all 0.4s ease;
   position: relative;
-
-  &::after {
-    content: '\2192';
-    margin-left: var(--space-2);
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  }
+  flex-shrink: 0;
+  opacity: 0.5;
+  white-space: nowrap;
 
   .card:hover & {
     color: var(--color-electric-bright);
-
-    &::after {
-      transform: translateX(6px);
-    }
+    opacity: 1;
   }
 }
 
-.ctaPulse {
-  position: absolute;
-  left: -14px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--color-electric);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  box-shadow: 0 0 8px 2px rgba(0, 120, 255, 0.5);
-  animation: cta-dot-pulse 1.5s ease-in-out infinite;
-}
 
-@keyframes cta-dot-pulse {
-  0%, 100% { box-shadow: 0 0 4px 1px rgba(0, 120, 255, 0.3); }
-  50%      { box-shadow: 0 0 12px 4px rgba(0, 120, 255, 0.7); }
-}
 
 // ── Corner accents ──────────────────────────
 
