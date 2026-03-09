@@ -12,6 +12,7 @@ const Coverage = lazy(() => import('../pages/Coverage/Coverage'));
 const Careers = lazy(() => import('../pages/Careers/Careers'));
 const Contact = lazy(() => import('../pages/Contact/Contact'));
 const Legal = lazy(() => import('../pages/Legal/Legal'));
+const Whistleblower = lazy(() => import('../pages/Whistleblower/Whistleblower'));
 
 function LanguageWrapper({ children }) {
   const { lang } = useParams();
@@ -109,6 +110,10 @@ export default function AppRouter() {
           {/* Contact */}
           <Route path="contact" element={<Contact />} />
           <Route path="contacto" element={<Contact />} />
+
+          {/* Whistleblower */}
+          <Route path="whistleblower" element={<Whistleblower />} />
+          <Route path="denuncia-etica" element={<Whistleblower />} />
 
           {/* Legal — EN */}
           <Route path="privacy-policy" element={<Legal page="privacy" />} />

@@ -1,0 +1,87 @@
+{
+  "meta": {
+    "title": "Denuncia y Ética"
+  },
+  "hero": {
+    "title": "La Integridad No Es Negociable.",
+    "subtitle": "Confidencial. Anónimo. Protegido. Cada reporte es revisado por nuestro equipo independiente de cumplimiento, porque el silencio nunca es una opción.",
+    "cta": "Enviar un Reporte"
+  },
+  "intro": {
+    "text": "En GSI, la integridad, la transparencia y la rendición de cuentas son fundamentales en nuestra operación. Si tiene conocimiento de conductas indebidas, comportamiento antiético o violaciones a leyes o políticas de la empresa, lo invitamos a reportarlo.",
+    "confidential": "Puede reportar sus preocupaciones de manera confidencial o anónima. Todos los reportes son tomados con seriedad y revisados por nuestro equipo de cumplimiento.",
+    "noRetaliation": "Las represalias contra cualquier persona que plantee preocupaciones de buena fe están estrictamente prohibidas."
+  },
+  "reportable": {
+    "title": "Qué Se Puede Reportar",
+    "subtitle": "Puede reportar cualquier conducta que pueda violar leyes, regulaciones o políticas de la empresa, incluyendo:",
+    "items": [
+      "Fraude o conducta financiera indebida",
+      "Soborno o corrupción",
+      "Robo o uso indebido de activos de la empresa",
+      "Acoso o discriminación",
+      "Violaciones de seguridad laboral",
+      "Violaciones de privacidad de datos o ciberseguridad",
+      "Conflictos de interés",
+      "Violaciones de obligaciones regulatorias o legales",
+      "Cualquier actividad antiética o sospechosa"
+    ],
+    "unsure": "Si no está seguro de si algo debe ser reportado, puede enviar un reporte de todas formas."
+  },
+  "protection": {
+    "title": "Tu Identidad Permanece en las Sombras.",
+    "subtitle": "Nunca serás expuesto. Nuestros sistemas están diseñados para que la verdad salga a la luz, sin que tú tengas que hacerlo.",
+    "items": [
+      "Envía reportes completamente anónimos. Sin cuenta, sin rastro.",
+      "Tu identidad está cifrada y protegida en cada nivel",
+      "Política de cero tolerancia a represalias, aplicada sin excepción",
+      "Cada caso es revisado por una autoridad de cumplimiento independiente"
+    ],
+    "warning": "Las represalias de cualquier tipo activan procedimientos disciplinarios inmediatos. Sin advertencias. Sin excepciones."
+  },
+  "form": {
+    "title": "Enviar un Reporte",
+    "subtitle": "Puede enviar un reporte a través del formulario seguro a continuación.",
+    "fields": {
+      "reportType": "Tipo de Reporte",
+      "location": "Ubicación / Departamento",
+      "incidentDate": "Fecha del Incidente (si se conoce)",
+      "description": "Descripción del Problema",
+      "peopleInvolved": "Personas Involucradas (si se conoce)",
+      "evidence": "Evidencia o Documentos",
+      "anonymous": "¿Desea permanecer anónimo?",
+      "anonymousYes": "Sí",
+      "anonymousNo": "No",
+      "contactEmail": "Correo de Contacto (opcional)"
+    },
+    "reportTypes": [
+      "Fraude / Conducta financiera indebida",
+      "Corrupción / Soborno",
+      "Conducta laboral indebida",
+      "Violación de seguridad",
+      "Problema de seguridad de datos",
+      "Otro"
+    ],
+    "submit": "Enviar Reporte",
+    "success": "Su reporte ha sido recibido. Nuestro equipo de cumplimiento lo revisará a la brevedad.",
+    "error": "Hubo un error al enviar su reporte. Por favor intente de nuevo."
+  },
+  "process": {
+    "title": "Qué Sucede Después",
+    "steps": {
+      "step1": { "title": "Reporte Recibido", "text": "Su reporte es recibido por el Equipo de Cumplimiento de GSI." },
+      "step2": { "title": "Revisión del Caso", "text": "El caso es revisado y evaluado para determinar su validez." },
+      "step3": { "title": "Investigación", "text": "Si es necesario, se inicia una investigación confidencial." },
+      "step4": { "title": "Resolución", "text": "Se toman las acciones apropiadas según los hallazgos." }
+    },
+    "followUp": "Puede recibir preguntas de seguimiento si proporcionó información de contacto."
+  },
+  "emergency": {
+    "title": "Situaciones de Emergencia",
+    "text": "Si la situación involucra peligro inmediato o actividad criminal, contacte a las autoridades locales antes de enviar un reporte."
+  },
+  "commitment": {
+    "title": "Compromiso de Cumplimiento",
+    "text": "GSI está comprometido con mantener los más altos estándares éticos en todas sus operaciones. Levantar la voz ayuda a proteger a nuestros empleados, clientes y socios."
+  }
+}

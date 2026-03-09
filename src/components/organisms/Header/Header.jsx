@@ -21,6 +21,7 @@ const NAV_LINKS = [
   { key: 'coverage', routeKey: 'coverage' },
   { key: 'careers', routeKey: 'careers' },
   { key: 'contact', routeKey: 'contact' },
+  { key: 'whistleblower', routeKey: 'whistleblower' },
 ];
 
 function NavLink({ link, lang, currentPath }) {

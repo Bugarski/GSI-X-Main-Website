@@ -11,6 +11,7 @@ import enFooter from './locales/en/footer.json';
 import enCoverage from './locales/en/coverage.json';
 import enCareers from './locales/en/careers.json';
 import enLegal from './locales/en/legal.json';
+import enWhistleblower from './locales/en/whistleblower.json';
 
 import esCommon from './locales/es/common.json';
 import esHome from './locales/es/home.json';
@@ -21,6 +22,7 @@ import esFooter from './locales/es/footer.json';
 import esCoverage from './locales/es/coverage.json';
 import esCareers from './locales/es/careers.json';
 import esLegal from './locales/es/legal.json';
+import esWhistleblower from './locales/es/whistleblower.json';
 
 const resources = {
   en: {
@@ -33,6 +35,7 @@ const resources = {
     coverage: enCoverage,
     careers: enCareers,
     legal: enLegal,
+    whistleblower: enWhistleblower,
   },
   es: {
     common: esCommon,
@@ -44,6 +47,7 @@ const resources = {
     coverage: esCoverage,
     careers: esCareers,
     legal: esLegal,
+    whistleblower: esWhistleblower,
   },
 };
 
@@ -54,7 +58,7 @@ i18n
     resources,
     fallbackLng: 'es',
     supportedLngs: ['en', 'es'],
-    ns: ['common', 'home', 'about', 'services', 'contact', 'footer', 'coverage', 'careers', 'legal'],
+    ns: ['common', 'home', 'about', 'services', 'contact', 'footer', 'coverage', 'careers', 'legal', 'whistleblower'],
     defaultNS: 'common',
     interpolation: {
       escapeValue: false,

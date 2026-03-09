@@ -51,6 +51,10 @@ export const routeConfig = {
     en: '/contact',
     es: '/contacto',
   },
+  whistleblower: {
+    en: '/whistleblower',
+    es: '/denuncia-etica',
+  },
   legal: {
     privacy: { en: '/privacy-policy', es: '/aviso-de-privacidad' },
     terms: { en: '/terms', es: '/terminos-y-condiciones' },

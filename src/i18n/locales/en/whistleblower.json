@@ -1,0 +1,87 @@
+{
+  "meta": {
+    "title": "Whistleblower & Ethics Reporting"
+  },
+  "hero": {
+    "title": "Integrity Is Non-Negotiable.",
+    "subtitle": "Confidential. Anonymous. Protected. Every report is reviewed by our independent compliance team, because silence is never an option.",
+    "cta": "Submit a Report"
+  },
+  "intro": {
+    "text": "At GSI, integrity, transparency, and accountability are fundamental to how we operate. If you are aware of misconduct, unethical behavior, or violations of laws or company policies, we encourage you to report it.",
+    "confidential": "You may report concerns confidentially or anonymously. All reports are taken seriously and reviewed by our compliance team.",
+    "noRetaliation": "Retaliation against anyone who raises concerns in good faith is strictly prohibited."
+  },
+  "reportable": {
+    "title": "What Can Be Reported",
+    "subtitle": "You can report any behavior that may violate laws, regulations, or company policies, including:",
+    "items": [
+      "Fraud or financial misconduct",
+      "Bribery or corruption",
+      "Theft or misuse of company assets",
+      "Harassment or discrimination",
+      "Workplace safety violations",
+      "Data privacy or cybersecurity breaches",
+      "Conflicts of interest",
+      "Violations of regulatory or legal obligations",
+      "Any unethical or suspicious activity"
+    ],
+    "unsure": "If you are unsure whether something should be reported, you can still submit a report."
+  },
+  "protection": {
+    "title": "Your Identity Stays in the Shadows.",
+    "subtitle": "You will never be exposed. Our systems are designed so that the truth can surface, without you ever having to.",
+    "items": [
+      "Submit fully anonymous reports. No account, no trace.",
+      "Your identity is encrypted and shielded at every layer",
+      "Zero-tolerance retaliation policy, enforced without exception",
+      "Every case reviewed by an independent compliance authority"
+    ],
+    "warning": "Retaliation of any kind triggers immediate disciplinary proceedings. No warnings. No exceptions."
+  },
+  "form": {
+    "title": "Submit a Report",
+    "subtitle": "You may submit a report through the secure form below.",
+    "fields": {
+      "reportType": "Type of Report",
+      "location": "Location / Department",
+      "incidentDate": "Date of Incident (if known)",
+      "description": "Description of the Issue",
+      "peopleInvolved": "People Involved (if known)",
+      "evidence": "Evidence or Documents",
+      "anonymous": "Do you want to remain anonymous?",
+      "anonymousYes": "Yes",
+      "anonymousNo": "No",
+      "contactEmail": "Contact Email (optional)"
+    },
+    "reportTypes": [
+      "Fraud / Financial misconduct",
+      "Corruption / Bribery",
+      "Workplace misconduct",
+      "Safety violation",
+      "Data security issue",
+      "Other"
+    ],
+    "submit": "Submit Report",
+    "success": "Your report has been received. Our compliance team will review it promptly.",
+    "error": "There was an error submitting your report. Please try again."
+  },
+  "process": {
+    "title": "What Happens Next",
+    "steps": {
+      "step1": { "title": "Report Received", "text": "Your report is received by the GSI Compliance Team." },
+      "step2": { "title": "Case Review", "text": "The case is reviewed and assessed for validity." },
+      "step3": { "title": "Investigation", "text": "If necessary, a confidential investigation is initiated." },
+      "step4": { "title": "Resolution", "text": "Appropriate actions are taken based on findings." }
+    },
+    "followUp": "You may receive follow-up questions if contact information is provided."
+  },
+  "emergency": {
+    "title": "Emergency Situations",
+    "text": "If the situation involves immediate danger or criminal activity, please contact local authorities before submitting a report."
+  },
+  "commitment": {
+    "title": "Compliance Commitment",
+    "text": "GSI is committed to maintaining the highest ethical standards in all operations. Speaking up helps protect our employees, customers, and partners."
+  }
+}

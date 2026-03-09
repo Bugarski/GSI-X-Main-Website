@@ -1,0 +1,463 @@
+.whistleblower {
+  background-color: var(--surface-dark);
+}
+
+.section {
+  padding: var(--section-padding-mobile);
+
+  @include md { padding: var(--section-padding-tablet); }
+  @include lg { padding: var(--section-padding-desktop); }
+}
+
+.sectionAlt {
+  background-color: var(--surface-dark-elevated);
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--border-medium) 50%, transparent 100%);
+  }
+}
+
+// ── Intro ────────────────────────────────
+
+.introText {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto var(--space-10);
+}
+
+.introHighlights {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  position: relative;
+  z-index: 1;
+
+  @include md {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.introCard {
+  position: relative;
+  overflow: hidden;
+  min-height: 320px;
+  display: flex;
+  align-items: flex-end;
+  border: 1px solid var(--border-panel);
+
+  @include md { min-height: 380px; }
+
+  &:hover .introCardPhoto {
+    opacity: 0.18;
+    transform: scale(1.04);
+  }
+}
+
+.introCardPhoto {
+  position: absolute;
+  inset: -8px;
+  width: calc(100% + 16px);
+  height: calc(100% + 16px);
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.1;
+  filter: saturate(0.3);
+  transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.introCardOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(0, 8, 24, 0.3) 40%,
+    rgba(0, 8, 24, 0.85) 70%,
+    rgba(0, 8, 24, 0.97) 100%
+  );
+  pointer-events: none;
+}
+
+.introCardContent {
+  position: relative;
+  z-index: 1;
+  padding: var(--space-8);
+}
+
+.introCardLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-primary);
+  font-size: 10px;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-electric);
+  margin-bottom: var(--space-3);
+}
+
+.introCardLabelIcon {
+  font-size: 12px;
+}
+
+.introCardHeading {
+  font-family: var(--font-primary);
+  font-weight: var(--fw-extrabold);
+  font-size: 22px;
+  line-height: 1.2;
+  color: var(--text-primary);
+  margin-bottom: var(--space-3);
+
+  @include md { font-size: 26px; }
+}
+
+// ── What Can Be Reported ─────────────────
+
+.reportGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+  margin-bottom: var(--space-8);
+
+  @include md {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+  }
+
+  @include lg {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.reportItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  background: var(--surface-panel);
+  border: 1px solid var(--border-panel);
+  transition: all var(--transition-system);
+
+  &:hover {
+    border-color: var(--border-medium);
+    box-shadow: var(--shadow-glow-sm);
+  }
+}
+
+.reportIdx {
+  font-family: var(--font-primary);
+  font-size: 11px;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.1em;
+  color: var(--color-electric);
+  opacity: 0.5;
+  flex-shrink: 0;
+  width: 20px;
+}
+
+.unsureNote {
+  text-align: center;
+  font-style: italic;
+  opacity: 0.7;
+}
+
+// ── Protection ───────────────────────────
+
+// ── Protection — split layout ────────────
+.protectionLayout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+
+  @include lg {
+    flex-direction: row;
+    align-items: stretch;
+    gap: var(--space-10);
+  }
+}
+
+.protectionPhoto {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  flex-shrink: 0;
+  aspect-ratio: 3 / 4;
+  max-height: 520px;
+
+  @include lg {
+    width: 38%;
+  }
+}
+
+.protectionImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 80% 40%;
+  display: block;
+}
+
+.protectionImageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 8, 24, 0.15) 0%,
+    rgba(0, 8, 24, 0.05) 50%,
+    rgba(0, 8, 24, 0.55) 100%
+  );
+  pointer-events: none;
+}
+
+.protectionContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.protectionGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+  margin-bottom: var(--space-6);
+
+  @include md {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.protectionCard {
+  padding: var(--space-6);
+  background: var(--surface-panel);
+  border: 1px solid var(--border-panel);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.protectionIconWrap {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-electric-dim);
+  background: rgba(0, 140, 255, 0.06);
+}
+
+.protectionIcon {
+  font-size: 18px;
+  color: var(--color-electric);
+}
+
+.warningNote {
+  display: flex;
+  align-items: stretch;
+  background: rgba(249, 159, 37, 0.04);
+  border: 1px solid rgba(249, 159, 37, 0.15);
+  overflow: hidden;
+}
+
+.warningBar {
+  width: 4px;
+  flex-shrink: 0;
+  background: linear-gradient(180deg, var(--color-gold), rgba(249, 159, 37, 0.3));
+}
+
+.warningBody {
+  padding: var(--space-4) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.warningHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.warningIcon {
+  font-size: 14px;
+  color: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.warningLabel {
+  font-family: var(--font-primary);
+  font-size: 11px;
+  font-weight: var(--fw-bold);
+  color: var(--color-gold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.warningText {
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+// ── Form Section ─────────────────────────
+
+.sectionForm {
+  background: linear-gradient(170deg, var(--surface-dark-elevated) 0%, var(--surface-primary) 100%);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--grid-color) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+    background-size: var(--grid-size) var(--grid-size);
+    mask-image: radial-gradient(ellipse 60% 80% at 50% 50%, black 10%, transparent 70%);
+    pointer-events: none;
+  }
+}
+
+.form {
+  position: relative;
+  z-index: 1;
+}
+
+.formCard {
+  padding: var(--space-8);
+  background: var(--surface-panel);
+  border: 1px solid var(--border-panel);
+
+  @include md { padding: var(--space-10); }
+}
+
+.formHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid var(--border-panel);
+}
+
+.formHeaderIcon {
+  font-size: 24px;
+  color: var(--color-electric);
+}
+
+.formFields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+
+  @include md {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.textareaField {
+  textarea {
+    min-height: 140px;
+  }
+}
+
+.formFooter {
+  margin-top: var(--space-8);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.errorBanner {
+  padding: var(--space-4);
+  margin-bottom: var(--space-6);
+  background: rgba(220, 40, 40, 0.08);
+  border: 1px solid rgba(220, 40, 40, 0.3);
+  color: #ff6b6b;
+}
+
+.successCard {
+  padding: var(--space-12);
+  background: var(--surface-panel);
+  border: 1px solid var(--border-panel);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.successIcon {
+  font-size: 48px;
+  color: var(--color-electric);
+}
+
+// ── Process follow-up ────────────────────
+
+.followUp {
+  text-align: center;
+  margin-top: var(--space-8);
+  font-style: italic;
+  opacity: 0.7;
+}
+
+// ── Emergency + Commitment ───────────────
+
+.bottomCards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+
+  @include md {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.emergencyCard,
+.commitmentCard {
+  padding: var(--space-8);
+  background: var(--surface-panel);
+  border: 1px solid var(--border-panel);
+}
+
+.emergencyCard {
+  border-left: 2px solid var(--color-gold);
+}
+
+.commitmentCard {
+  border-left: 2px solid var(--color-electric-dim);
+}
+
+.emergencyHeader,
+.commitmentHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.emergencyIcon {
+  font-size: 20px;
+  color: var(--color-gold);
+}
+
+.commitmentIcon {
+  font-size: 20px;
+  color: var(--color-electric);
+}

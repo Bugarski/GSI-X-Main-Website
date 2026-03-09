@@ -15,6 +15,7 @@ const placeholders = {
     coverage: `${O}/heroes/coverage-hero-lg.jpg`,
     careers: `${O}/heroes/careers-hero-lg.jpg`,
     contact: `${O}/heroes/contact-hero-lg.jpg`,
+    whistleblower: `${O}/services/guard-checkpoint-lg.jpg`,
   },
 
   services: {
@@ -47,6 +48,8 @@ const placeholders = {
     atmOperation: `${O}/services/atm-operation-lg.jpg`,
     assetProtection: `${O}/services/asset-protection-lg.jpg`,
     guardRadioCap: `${O}/heroes/guard-radio-cap-lg.jpg`,
+    policeThinking: `${O}/services/police-thinking-lg.jpg`,
+    guardAnonymous: `${O}/services/guard-anonymous-lg.jpg`,
   },
 };
 

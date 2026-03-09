@@ -26,9 +26,18 @@ function HeroSection({
 }) {
   const CtaLink = ({ cta, variant = 'primary' }) => {
     if (!cta) return null;
+    const isHash = typeof cta.href === 'string' && cta.href.startsWith('#');
     const isInternal = typeof cta.href === 'string' && cta.href.startsWith('/');
     const classNames = `${buttonStyles.button} ${buttonStyles[variant]} ${buttonStyles.lg}`;
     const content = <span className={buttonStyles.label}>{cta.text}</span>;
+    if (isHash) {
+      const handleScroll = (e) => {
+        e.preventDefault();
+        const el = document.querySelector(cta.href);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      };
+      return <a href={cta.href} className={classNames} onClick={handleScroll}>{content}</a>;
+    }
     if (isInternal) {
       return <Link to={cta.href} className={classNames}>{content}</Link>;
     }

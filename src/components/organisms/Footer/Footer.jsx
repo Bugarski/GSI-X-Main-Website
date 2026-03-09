@@ -99,6 +99,9 @@ function Footer() {
             <Link to={getLocalizedPath('legal', currentLang, 'compliance')} className={styles.link}>
               {t('legal.compliance')}
             </Link>
+            <Link to={getLocalizedPath('whistleblower', currentLang)} className={styles.link}>
+              {t('legal.whistleblower')}
+            </Link>
           </nav>
         </div>
       </div>
