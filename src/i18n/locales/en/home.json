@@ -82,7 +82,24 @@
   },
   "empresas": {
     "sectionTitle": "The GSI Network",
-    "subtitle": "15+ specialized companies operating under one command structure."
+    "subtitle": "15+ specialized companies operating under one command structure.",
+    "companies": {
+      "cometra": "Founded in 1976, COMETRA is the cornerstone of the group. Cash-in-transit, cash processing and management, ATMs, and payroll services.",
+      "sepsa": "Founded in 1976 and part of GSI since 1988, SEPSA extends the group's reach in cash-in-transit, cash processing, and ATM services.",
+      "seguritec": "Founded in 1984, SEGURITEC operates across major cities with cash-in-transit, cash processing, and ATM services.",
+      "gsi-seguridad": "Launched in 2003 from Mexico City with 22 branches. Specialized security guards with nationwide reach.",
+      "sepsa-custodias": "Since 1999, operates armored units with national coverage for custody and transport of high-value goods.",
+      "central-alarmas": "Alarm systems, monitoring, and response solutions to protect assets and facilities nationwide.",
+      "regio": "Founded in 2001, provides cash-in-transit, cash processing, ATMs, payroll services, and electronic operations.",
+      "cinco-elementos": "Over 12 years of experience in uniform manufacturing for various sectors.",
+      "ax-transporter": "Specialized armored transport and high-security logistics services.",
+      "gsi-fabril": "Manufacturing of armoring, storage solutions, and merchandise and cash safekeeping with the highest quality standards.",
+      "grumer": "Security services powered by cutting-edge technology, continuous operational improvement, and market-leading innovation.",
+      "impacto-total": "ISO 9001:2015 certified with federal, state, and municipal operating permits. Members of AMESP, COPARMEX, and ESR.",
+      "tameme": "Specialized courier and valued document transport services with national coverage.",
+      "tecnoval": "Founded in 1996, dedicated to transporting large volumes of money and valued documents for banks and businesses.",
+      "cogar-trade": "Specialized trading of security products and solutions."
+    }
   },
   "clients": {
     "sectionTitle": "Trusted By",

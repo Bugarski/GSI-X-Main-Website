@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import ThinIcon from '../../utils/ThinIcon';
 import {
   faShieldHalved,
@@ -10,7 +10,9 @@ import {
   faSatelliteDish,
   faGlobe,
   faCog,
+  faArrowUpRightFromSquare,
 } from '@fortawesome/pro-light-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import HeroSection from '../../components/organisms/HeroSection/HeroSection';
 import ServiceCard from '../../components/molecules/ServiceCard/ServiceCard';
 import StepProcess from '../../components/organisms/StepProcess/StepProcess';
@@ -33,22 +35,23 @@ const panelReveal = {
 };
 
 const LOGO_BASE = '/media/optimized/logos/empresas';
+const PHOTO_BASE = '/media/optimized/empresas';
 const EMPRESAS_GSI = [
-  { key: 'cometra', name: 'Cometra', logo: `${LOGO_BASE}/cometra.png` },
-  { key: 'sepsa', name: 'Sepsa', logo: `${LOGO_BASE}/sepsa.png` },
-  { key: 'seguritec', name: 'Seguritec', logo: `${LOGO_BASE}/seguritec.png` },
-  { key: 'gsi-seguridad', name: 'GSI Seguridad Privada', logo: `${LOGO_BASE}/gsi-seguridad.png` },
-  { key: 'sepsa-custodias', name: 'Sepsa Custodias', logo: `${LOGO_BASE}/sepsa-custodias.png` },
-  { key: 'central-alarmas', name: 'Central de Alarmas', logo: `${LOGO_BASE}/central-alarmas.png` },
-  { key: 'regio', name: 'Regio Traslados', logo: `${LOGO_BASE}/regio.png` },
-  { key: 'cinco-elementos', name: 'Cinco Elementos', logo: `${LOGO_BASE}/cinco-elementos.png` },
-  { key: 'ax-transporter', name: 'AX Transporter', logo: `${LOGO_BASE}/ax-transporter.png` },
-  { key: 'gsi-fabril', name: 'GSI Fabril', logo: `${LOGO_BASE}/gsi-fabril.png` },
-  { key: 'grumer', name: 'Grumer', logo: `${LOGO_BASE}/grumer.png` },
-  { key: 'impacto-total', name: 'Impacto Total', logo: `${LOGO_BASE}/impacto-total.png` },
-  { key: 'tameme', name: 'Tameme', logo: `${LOGO_BASE}/tameme.png` },
-  { key: 'tecnoval', name: 'Tecnoval', logo: `${LOGO_BASE}/tecnoval.png` },
-  { key: 'cogar-trade', name: 'Cogar Trade', logo: `${LOGO_BASE}/cogar-trade.png` },
+  { key: 'cometra', name: 'Cometra', fullName: 'Compañía Mexicana de Traslado de Valores, S.A. de C.V.', founded: '1976', logo: `${LOGO_BASE}/cometra.png`, photo: `${PHOTO_BASE}/cometra.jpg` },
+  { key: 'sepsa', name: 'Sepsa', fullName: 'Sepsa, S.A. de C.V.', founded: '1976', logo: `${LOGO_BASE}/sepsa.png`, photo: `${PHOTO_BASE}/sepsa.jpg` },
+  { key: 'seguritec', name: 'Seguritec', fullName: 'Seguritec Transporte de Valores, S.A. de C.V.', founded: '1984', logo: `${LOGO_BASE}/seguritec.png`, photo: `${PHOTO_BASE}/seguritec.jpg` },
+  { key: 'gsi-seguridad', name: 'GSI Seguridad Privada', fullName: 'GSI Seguridad Privada, S.A. de C.V.', founded: '2003', logo: `${LOGO_BASE}/gsi-seguridad.png`, photo: `${PHOTO_BASE}/gsi-seguridad.jpg`, website: 'https://www.gsiseguridad.com.mx/' },
+  { key: 'sepsa-custodias', name: 'Sepsa Custodias', fullName: 'Sepsa Custodias de Valores', founded: '1999', logo: `${LOGO_BASE}/sepsa-custodias.png`, photo: `${PHOTO_BASE}/sepsa-custodias.jpg`, website: 'https://www.sepsacustodias.com.mx/' },
+  { key: 'central-alarmas', name: 'Central de Alarmas', fullName: 'Central de Alarmas', logo: `${LOGO_BASE}/central-alarmas.png` },
+  { key: 'regio', name: 'Regio Traslados', fullName: 'Regio Translados, S.A. de C.V.', founded: '2001', logo: `${LOGO_BASE}/regio.png` },
+  { key: 'cinco-elementos', name: 'Cinco Elementos', fullName: 'Comercializadora Cinco Elementos, S.A. de C.V.', logo: `${LOGO_BASE}/cinco-elementos.png`, photo: `${PHOTO_BASE}/cinco-elementos.jpg`, website: 'https://www.cincoelementos.mx/' },
+  { key: 'ax-transporter', name: 'AX Transporter', fullName: 'AX Transporter', logo: `${LOGO_BASE}/ax-transporter.png`, photo: `${PHOTO_BASE}/ax-transporter.jpg` },
+  { key: 'gsi-fabril', name: 'GSI Fabril', fullName: 'Fabril, S.A. de C.V.', logo: `${LOGO_BASE}/gsi-fabril.png`, photo: `${PHOTO_BASE}/gsi-fabril.jpg`, website: 'https://www.gsifabril.com/' },
+  { key: 'grumer', name: 'Grumer', fullName: 'Grupo Mercurio de Transportes, S.A. de C.V.', logo: `${LOGO_BASE}/grumer.png`, photo: `${PHOTO_BASE}/grumer.jpg`, website: 'https://grumer-mexico.com.mx/' },
+  { key: 'impacto-total', name: 'Impacto Total', fullName: 'Impacto Total en Seguridad Privada Integral, S.A. de C.V.', logo: `${LOGO_BASE}/impacto-total.png`, photo: `${PHOTO_BASE}/impacto-total.jpg`, website: 'http://impactototal.mx/' },
+  { key: 'tameme', name: 'Tameme', fullName: 'Tameme', logo: `${LOGO_BASE}/tameme.png`, photo: `${PHOTO_BASE}/tameme.jpg` },
+  { key: 'tecnoval', name: 'Tecnoval', fullName: 'Tecnoval de México, S.A. de C.V.', founded: '1996', logo: `${LOGO_BASE}/tecnoval.png`, photo: `${PHOTO_BASE}/tecnoval.jpg` },
+  { key: 'cogar-trade', name: 'Cogar Trade', fullName: 'Cogar Trade, S.A. de C.V.', logo: `${LOGO_BASE}/cogar-trade.png` },
 ];
 
 const CLIENT_SECTORS = [
@@ -89,6 +92,7 @@ const WHY_GSI_ICONS = {
 export default function Home() {
   const { lang } = useParams();
   const { t } = useTranslation(['home', 'common']);
+  const [activeEmpresa, setActiveEmpresa] = useState(EMPRESAS_GSI[0].key);
 
   useEffect(() => {
     document.title = t('hero.title') + ' | GSI';
@@ -338,31 +342,93 @@ export default function Home() {
 
       {/* Empresas GSI */}
       <section className={`${styles.section} ${styles.sectionEmpresas}`}>
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={panelReveal}
-        >
-          <Container size="lg">
+        <Container size="lg">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={panelReveal}
+          >
             <SectionTitle
               title={t('empresas.sectionTitle')}
               subtitle={t('empresas.subtitle')}
             />
-          </Container>
-          <div className={styles.marqueeWrap}>
-            <div className={styles.marqueeTrack}>
-              {[...EMPRESAS_GSI, ...EMPRESAS_GSI].map((empresa, i) => (
-                <div key={`a-${i}`} className={styles.marqueeItem}>
-                  <div className={styles.marqueeLogoWrap}>
-                    <img src={empresa.logo} alt={empresa.name} className={styles.marqueeImg} loading="lazy" />
-                    <img src={empresa.logo} alt="" className={styles.marqueeImgColor} aria-hidden="true" loading="lazy" />
+          </motion.div>
+
+          <div className={styles.empresasBrowser}>
+            <div className={styles.empresasGrid}>
+              {EMPRESAS_GSI.map((empresa, i) => (
+                <motion.button
+                  key={empresa.key}
+                  type="button"
+                  className={`${styles.empresasTile} ${activeEmpresa === empresa.key ? styles.empresasTileActive : ''}`}
+                  onClick={() => setActiveEmpresa(empresa.key)}
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.35, delay: i * 0.03, ease: [0.16, 1, 0.3, 1] }}
+                >
+                  <div className={styles.empresasTileLogoWrap}>
+                    <img src={empresa.logo} alt={empresa.name} className={styles.empresasTileGhost} loading="lazy" />
+                    <img src={empresa.logo} alt="" className={styles.empresasTileColor} aria-hidden="true" loading="lazy" />
                   </div>
-                </div>
+                  <span className={styles.empresasTileName}>{empresa.name}</span>
+                </motion.button>
               ))}
             </div>
+
+            <div className={styles.empresasPanel}>
+              <AnimatePresence mode="wait">
+                {(() => {
+                  const emp = EMPRESAS_GSI.find((e) => e.key === activeEmpresa);
+                  if (!emp) return null;
+                  return (
+                    <motion.div
+                      key={emp.key}
+                      className={styles.empresasPanelContent}
+                      initial={{ opacity: 0, x: 8 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -8 }}
+                      transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                    >
+                      <div className={styles.empresasPanelPhoto}>
+                        {emp.photo && <img src={emp.photo} alt={emp.name} loading="lazy" />}
+                      </div>
+                      <div className={styles.empresasPanelBody}>
+                        <div className={styles.empresasPanelLogo}>
+                          <img src={emp.logo} alt={emp.name} />
+                        </div>
+                        <div className={styles.empresasPanelInfo}>
+                          <div className={styles.empresasPanelNameRow}>
+                            <h3 className={styles.empresasPanelName}>{emp.name}</h3>
+                            {emp.founded && (
+                              <span className={styles.empresasPanelBadge}>{emp.founded}</span>
+                            )}
+                          </div>
+                          <span className={styles.empresasPanelFullName}>{emp.fullName}</span>
+                        </div>
+                      </div>
+                      <div className={styles.empresasPanelDesc}>
+                        <p>{t(`empresas.companies.${emp.key}`)}</p>
+                        {emp.website && (
+                          <a
+                            href={emp.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.empresasPanelLink}
+                          >
+                            <span>Website</span>
+                            <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                          </a>
+                        )}
+                      </div>
+                    </motion.div>
+                  );
+                })()}
+              </AnimatePresence>
+            </div>
           </div>
-        </motion.div>
+        </Container>
       </section>
 
       {/* Clients */}

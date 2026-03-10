@@ -82,7 +82,24 @@
   },
   "empresas": {
     "sectionTitle": "La Red GSI",
-    "subtitle": "Más de 15 empresas especializadas operando bajo una misma estructura de mando."
+    "subtitle": "Más de 15 empresas especializadas operando bajo una misma estructura de mando.",
+    "companies": {
+      "cometra": "Fundada en 1976, COMETRA es la piedra angular del grupo. Traslado de valores, proceso y administración de efectivo, cajeros automáticos y servicios de nómina.",
+      "sepsa": "Fundada en 1976 y parte de GSI desde 1988, SEPSA extiende la presencia del grupo en traslado de valores, proceso de efectivo y cajeros automáticos.",
+      "seguritec": "Fundada en 1984, SEGURITEC opera en las principales ciudades del país con servicios de traslado de valores, proceso de efectivo y cajeros automáticos.",
+      "gsi-seguridad": "Inicia operaciones en 2003 con sede en Ciudad de México y 22 sucursales. Guardias especializados con alcance nacional.",
+      "sepsa-custodias": "Desde 1999, opera unidades blindadas con cobertura nacional para custodia y traslado de bienes.",
+      "central-alarmas": "Soluciones de sistemas de alarmas, monitoreo y respuesta para proteger activos e instalaciones a nivel nacional.",
+      "regio": "Fundada en 2001, ofrece traslado de valores, proceso de efectivo, cajeros automáticos, servicios de nómina y operaciones electrónicas.",
+      "cinco-elementos": "Más de 12 años de experiencia en fabricación de uniformes para distintos sectores.",
+      "ax-transporter": "Servicios especializados de transporte blindado y logística de alta seguridad.",
+      "gsi-fabril": "Fabricación de blindaje, soluciones de almacenamiento y resguardo de mercancías y efectivo con estándares de máxima calidad.",
+      "grumer": "Servicios de seguridad con alta tecnología, mejora continua en operación y aplicación de nuevas tendencias del mercado.",
+      "impacto-total": "Certificación ISO 9001:2015 con permisos para operar a nivel federal, estatal y municipal. Miembros de AMESP, COPARMEX y ESR.",
+      "tameme": "Servicios especializados de mensajería y traslado de documentos valorados con cobertura nacional.",
+      "tecnoval": "Fundada en 1996, dedicada al traslado de grandes volúmenes de dinero y documentos valorados para bancos y negocios.",
+      "cogar-trade": "Comercialización especializada de productos y soluciones de seguridad."
+    }
   },
   "clients": {
     "sectionTitle": "Confían en Nosotros",
