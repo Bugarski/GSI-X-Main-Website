@@ -78,6 +78,17 @@
   },
   "quoteSection": {
     "title": "Take the First Step Toward Secure Operations",
-    "subtitle": "Tell us what you need — our specialists respond fast and deploy faster."
+    "subtitle": "Tell us what you need, our specialists respond fast and deploy faster."
+  },
+  "empresas": {
+    "sectionTitle": "The GSI Network",
+    "subtitle": "15+ specialized companies operating under one command structure."
+  },
+  "clients": {
+    "sectionTitle": "Trusted By",
+    "subtitle": "Leaders across finance, industry, retail, and government rely on GSI.",
+    "financial": "Financial Sector",
+    "enterprise": "Enterprise & Retail",
+    "government": "Government"
   }
 }

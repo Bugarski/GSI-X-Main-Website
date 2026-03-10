@@ -32,6 +32,52 @@ const panelReveal = {
   }),
 };
 
+const LOGO_BASE = '/media/optimized/logos/empresas';
+const EMPRESAS_GSI = [
+  { key: 'cometra', name: 'Cometra', logo: `${LOGO_BASE}/cometra.png` },
+  { key: 'sepsa', name: 'Sepsa', logo: `${LOGO_BASE}/sepsa.png` },
+  { key: 'seguritec', name: 'Seguritec', logo: `${LOGO_BASE}/seguritec.png` },
+  { key: 'gsi-seguridad', name: 'GSI Seguridad Privada', logo: `${LOGO_BASE}/gsi-seguridad.png` },
+  { key: 'sepsa-custodias', name: 'Sepsa Custodias', logo: `${LOGO_BASE}/sepsa-custodias.png` },
+  { key: 'central-alarmas', name: 'Central de Alarmas', logo: `${LOGO_BASE}/central-alarmas.png` },
+  { key: 'regio', name: 'Regio Traslados', logo: `${LOGO_BASE}/regio.png` },
+  { key: 'cinco-elementos', name: 'Cinco Elementos', logo: `${LOGO_BASE}/cinco-elementos.png` },
+  { key: 'ax-transporter', name: 'AX Transporter', logo: `${LOGO_BASE}/ax-transporter.png` },
+  { key: 'gsi-fabril', name: 'GSI Fabril', logo: `${LOGO_BASE}/gsi-fabril.png` },
+  { key: 'grumer', name: 'Grumer', logo: `${LOGO_BASE}/grumer.png` },
+  { key: 'impacto-total', name: 'Impacto Total', logo: `${LOGO_BASE}/impacto-total.png` },
+  { key: 'tameme', name: 'Tameme', logo: `${LOGO_BASE}/tameme.png` },
+  { key: 'tecnoval', name: 'Tecnoval', logo: `${LOGO_BASE}/tecnoval.png` },
+  { key: 'cogar-trade', name: 'Cogar Trade', logo: `${LOGO_BASE}/cogar-trade.png` },
+];
+
+const CLIENT_SECTORS = [
+  {
+    key: 'financial',
+    names: [
+      'Banjercito', 'BBVA', 'Santander', 'Banco de México', 'Citibanamex',
+      'Scotiabank', 'HSBC', 'Banorte', 'Banco Bienestar', 'Banco Azteca',
+      'Banregio', 'BanBajío', 'Compartamos Banco',
+    ],
+  },
+  {
+    key: 'enterprise',
+    names: [
+      'Telmex', 'Grupo Bimbo', 'Walmart', 'Sears', 'Elektra', 'Soriana',
+      'Sabritas', 'Grupo ADO', 'Chedraui', 'Telcel', 'Liverpool', 'OXXO',
+      '7-Eleven', 'El Palacio de Hierro', 'Alsea', 'Cinemex', 'Cinépolis',
+      'Grupo Modelo', 'Coppel', 'Costco', 'Danone', 'PepsiCo',
+    ],
+  },
+  {
+    key: 'government',
+    names: [
+      'Gobierno de la CDMX', 'STC Metro', 'Lotería Nacional', 'CFE', 'SEP',
+      'ISSSTE', 'Capufe', 'IMSS', 'DIF', 'INE', 'DICONSA', 'FONADIN', 'SEPOMEX',
+    ],
+  },
+];
+
 const WHY_GSI_ICONS = {
   coverage: faGlobe,
   monitoring: faSatelliteDish,
@@ -287,6 +333,71 @@ export default function Home() {
               {t('testimonials.cta')}
             </Button>
           </motion.div>
+        </Container>
+      </section>
+
+      {/* Empresas GSI */}
+      <section className={`${styles.section} ${styles.sectionEmpresas}`}>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={panelReveal}
+        >
+          <Container size="lg">
+            <SectionTitle
+              title={t('empresas.sectionTitle')}
+              subtitle={t('empresas.subtitle')}
+            />
+          </Container>
+          <div className={styles.marqueeWrap}>
+            <div className={styles.marqueeTrack}>
+              {[...EMPRESAS_GSI, ...EMPRESAS_GSI].map((empresa, i) => (
+                <div key={`a-${i}`} className={styles.marqueeItem}>
+                  <div className={styles.marqueeLogoWrap}>
+                    <img src={empresa.logo} alt={empresa.name} className={styles.marqueeImg} loading="lazy" />
+                    <img src={empresa.logo} alt="" className={styles.marqueeImgColor} aria-hidden="true" loading="lazy" />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Clients */}
+      <section className={styles.section}>
+        <Container size="lg">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={panelReveal}
+          >
+            <SectionTitle
+              title={t('clients.sectionTitle')}
+              subtitle={t('clients.subtitle')}
+            />
+          </motion.div>
+          <div className={styles.clientSectors}>
+            {CLIENT_SECTORS.map((sector) => (
+              <motion.div
+                key={sector.key}
+                className={styles.clientSector}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={panelReveal}
+              >
+                <span className={styles.clientSectorLabel}>{t(`clients.${sector.key}`)}</span>
+                <div className={styles.clientNames}>
+                  {sector.names.map((name) => (
+                    <span key={name} className={styles.clientName}>{name}</span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </Container>
       </section>
 

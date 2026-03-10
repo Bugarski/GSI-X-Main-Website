@@ -9,10 +9,14 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { Link, useLocation, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRightToBracket } from '@fortawesome/pro-light-svg-icons';
 import { getLocalizedPath, SERVICE_KEYS, routeConfig } from '../../../router/routes';
 import buttonStyles from '../../atoms/Button/Button.module.scss';
 import LanguageSwitcher from '../../molecules/LanguageSwitcher/LanguageSwitcher';
 import styles from './Header.module.scss';
+
+const PORTAL_URL = 'https://portal.gsi.com.mx';
 
 const NAV_LINKS = [
   { key: 'home', routeKey: 'home' },
@@ -21,7 +25,6 @@ const NAV_LINKS = [
   { key: 'coverage', routeKey: 'coverage' },
   { key: 'careers', routeKey: 'careers' },
   { key: 'contact', routeKey: 'contact' },
-  { key: 'whistleblower', routeKey: 'whistleblower' },
 ];
 
 function NavLink({ link, lang, currentPath }) {
@@ -224,6 +227,15 @@ function Header() {
           </nav>
 
           <div className={styles.actions}>
+            <a
+              href={PORTAL_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${buttonStyles.button} ${buttonStyles.ghost} ${buttonStyles.sm}`}
+            >
+              <FontAwesomeIcon icon={faArrowRightToBracket} className={buttonStyles.icon} />
+              <span className={buttonStyles.label}>{t('cta.portalLogin')}</span>
+            </a>
             <LanguageSwitcher />
             <Link
               to={quoteHref}
@@ -280,7 +292,21 @@ function Header() {
               />
             )
           )}
+          <NavLink
+            link={{ key: 'whistleblower', routeKey: 'whistleblower' }}
+            lang={currentLang}
+            currentPath={currentPath}
+          />
           <LanguageSwitcher />
+          <a
+            href={PORTAL_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`${buttonStyles.button} ${buttonStyles.ghost} ${buttonStyles.md} ${buttonStyles.fullWidth}`}
+          >
+            <FontAwesomeIcon icon={faArrowRightToBracket} className={buttonStyles.icon} />
+            <span className={buttonStyles.label}>{t('cta.portalLogin')}</span>
+          </a>
           <Link
             to={quoteHref}
             className={`${buttonStyles.button} ${buttonStyles.primary} ${buttonStyles.md} ${buttonStyles.fullWidth}`}

@@ -78,6 +78,17 @@
   },
   "quoteSection": {
     "title": "Dé el Primer Paso Hacia Operaciones Seguras",
-    "subtitle": "Cuéntenos lo que necesita — nuestros especialistas responden rápido y despliegan aún más rápido."
+    "subtitle": "Cuéntenos lo que necesita, nuestros especialistas responden rápido y despliegan aún más rápido."
+  },
+  "empresas": {
+    "sectionTitle": "La Red GSI",
+    "subtitle": "Más de 15 empresas especializadas operando bajo una misma estructura de mando."
+  },
+  "clients": {
+    "sectionTitle": "Confían en Nosotros",
+    "subtitle": "Líderes en finanzas, industria, retail y gobierno confían en GSI.",
+    "financial": "Sector Financiero",
+    "enterprise": "Empresas y Comercio",
+    "government": "Gobierno"
   }
 }
