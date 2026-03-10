@@ -582,6 +582,31 @@ $gold-bright: #fbbf6d;
   margin-bottom: var(--space-4);
 }
 
+// ═══════════════════════════════════════════════
+// Network Map Video
+// ═══════════════════════════════════════════════
+
+.networkVideo {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  max-height: 560px;
+
+  @include md { max-height: 640px; }
+  @include lg { max-height: 720px; }
+}
+
+.networkVideoEl {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.networkVideoOverlay {
+  display: none;
+}
+
 .testimonialCard {
   margin-top: var(--space-8);
   padding: var(--space-10);
@@ -724,8 +749,8 @@ $emp-height: calc(4 * #{$emp-tile} + 3 * #{$emp-gap}); // 416px
   max-width: 80%;
   max-height: 80%;
   object-fit: contain;
-  filter: grayscale(1) brightness(1.8);
-  opacity: 0.2;
+  filter: grayscale(1) brightness(1.2) sepia(1) hue-rotate(180deg) saturate(0.4);
+  opacity: 0.3;
   transition: opacity 0.4s ease;
 }
 
@@ -925,58 +950,236 @@ $emp-height: calc(4 * #{$emp-tile} + 3 * #{$emp-gap}); // 416px
 
 // ── Clients ─────────────────────────────
 
-.clientSectors {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-10);
+// ═══════════════════════════════════════════════
+// Clients — Active Connections Dashboard
+// ═══════════════════════════════════════════════
+
+.sectionClients {
+  position: relative;
+  overflow: hidden;
+  background: var(--surface-dark);
 }
 
-.clientSector {
+.clientsGrid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 136, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 136, 255, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 0%, transparent 80%);
+  pointer-events: none;
+}
+
+.clientsScanline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 136, 255, 0.0) 20%,
+    rgba(0, 136, 255, 0.4) 50%,
+    rgba(0, 136, 255, 0.0) 80%,
+    transparent 100%
+  );
+  animation: clients-scan 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes clients-scan {
+  0%   { top: 0; opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+// ── Counter ─────────────────────────────
+
+.clientsCounter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-12);
+}
+
+.clientsCounterIcon {
+  font-size: 18px;
+  color: var(--color-electric);
+  animation: clients-pulse 2s ease-in-out infinite;
+}
+
+@keyframes clients-pulse {
+  0%, 100% { opacity: 0.6; }
+  50%      { opacity: 1; }
+}
+
+.clientsCounterNum {
+  font-family: var(--font-primary);
+  font-size: 40px;
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.clientsCounterLabel {
+  font-family: var(--font-primary);
+  font-size: 13px;
+  font-weight: var(--fw-semibold);
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+// ── Feed layout ─────────────────────────
+
+.clientFeed {
   display: flex;
   flex-direction: column;
-  gap: var(--space-5);
+  gap: 12px;
+  margin-top: var(--space-4);
+}
+
+.clientRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.clientRowLabel {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  width: 180px;
+  padding: 8px 12px;
+  border: 1px solid var(--border-panel);
+  border-radius: 6px;
+  background: rgba(0, 20, 40, 0.7);
+
+  @include md { display: flex; }
+}
+
+.clientSectorPulse {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-electric);
+  box-shadow: 0 0 6px 1px var(--color-electric-glow-strong);
+  animation: clients-pulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+.clientSectorIcon {
+  font-size: 13px;
+  color: var(--color-electric);
+  flex-shrink: 0;
 }
 
 .clientSectorLabel {
   font-family: var(--font-primary);
-  font-size: 11px;
+  font-size: 10px;
   font-weight: var(--fw-bold);
   color: var(--color-electric);
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  padding-bottom: var(--space-3);
-  border-bottom: 1px solid var(--border-panel);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.clientNames {
+// ── Ticker ──────────────────────────────
+
+.clientTickerWrap {
+  flex: 1;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    black 6%,
+    black 94%,
+    transparent 100%
+  );
+}
+
+.clientTicker {
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2) var(--space-4);
+  width: max-content;
+  animation: client-scroll var(--ticker-duration, 35s) linear infinite;
+
+  &:hover { animation-play-state: paused; }
 }
 
-.clientName {
+.clientTickerReverse {
+  animation-direction: reverse;
+}
+
+.clientTickerTrack {
+  display: flex;
+  gap: 10px;
+  padding-right: 10px;
+}
+
+@keyframes client-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+// ── Chips ───────────────────────────────
+
+.clientChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-family: var(--font-primary);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: var(--fw-medium);
   color: var(--text-muted);
-  padding: var(--space-1) 0;
-  position: relative;
-  transition: color 0.2s ease;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 1px solid rgba(138, 158, 178, 0.08);
+  background: rgba(0, 20, 40, 0.6);
   white-space: nowrap;
-
-  &::after {
-    content: '·';
-    margin-left: var(--space-4);
-    color: var(--border-panel);
-  }
-
-  &:last-child::after {
-    content: none;
-  }
+  cursor: default;
+  animation: chip-ping 15s ease-in-out infinite;
+  animation-delay: var(--ping-delay, 0s);
 
   &:hover {
     color: var(--text-primary);
+    border-color: rgba(0, 136, 255, 0.4);
+    background: rgba(0, 136, 255, 0.1);
+    box-shadow: 0 0 16px -2px rgba(0, 136, 255, 0.25);
   }
+}
+
+@keyframes chip-ping {
+  0%, 85%, 100% {
+    border-color: rgba(138, 158, 178, 0.08);
+    color: var(--text-muted);
+    box-shadow: none;
+  }
+  90% {
+    border-color: rgba(0, 136, 255, 0.5);
+    color: var(--text-primary);
+    box-shadow: 0 0 14px -2px rgba(0, 136, 255, 0.3);
+  }
+}
+
+.clientChipIcon {
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  object-fit: contain;
+  flex-shrink: 0;
+  opacity: 0.6;
+  transition: opacity 0.25s ease;
+
+  .clientChip:hover & { opacity: 1; }
 }
 
 // ── CTA Section ─────────────────────────

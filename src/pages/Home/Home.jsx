@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef, useCallback } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -11,6 +11,10 @@ import {
   faGlobe,
   faCog,
   faArrowUpRightFromSquare,
+  faBuildingColumns,
+  faBuildings,
+  faLandmarkDome,
+  faSignalStream,
 } from '@fortawesome/pro-light-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import HeroSection from '../../components/organisms/HeroSection/HeroSection';
@@ -54,29 +58,70 @@ const EMPRESAS_GSI = [
   { key: 'cogar-trade', name: 'Cogar Trade', fullName: 'Cogar Trade, S.A. de C.V.', logo: `${LOGO_BASE}/cogar-trade.png` },
 ];
 
+const favicon = (domain) => `https://www.google.com/s2/favicons?domain=${domain}&sz=32`;
+
 const CLIENT_SECTORS = [
   {
     key: 'financial',
-    names: [
-      'Banjercito', 'BBVA', 'Santander', 'Banco de México', 'Citibanamex',
-      'Scotiabank', 'HSBC', 'Banorte', 'Banco Bienestar', 'Banco Azteca',
-      'Banregio', 'BanBajío', 'Compartamos Banco',
+    clients: [
+      { name: 'Banjercito', icon: favicon('banjercito.com.mx') },
+      { name: 'BBVA', icon: favicon('bbva.mx') },
+      { name: 'Santander', icon: favicon('santander.com.mx') },
+      { name: 'Banco de México', icon: favicon('banxico.org.mx') },
+      { name: 'Citibanamex', icon: favicon('citibanamex.com') },
+      { name: 'Scotiabank', icon: favicon('scotiabank.com.mx') },
+      { name: 'HSBC', icon: favicon('hsbc.com.mx') },
+      { name: 'Banorte', icon: favicon('banorte.com') },
+      { name: 'Banco Bienestar', icon: favicon('gob.mx') },
+      { name: 'Banco Azteca', icon: favicon('bancoazteca.com.mx') },
+      { name: 'Banregio', icon: favicon('banregio.com') },
+      { name: 'BanBajío', icon: favicon('bb.com.mx') },
+      { name: 'Compartamos Banco', icon: favicon('compartamos.com.mx') },
     ],
   },
   {
     key: 'enterprise',
-    names: [
-      'Telmex', 'Grupo Bimbo', 'Walmart', 'Sears', 'Elektra', 'Soriana',
-      'Sabritas', 'Grupo ADO', 'Chedraui', 'Telcel', 'Liverpool', 'OXXO',
-      '7-Eleven', 'El Palacio de Hierro', 'Alsea', 'Cinemex', 'Cinépolis',
-      'Grupo Modelo', 'Coppel', 'Costco', 'Danone', 'PepsiCo',
+    clients: [
+      { name: 'Telmex', icon: favicon('telmex.com') },
+      { name: 'Grupo Bimbo', icon: favicon('grupobimbo.com') },
+      { name: 'Walmart', icon: favicon('walmart.com.mx') },
+      { name: 'Sears', icon: favicon('sears.com.mx') },
+      { name: 'Elektra', icon: favicon('elektra.com.mx') },
+      { name: 'Soriana', icon: favicon('soriana.com') },
+      { name: 'Sabritas', icon: favicon('sabritas.com.mx') },
+      { name: 'Grupo ADO', icon: favicon('ado.com.mx') },
+      { name: 'Chedraui', icon: favicon('chedraui.com.mx') },
+      { name: 'Telcel', icon: favicon('telcel.com') },
+      { name: 'Liverpool', icon: favicon('liverpool.com.mx') },
+      { name: 'OXXO', icon: favicon('oxxo.com') },
+      { name: '7-Eleven', icon: favicon('7-eleven.com.mx') },
+      { name: 'El Palacio de Hierro', icon: favicon('elpalaciodehierro.com') },
+      { name: 'Alsea', icon: favicon('alsea.net') },
+      { name: 'Cinemex', icon: favicon('cinemex.com') },
+      { name: 'Cinépolis', icon: favicon('cinepolis.com') },
+      { name: 'Grupo Modelo', icon: favicon('grupomodelo.com') },
+      { name: 'Coppel', icon: favicon('coppel.com') },
+      { name: 'Costco', icon: favicon('costco.com.mx') },
+      { name: 'Danone', icon: favicon('danone.com') },
+      { name: 'PepsiCo', icon: favicon('pepsico.com') },
     ],
   },
   {
     key: 'government',
-    names: [
-      'Gobierno de la CDMX', 'STC Metro', 'Lotería Nacional', 'CFE', 'SEP',
-      'ISSSTE', 'Capufe', 'IMSS', 'DIF', 'INE', 'DICONSA', 'FONADIN', 'SEPOMEX',
+    clients: [
+      { name: 'Gobierno de la CDMX', icon: favicon('cdmx.gob.mx') },
+      { name: 'STC Metro', icon: favicon('metro.cdmx.gob.mx') },
+      { name: 'Lotería Nacional', icon: favicon('lotenal.gob.mx') },
+      { name: 'CFE', icon: favicon('cfe.mx') },
+      { name: 'SEP', icon: favicon('gob.mx') },
+      { name: 'ISSSTE', icon: favicon('gob.mx') },
+      { name: 'Capufe', icon: favicon('capufe.gob.mx') },
+      { name: 'IMSS', icon: favicon('imss.gob.mx') },
+      { name: 'DIF', icon: favicon('gob.mx') },
+      { name: 'INE', icon: favicon('ine.mx') },
+      { name: 'DICONSA', icon: favicon('gob.mx') },
+      { name: 'FONADIN', icon: favicon('fonadin.gob.mx') },
+      { name: 'SEPOMEX', icon: favicon('gob.mx') },
     ],
   },
 ];
@@ -89,10 +134,52 @@ const WHY_GSI_ICONS = {
   trusted: faShieldHalved,
 };
 
+const SECTOR_ICONS = {
+  financial: faBuildingColumns,
+  enterprise: faBuildings,
+  government: faLandmarkDome,
+};
+
+const TOTAL_CLIENTS = CLIENT_SECTORS.reduce((sum, s) => sum + s.clients.length, 0);
+
+function useCountUp(target, duration = 1800) {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
+  const started = useRef(false);
+
+  const onIntersect = useCallback(
+    (entries) => {
+      if (entries[0].isIntersecting && !started.current) {
+        started.current = true;
+        const start = performance.now();
+        const step = (now) => {
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          setCount(Math.round(eased * target));
+          if (progress < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+      }
+    },
+    [target, duration],
+  );
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(onIntersect, { threshold: 0.3 });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [onIntersect]);
+
+  return { ref, count };
+}
+
 export default function Home() {
   const { lang } = useParams();
   const { t } = useTranslation(['home', 'common']);
   const [activeEmpresa, setActiveEmpresa] = useState(EMPRESAS_GSI[0].key);
+  const { ref: counterRef, count: clientCount } = useCountUp(TOTAL_CLIENTS);
 
   useEffect(() => {
     document.title = t('hero.title') + ' | GSI';
@@ -285,6 +372,19 @@ export default function Home() {
         </Container>
       </section>
 
+      <section className={styles.networkVideo}>
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className={styles.networkVideoEl}
+        >
+          <source src="/media/videos/map-network.mp4" type="video/mp4" />
+        </video>
+        <div className={styles.networkVideoOverlay} />
+      </section>
+
       <section className={`${styles.section} ${styles.sectionAlt}`}>
         <Container size="lg">
           <motion.div
@@ -431,8 +531,10 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* Clients */}
-      <section className={styles.section}>
+      {/* Clients — Active Connections Feed */}
+      <section className={`${styles.section} ${styles.sectionClients}`}>
+        <div className={styles.clientsGrid} aria-hidden="true" />
+        <div className={styles.clientsScanline} aria-hidden="true" />
         <Container size="lg">
           <motion.div
             initial="hidden"
@@ -445,26 +547,65 @@ export default function Home() {
               subtitle={t('clients.subtitle')}
             />
           </motion.div>
-          <div className={styles.clientSectors}>
-            {CLIENT_SECTORS.map((sector) => (
-              <motion.div
-                key={sector.key}
-                className={styles.clientSector}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={panelReveal}
-              >
-                <span className={styles.clientSectorLabel}>{t(`clients.${sector.key}`)}</span>
-                <div className={styles.clientNames}>
-                  {sector.names.map((name) => (
-                    <span key={name} className={styles.clientName}>{name}</span>
+
+          <motion.div
+            ref={counterRef}
+            className={styles.clientsCounter}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={panelReveal}
+          >
+            <FontAwesomeIcon icon={faSignalStream} className={styles.clientsCounterIcon} />
+            <span className={styles.clientsCounterNum}>{clientCount}</span>
+            <span className={styles.clientsCounterLabel}>{t('clients.counter')}</span>
+          </motion.div>
+        </Container>
+
+        <div className={styles.clientFeed}>
+          {CLIENT_SECTORS.map((sector, si) => (
+            <div key={sector.key} className={styles.clientRow}>
+              <div className={styles.clientRowLabel}>
+                <span className={styles.clientSectorPulse} />
+                <FontAwesomeIcon
+                  icon={SECTOR_ICONS[sector.key]}
+                  className={styles.clientSectorIcon}
+                />
+                <span className={styles.clientSectorLabel}>
+                  {t(`clients.${sector.key}`)}
+                </span>
+              </div>
+              <div className={styles.clientTickerWrap}>
+                <div
+                  className={`${styles.clientTicker} ${si % 2 !== 0 ? styles.clientTickerReverse : ''}`}
+                  style={{ '--ticker-duration': `${30 + si * 8}s` }}
+                >
+                  {[0, 1].map((copy) => (
+                    <div key={copy} className={styles.clientTickerTrack} aria-hidden={copy === 1}>
+                      {sector.clients.map((client) => (
+                        <span
+                          key={client.name}
+                          className={styles.clientChip}
+                          style={{ '--ping-delay': `${(Math.random() * 12 + 3).toFixed(1)}s` }}
+                        >
+                          <img
+                            src={client.icon}
+                            alt=""
+                            className={styles.clientChipIcon}
+                            loading="lazy"
+                            width="16"
+                            height="16"
+                          />
+                          {client.name}
+                        </span>
+                      ))}
+                    </div>
                   ))}
                 </div>
-              </motion.div>
-            ))}
-          </div>
-        </Container>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
 
       <section className={`${styles.section} ${styles.sectionCta}`}>
