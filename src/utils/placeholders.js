@@ -24,7 +24,7 @@ const placeholders = {
     cargo: `${O}/services/cargo-hero-lg.jpg`,
     technology: `${O}/services/technology-hero-lg.jpg`,
     consulting: `${O}/services/consulting-hero-lg.jpg`,
-    conceptDesign: `${O}/services/concept-design-hero-lg.jpg`,
+    conceptDesign: `${O}/heroes/services-hero-lg.jpg`,
     executive: `${O}/services/executive-hero-lg.jpg`,
     atm: `${O}/services/atm-hero-lg.jpg`,
     custom: `${O}/services/custom-hero-lg.jpg`,

@@ -39,6 +39,7 @@ export default function Contact() {
       <HeroSection
         title={t('hero.title')}
         subtitle={t('hero.subtitle')}
+        backgroundVideo="/media/optimized/videos/contact-hero"
         backgroundImage={placeholders.heroes.contact}
         fullHeight={false}
         align="center"

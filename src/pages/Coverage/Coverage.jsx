@@ -40,6 +40,7 @@ export default function Coverage() {
       <HeroSection
         title={t('hero.title')}
         subtitle={t('hero.subtitle')}
+        backgroundVideo="/media/optimized/videos/coverage-hero"
         backgroundImage={placeholders.heroes.coverage}
         align="center"
       />

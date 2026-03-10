@@ -73,6 +73,7 @@ export default function Services() {
       <HeroSection
         title={t('hero.title')}
         subtitle={t('hero.subtitle')}
+        backgroundVideo="/media/optimized/videos/services-hero"
         backgroundImage={placeholders.heroes.services}
         align="center"
       />
