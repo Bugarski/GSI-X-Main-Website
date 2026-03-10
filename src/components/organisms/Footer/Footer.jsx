@@ -1,15 +1,12 @@
-/**
- * Footer — Organism: Full-width footer
- *
- * Sections: Brand, 24/7 Contact, Services, Company, Coverage, Legal
- * Bottom bar: trust line + copyright
- * All from i18n footer namespace. Responsive grid.
- */
-
 import { Link, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { getLocalizedPath } from '../../../router/routes';
+import { getLocalizedPath, SERVICE_KEYS, routeConfig } from '../../../router/routes';
 import styles from './Footer.module.scss';
+
+const SERVICE_FOOTER_KEYS = [
+  'cit', 'guards', 'cargo', 'technology', 'consulting',
+  'executive', 'atm', 'conceptDesign', 'custom',
+];
 
 function Footer() {
   const { lang } = useParams();
@@ -19,94 +16,87 @@ function Footer() {
 
   return (
     <footer className={styles.footer}>
-      <div className={styles.grid}>
+      <div className={styles.top}>
         <div className={styles.brand}>
           <Link to={`/${currentLang}`} className={styles.logo}>
             <img
               src="/media/logos/gsi-logo-white.png"
-              alt="GSI — Grupo Seguridad Integral"
+              alt="GSI"
               className={styles.logoImg}
             />
           </Link>
           <p className={styles.brandDesc}>{t('brand.description')}</p>
-        </div>
-
-        <div className={styles.section}>
-          <h4 className={styles.sectionTitle}>{t('operations.title')}</h4>
-          <div className={styles.contactInfo}>
-            <a href={`tel:${t('operations.phone').replace(/\D/g, '')}`} className={styles.link}>
+          <div className={styles.contactBlock}>
+            <a href={`tel:${t('operations.phone').replace(/\D/g, '')}`} className={styles.contactLink}>
               {t('operations.phone')}
             </a>
-            <a href={`tel:${t('operations.tollFree').replace(/\D/g, '')}`} className={styles.link}>
+            <a href={`tel:${t('operations.tollFree').replace(/\D/g, '')}`} className={styles.contactLink}>
               {t('operations.tollFree')}
             </a>
-            <a href={`mailto:${t('operations.email')}`} className={styles.link}>
+            <a href={`mailto:${t('operations.email')}`} className={styles.contactLink}>
               {t('operations.email')}
             </a>
           </div>
         </div>
 
-        <div className={styles.section}>
-          <h4 className={styles.sectionTitle}>{t('services.title')}</h4>
-          <Link to={getLocalizedPath('services', currentLang)} className={styles.link}>
-            {t('services.title')}
-          </Link>
-        </div>
-
-        <div className={styles.section}>
-          <h4 className={styles.sectionTitle}>{t('company.title')}</h4>
-          <nav className={styles.links}>
-            <Link to={getLocalizedPath('about', currentLang)} className={styles.link}>
-              {t('company.about')}
-            </Link>
-            <Link to={getLocalizedPath('about', currentLang)} className={styles.link}>
-              {t('company.whyGsi')}
-            </Link>
-            <Link to={getLocalizedPath('coverage', currentLang)} className={styles.link}>
-              {t('company.coverage')}
-            </Link>
-            <Link to={getLocalizedPath('careers', currentLang)} className={styles.link}>
-              {t('company.careers')}
-            </Link>
-            <Link to={getLocalizedPath('contact', currentLang)} className={styles.link}>
-              {t('company.contact')}
-            </Link>
-          </nav>
-        </div>
-
-        <div className={styles.section}>
-          <h4 className={styles.sectionTitle}>{t('coverageSection.title')}</h4>
-          <div className={styles.coverageList}>
-            <span className={styles.coverageItem}>{t('coverageSection.mexico')}</span>
-            <span className={styles.coverageItem}>{t('coverageSection.centralAmerica')}</span>
-            <span className={styles.coverageItem}>{t('coverageSection.brazil')}</span>
-            <span className={styles.coverageItem}>{t('coverageSection.globalPartners')}</span>
+        <div className={styles.columns}>
+          <div className={styles.col}>
+            <h4 className={styles.colTitle}>{t('services.title')}</h4>
+            <nav className={styles.colLinks}>
+              {SERVICE_FOOTER_KEYS.map((key) => (
+                <Link
+                  key={key}
+                  to={`/${currentLang}${routeConfig.serviceDetail[key][currentLang]}`}
+                  className={styles.colLink}
+                >
+                  {t(`services.${key}`)}
+                </Link>
+              ))}
+            </nav>
           </div>
-        </div>
 
-        <div className={styles.section}>
-          <h4 className={styles.sectionTitle}>{t('legal.title')}</h4>
-          <nav className={styles.links}>
-            <Link to={getLocalizedPath('legal', currentLang, 'privacy')} className={styles.link}>
-              {t('legal.privacy')}
-            </Link>
-            <Link to={getLocalizedPath('legal', currentLang, 'terms')} className={styles.link}>
-              {t('legal.terms')}
-            </Link>
-            <Link to={getLocalizedPath('legal', currentLang, 'legalNotice')} className={styles.link}>
-              {t('legal.legalNotice')}
-            </Link>
-            <Link to={getLocalizedPath('legal', currentLang, 'compliance')} className={styles.link}>
-              {t('legal.compliance')}
-            </Link>
-            <Link to={getLocalizedPath('whistleblower', currentLang)} className={styles.link}>
-              {t('legal.whistleblower')}
-            </Link>
-          </nav>
+          <div className={styles.col}>
+            <h4 className={styles.colTitle}>{t('company.title')}</h4>
+            <nav className={styles.colLinks}>
+              <Link to={getLocalizedPath('about', currentLang)} className={styles.colLink}>
+                {t('company.about')}
+              </Link>
+              <Link to={getLocalizedPath('coverage', currentLang)} className={styles.colLink}>
+                {t('company.coverage')}
+              </Link>
+              <Link to={getLocalizedPath('careers', currentLang)} className={styles.colLink}>
+                {t('company.careers')}
+              </Link>
+              <Link to={getLocalizedPath('contact', currentLang)} className={styles.colLink}>
+                {t('company.contact')}
+              </Link>
+              <Link to={getLocalizedPath('whistleblower', currentLang)} className={styles.colLink}>
+                {t('company.whistleblower')}
+              </Link>
+            </nav>
+          </div>
+
+          <div className={styles.col}>
+            <h4 className={styles.colTitle}>{t('legal.title')}</h4>
+            <nav className={styles.colLinks}>
+              <Link to={getLocalizedPath('legal', currentLang, 'privacy')} className={styles.colLink}>
+                {t('legal.privacy')}
+              </Link>
+              <Link to={getLocalizedPath('legal', currentLang, 'terms')} className={styles.colLink}>
+                {t('legal.terms')}
+              </Link>
+              <Link to={getLocalizedPath('legal', currentLang, 'legalNotice')} className={styles.colLink}>
+                {t('legal.legalNotice')}
+              </Link>
+              <Link to={getLocalizedPath('legal', currentLang, 'compliance')} className={styles.colLink}>
+                {t('legal.compliance')}
+              </Link>
+            </nav>
+          </div>
         </div>
       </div>
 
-      <div className={styles.bottomBar}>
+      <div className={styles.bottom}>
         <p className={styles.trustLine}>{t('trustLine')}</p>
         <p className={styles.copyright}>{t('copyright')}</p>
       </div>

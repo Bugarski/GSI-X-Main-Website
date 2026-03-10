@@ -50,5 +50,31 @@
       "portfolio": "Integrated service portfolio",
       "trusted": "Trusted by major banks & global brands"
     }
+  },
+  "culture": {
+    "sectionTitle": "Our Culture & Values",
+    "subtitle": "The principles that guide every decision, every operation, and every interaction.",
+    "csr": {
+      "badge": "ESR Certified",
+      "text": "We are a Socially Responsible Company committed to our employees, their families, society, and the environment through ethical values and sustainable practices."
+    },
+    "values": {
+      "integrity": { "title": "Integrity", "text": "Transparency, honesty, and accountability at every level." },
+      "discipline": { "title": "Discipline", "text": "Rigorous protocols and zero tolerance for deviation." },
+      "excellence": { "title": "Excellence", "text": "The highest standards in every service and process." },
+      "commitment": { "title": "Commitment", "text": "Total dedication to our clients and mission." },
+      "teamwork": { "title": "Teamwork", "text": "Coordinated effort across every unit and subsidiary." },
+      "innovation": { "title": "Innovation", "text": "Evolving methods and technology to stay ahead." },
+      "responsibility": { "title": "Responsibility", "text": "Ownership of actions and impact on communities." },
+      "respect": { "title": "Respect", "text": "Dignity for every individual and community we serve." }
+    },
+    "ethics": {
+      "title": "Code of Ethics",
+      "text": "Our behavioral framework ensures the highest standards of professionalism, legality, and moral integrity across the entire GSI network."
+    },
+    "compliance": {
+      "title": "AML Compliance",
+      "text": "As a regulated entity, GSI fully complies with Mexico's Anti-Money Laundering Law (LFPIORPI), maintaining strict protocols for regulatory transparency."
+    }
   }
 }

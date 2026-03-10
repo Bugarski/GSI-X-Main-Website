@@ -1,39 +1,40 @@
 {
   "brand": {
-    "title": "GSI — Soluciones Integrales de Seguridad",
     "description": "Soluciones de seguridad, logística y tecnología diseñadas para operaciones críticas en Latinoamérica."
   },
   "operations": {
-    "title": "Atención y Operación 24/7",
+    "title": "Operaciones 24/7",
     "phone": "(55) 5764 9999",
     "tollFree": "01 800 832 7981",
     "email": "contacto@gsi.com.mx"
   },
   "services": {
-    "title": "Servicios"
+    "title": "Servicios",
+    "cit": "Traslado de Valores",
+    "guards": "Guardias de Seguridad",
+    "cargo": "Monitoreo de Carga",
+    "technology": "Integración Tecnológica",
+    "consulting": "Consultoría de Seguridad",
+    "executive": "Protección Ejecutiva",
+    "atm": "Operación de Cajeros",
+    "conceptDesign": "Concepto y Diseño",
+    "custom": "Proyectos Especiales",
+    "viewAll": "Todos los Servicios"
   },
   "company": {
     "title": "Empresa",
     "about": "Sobre Nosotros",
-    "whyGsi": "Por Qué GSI",
     "coverage": "Cobertura",
     "careers": "Carreras",
-    "contact": "Contáctanos"
-  },
-  "coverageSection": {
-    "title": "Cobertura Operativa",
-    "mexico": "México",
-    "centralAmerica": "Centroamérica",
-    "brazil": "Brasil",
-    "globalPartners": "Aliados Globales Estratégicos"
+    "contact": "Contáctanos",
+    "whistleblower": "Denuncia Ética"
   },
   "legal": {
     "title": "Legal y Cumplimiento",
     "privacy": "Aviso de Privacidad",
     "terms": "Términos y Condiciones",
     "legalNotice": "Aviso Legal",
-    "compliance": "Cumplimiento y Ética",
-    "whistleblower": "Denuncia y Ética"
+    "compliance": "Cumplimiento y Ética"
   },
   "trustLine": "Diseñado para operaciones donde fallar no es una opción.",
   "copyright": "© 2026 Grupo Seguridad Integral (GSI). Todos los derechos reservados."

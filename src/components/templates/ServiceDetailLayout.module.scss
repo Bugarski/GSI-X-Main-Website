@@ -349,12 +349,203 @@
   @include md { font-size: 17px; }
 }
 
-.briefingDivider {
-  height: 2px;
-  max-width: 120px;
-  margin: var(--space-12) auto;
-  background: linear-gradient(90deg, transparent, var(--color-electric), transparent);
-  transform-origin: center;
+// ── Problem → Solution transition ────────
+
+$trans-blue: rgba(0, 136, 255, 1);
+$trans-blue-dim: rgba(0, 136, 255, 0.3);
+$trans-blue-glow: rgba(0, 136, 255, 0.15);
+
+.briefingTransition {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin: var(--space-10) 0;
+  @include md { margin: var(--space-14) 0; }
+}
+
+.transLineLeft,
+.transLineRight {
+  flex: 1;
+  height: 1px;
+  position: relative;
+}
+
+.transLineLeft {
+  background: linear-gradient(90deg, transparent 0%, $trans-blue-dim 100%);
+}
+
+.transLineRight {
+  background: linear-gradient(90deg, $trans-blue-dim 0%, transparent 100%);
+}
+
+.transLineLeft::after,
+.transLineRight::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  width: 40px;
+  height: 3px;
+  border-radius: 2px;
+  background: $trans-blue;
+  filter: blur(1px);
+  animation: trans-beam 3s ease-in-out infinite;
+}
+
+.transLineLeft::after {
+  right: 0;
+  animation-name: trans-beam-left;
+}
+
+.transLineRight::after {
+  left: 0;
+  animation-name: trans-beam-right;
+}
+
+@keyframes trans-beam-left {
+  0%   { opacity: 0; transform: translateX(-100px); }
+  40%  { opacity: 1; }
+  100% { opacity: 0; transform: translateX(0); }
+}
+
+@keyframes trans-beam-right {
+  0%   { opacity: 0; transform: translateX(0); }
+  40%  { opacity: 1; }
+  100% { opacity: 0; transform: translateX(100px); }
+}
+
+// ── Central node ─────────────────────────
+
+.transNode {
+  position: relative;
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+
+  @include md { width: 96px; height: 96px; }
+}
+
+.transOrb {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: $trans-blue;
+  transform: translate(-50%, -50%);
+  box-shadow:
+    0 0 8px 2px $trans-blue,
+    0 0 24px 6px $trans-blue-glow;
+  animation: trans-orb-breathe 2.5s ease-in-out infinite;
+}
+
+@keyframes trans-orb-breathe {
+  0%, 100% { box-shadow: 0 0 8px 2px $trans-blue, 0 0 24px 6px $trans-blue-glow; transform: translate(-50%, -50%) scale(1); }
+  50%      { box-shadow: 0 0 12px 4px $trans-blue, 0 0 40px 12px $trans-blue-glow; transform: translate(-50%, -50%) scale(1.3); }
+}
+
+// Concentric rings
+.transRing1,
+.transRing2,
+.transRing3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  border: 1px solid $trans-blue;
+}
+
+.transRing1 {
+  width: 32px;
+  height: 32px;
+  transform: translate(-50%, -50%);
+  opacity: 0.25;
+  animation: trans-ring-pulse 3s ease-out infinite;
+}
+
+.transRing2 {
+  width: 52px;
+  height: 52px;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  animation: trans-ring-pulse 3s ease-out 1s infinite;
+}
+
+.transRing3 {
+  width: 72px;
+  height: 72px;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  animation: trans-ring-pulse 3s ease-out 2s infinite;
+}
+
+@keyframes trans-ring-pulse {
+  0%   { transform: translate(-50%, -50%) scale(0.6); opacity: 0.35; }
+  100% { transform: translate(-50%, -50%) scale(1.2); opacity: 0; }
+}
+
+// Crosshair lines
+.transCross {
+  position: absolute;
+  inset: 0;
+  animation: trans-cross-rotate 20s linear infinite;
+
+  span {
+    position: absolute;
+    background: $trans-blue;
+    opacity: 0.12;
+  }
+
+  span:first-child {
+    top: 50%;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    transform: translateY(-0.5px);
+  }
+
+  span:last-child {
+    left: 50%;
+    top: 10%;
+    bottom: 10%;
+    width: 1px;
+    transform: translateX(-0.5px);
+  }
+}
+
+@keyframes trans-cross-rotate {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+// Orbiting sparks
+.transSpark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: $trans-blue;
+  box-shadow: 0 0 6px 1px $trans-blue;
+  transform-origin: 0 0;
+  animation: trans-spark-orbit 4s linear infinite;
+  animation-delay: var(--s-delay, 0s);
+}
+
+@keyframes trans-spark-orbit {
+  0% {
+    transform: rotate(var(--s-angle, 0deg)) translateX(36px) scale(0.8);
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(calc(var(--s-angle, 0deg) + 180deg)) translateX(36px) scale(1);
+  }
+  100% {
+    transform: rotate(calc(var(--s-angle, 0deg) + 360deg)) translateX(36px) scale(0.8);
+    opacity: 0.7;
+  }
 }
 
 .briefingCards {

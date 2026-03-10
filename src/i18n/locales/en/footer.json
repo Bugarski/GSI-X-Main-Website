@@ -1,39 +1,40 @@
 {
   "brand": {
-    "title": "GSI — Integrated Security Solutions",
     "description": "High-risk security, logistics, and technology solutions engineered for mission-critical operations across Latin America."
   },
   "operations": {
-    "title": "24/7 Operations & Support",
+    "title": "24/7 Operations",
     "phone": "(55) 5764 9999",
     "tollFree": "01 800 832 7981",
     "email": "contacto@gsi.com.mx"
   },
   "services": {
-    "title": "Services"
+    "title": "Services",
+    "cit": "Cash-in-Transit",
+    "guards": "Security Guards",
+    "cargo": "Cargo Monitoring",
+    "technology": "Technology Integration",
+    "consulting": "Security Consulting",
+    "executive": "Executive Protection",
+    "atm": "ATM Operations",
+    "conceptDesign": "Concept & Design",
+    "custom": "Custom Projects",
+    "viewAll": "All Services"
   },
   "company": {
     "title": "Company",
     "about": "About Us",
-    "whyGsi": "Why GSI",
     "coverage": "Coverage",
     "careers": "Careers",
-    "contact": "Contact"
-  },
-  "coverageSection": {
-    "title": "Operational Coverage",
-    "mexico": "Mexico",
-    "centralAmerica": "Central America",
-    "brazil": "Brazil",
-    "globalPartners": "Strategic Global Partners"
+    "contact": "Contact",
+    "whistleblower": "Whistleblower"
   },
   "legal": {
     "title": "Legal & Compliance",
     "privacy": "Privacy Policy",
     "terms": "Terms & Conditions",
     "legalNotice": "Legal Notice",
-    "compliance": "Compliance & Ethics",
-    "whistleblower": "Whistleblower & Ethics"
+    "compliance": "Compliance & Ethics"
   },
   "trustLine": "Built for operations where failure is not an option.",
   "copyright": "© 2026 Grupo Seguridad Integral (GSI). All rights reserved."

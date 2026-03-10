@@ -227,16 +227,17 @@ function Header() {
           </nav>
 
           <div className={styles.actions}>
+            <LanguageSwitcher />
             <a
               href={PORTAL_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className={`${buttonStyles.button} ${buttonStyles.ghost} ${buttonStyles.sm}`}
+              className={styles.portalBtn}
+              title={t('cta.portalLogin')}
+              aria-label={t('cta.portalLogin')}
             >
-              <FontAwesomeIcon icon={faArrowRightToBracket} className={buttonStyles.icon} />
-              <span className={buttonStyles.label}>{t('cta.portalLogin')}</span>
+              <FontAwesomeIcon icon={faArrowRightToBracket} />
             </a>
-            <LanguageSwitcher />
             <Link
               to={quoteHref}
               className={`${buttonStyles.button} ${buttonStyles.primary} ${buttonStyles.sm}`}

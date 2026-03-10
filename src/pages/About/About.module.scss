@@ -381,3 +381,146 @@
   font-size: 24px;
   margin-bottom: var(--space-4);
 }
+
+// =============================================
+// Culture & Values (merged from Culture page)
+// =============================================
+
+.cultureImageWrap {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: var(--space-10);
+  border: 1px solid var(--border-panel);
+  max-height: 360px;
+
+  @include md { max-height: 420px; }
+}
+
+.cultureImage {
+  display: block;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+.cultureImageOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(135deg, rgba(0, 15, 40, 0.5) 0%, rgba(0, 30, 70, 0.4) 50%, rgba(0, 15, 40, 0.55) 100%);
+  pointer-events: none;
+}
+
+.csrRow {
+  max-width: 720px;
+  margin: 0 auto var(--space-10);
+}
+
+.csrCard {
+  padding: var(--space-6) var(--space-8);
+  background: var(--surface-panel);
+  border: 1px solid var(--border-panel);
+  border-left: 2px solid var(--color-electric-dim);
+
+  &:hover {
+    border-color: var(--border-medium);
+    border-left-color: var(--color-electric);
+    box-shadow: var(--shadow-glow-sm);
+  }
+}
+
+.csrBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-primary);
+  font-size: 11px;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-electric);
+  margin-bottom: var(--space-4);
+  padding: 4px 12px;
+  border: 1px solid rgba(0, 136, 255, 0.2);
+  border-radius: 4px;
+  background: rgba(0, 136, 255, 0.06);
+
+  svg { font-size: 14px; }
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+
+  @include sm { grid-template-columns: repeat(2, 1fr); }
+  @include lg { grid-template-columns: repeat(4, 1fr); }
+}
+
+.valueCard {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-6);
+  background: var(--surface-panel);
+  border: 1px solid var(--border-panel);
+  transition: all var(--transition-system);
+
+  &:hover {
+    border-color: var(--border-medium);
+    box-shadow: var(--shadow-glow-sm);
+  }
+}
+
+.valueIcon {
+  color: var(--text-electric);
+  font-size: 24px;
+  margin-bottom: var(--space-4);
+}
+
+.valueTitle {
+  margin-bottom: var(--space-2);
+}
+
+// =============================================
+// Ethics & Compliance
+// =============================================
+
+.complianceGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+
+  @include md { grid-template-columns: repeat(2, 1fr); }
+}
+
+.complianceCard {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-8);
+  background: var(--surface-panel);
+  border: 1px solid var(--border-panel);
+  border-left: 2px solid var(--color-electric-dim);
+  height: 100%;
+  transition: all var(--transition-system);
+
+  &:hover {
+    border-color: var(--border-medium);
+    border-left-color: var(--color-electric);
+    box-shadow: var(--shadow-glow-sm);
+  }
+}
+
+.complianceIcon {
+  color: var(--text-electric);
+  font-size: 28px;
+  margin-bottom: var(--space-4);
+}
+
+.complianceTitle {
+  margin-bottom: var(--space-3);
+}

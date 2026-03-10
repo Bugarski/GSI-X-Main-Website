@@ -127,10 +127,10 @@ export default function Careers() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <Text variant="h3">{t('cta.title')}</Text>
-            <Text variant="body1" color="muted">
-              {t('cta.subtitle')}
-            </Text>
+            <SectionTitle
+              title={t('cta.title')}
+              subtitle={t('cta.subtitle')}
+            />
             <a
               href={`mailto:${careersEmail}`}
               className={styles.emailLink}

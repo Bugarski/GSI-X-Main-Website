@@ -1,0 +1,65 @@
+{
+  "hero": {
+    "title": "Our Culture",
+    "subtitle": "The values, discipline, and principles that define how we operate, protect, and lead."
+  },
+  "intro": {
+    "sectionTitle": "What Drives Us",
+    "text": "Our culture is the foundation of everything we do. It is the combination of values, beliefs, behaviors, and discipline that we extend to every member of our organization, ensuring a standard of excellence in every operation."
+  },
+  "csr": {
+    "sectionTitle": "Socially Responsible",
+    "text": "We are proud to be a Socially Responsible Company. Our primary objective is to maintain our social responsibility with our employees, their families, society, and the environment through the promotion of ethical values and sustainable practices.",
+    "badge": "ESR Certified"
+  },
+  "values": {
+    "sectionTitle": "Our Core Values",
+    "subtitle": "The principles that guide every decision, every operation, and every interaction.",
+    "integrity": {
+      "title": "Integrity",
+      "text": "We operate with transparency, honesty, and accountability at every level of the organization."
+    },
+    "discipline": {
+      "title": "Discipline",
+      "text": "Rigorous protocols, consistent execution, and zero tolerance for deviation from standards."
+    },
+    "excellence": {
+      "title": "Excellence",
+      "text": "We pursue the highest standards in every service, every process, and every client interaction."
+    },
+    "commitment": {
+      "title": "Commitment",
+      "text": "Total dedication to our clients, our people, and the mission at hand."
+    },
+    "teamwork": {
+      "title": "Teamwork",
+      "text": "Coordinated effort across every unit, department, and subsidiary to deliver unified results."
+    },
+    "innovation": {
+      "title": "Innovation",
+      "text": "Continuously evolving our methods, technology, and training to stay ahead of emerging threats."
+    },
+    "responsibility": {
+      "title": "Responsibility",
+      "text": "Ownership of our actions, our impact on communities, and our obligation to protect."
+    },
+    "respect": {
+      "title": "Respect",
+      "text": "Dignity for every individual, client, partner, and community we serve."
+    }
+  },
+  "ethics": {
+    "sectionTitle": "Code of Ethics and Conduct",
+    "text": "Our Code of Ethics and Conduct establishes the behavioral framework that governs every employee, contractor, and partner within the GSI network. It ensures that our operations maintain the highest standards of professionalism, legality, and moral integrity.",
+    "cta": "View Full Code"
+  },
+  "compliance": {
+    "sectionTitle": "Anti-Money Laundering Compliance",
+    "text": "As a regulated entity in the transport of values sector, GSI fully complies with Mexico's Anti-Money Laundering Law (LFPIORPI). This law requires both value transport companies and their clients to report cash shipments. We maintain strict protocols to ensure full regulatory compliance and transparency in all financial operations.",
+    "cta": "Learn More"
+  },
+  "cta": {
+    "title": "Culture Is Not a Statement. It Is How We Operate.",
+    "subtitle": "Join an organization where values are lived, not displayed."
+  }
+}

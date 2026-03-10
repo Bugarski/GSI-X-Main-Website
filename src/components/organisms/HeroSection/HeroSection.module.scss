@@ -56,19 +56,7 @@
 
 // ---- Horizontal scan line ----
 .scanLine {
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg,
-    transparent 0%,
-    rgba(0, 136, 255, 0.15) 20%,
-    rgba(0, 136, 255, 0.4) 50%,
-    rgba(0, 136, 255, 0.15) 80%,
-    transparent 100%
-  );
-  animation: scan-line 6s linear infinite;
-  z-index: 1;
+  display: none;
 }
 
 // ---- HUD corner brackets ----
@@ -85,62 +73,62 @@
   }
 
   &.topLeft {
-    top: var(--space-6);
-    left: var(--space-6);
+    top: 80px;
+    left: var(--space-8);
 
-    &::before { width: 40px; height: 1px; top: 0; left: 0; }
-    &::after { width: 1px; height: 40px; top: 0; left: 0; }
+    &::before { width: 32px; height: 1px; top: 0; left: 0; }
+    &::after { width: 1px; height: 32px; top: 0; left: 0; }
 
     @include lg {
-      top: var(--space-10);
-      left: var(--space-10);
-      &::before { width: 60px; }
-      &::after { height: 60px; }
+      top: 90px;
+      left: 8%;
+      &::before { width: 48px; }
+      &::after { height: 48px; }
     }
   }
 
   &.topRight {
-    top: var(--space-6);
-    right: var(--space-6);
+    top: 80px;
+    right: var(--space-8);
 
-    &::before { width: 40px; height: 1px; top: 0; right: 0; }
-    &::after { width: 1px; height: 40px; top: 0; right: 0; }
+    &::before { width: 32px; height: 1px; top: 0; right: 0; }
+    &::after { width: 1px; height: 32px; top: 0; right: 0; }
 
     @include lg {
-      top: var(--space-10);
-      right: var(--space-10);
-      &::before { width: 60px; }
-      &::after { height: 60px; }
+      top: 90px;
+      right: 8%;
+      &::before { width: 48px; }
+      &::after { height: 48px; }
     }
   }
 
   &.bottomLeft {
-    bottom: var(--space-6);
-    left: var(--space-6);
+    bottom: var(--space-8);
+    left: var(--space-8);
 
-    &::before { width: 40px; height: 1px; bottom: 0; left: 0; }
-    &::after { width: 1px; height: 40px; bottom: 0; left: 0; }
+    &::before { width: 32px; height: 1px; bottom: 0; left: 0; }
+    &::after { width: 1px; height: 32px; bottom: 0; left: 0; }
 
     @include lg {
-      bottom: var(--space-10);
-      left: var(--space-10);
-      &::before { width: 60px; }
-      &::after { height: 60px; }
+      bottom: var(--space-12);
+      left: 8%;
+      &::before { width: 48px; }
+      &::after { height: 48px; }
     }
   }
 
   &.bottomRight {
-    bottom: var(--space-6);
-    right: var(--space-6);
+    bottom: var(--space-8);
+    right: var(--space-8);
 
-    &::before { width: 40px; height: 1px; bottom: 0; right: 0; }
-    &::after { width: 1px; height: 40px; bottom: 0; right: 0; }
+    &::before { width: 32px; height: 1px; bottom: 0; right: 0; }
+    &::after { width: 1px; height: 32px; bottom: 0; right: 0; }
 
     @include lg {
-      bottom: var(--space-10);
-      right: var(--space-10);
-      &::before { width: 60px; }
-      &::after { height: 60px; }
+      bottom: var(--space-12);
+      right: 8%;
+      &::before { width: 48px; }
+      &::after { height: 48px; }
     }
   }
 }
@@ -167,23 +155,22 @@
 // ---- Status bar (top-right HUD readout) ----
 .statusBar {
   position: absolute;
-  bottom: var(--space-6);
-  left: var(--space-6);
-  display: none;
+  bottom: var(--space-10);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
   align-items: center;
-  gap: var(--space-3);
+  gap: var(--space-2);
   z-index: 3;
   font-family: var(--font-primary);
-  font-size: 10px;
+  font-size: 9px;
   font-weight: var(--fw-semibold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--text-faint);
 
   @include lg {
-    display: flex;
-    top: var(--space-10);
-    right: var(--space-10);
+    bottom: var(--space-12);
   }
 }
 

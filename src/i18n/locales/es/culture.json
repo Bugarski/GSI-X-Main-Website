@@ -1,0 +1,65 @@
+{
+  "hero": {
+    "title": "Nuestra Cultura",
+    "subtitle": "Los valores, la disciplina y los principios que definen cómo operamos, protegemos y lideramos."
+  },
+  "intro": {
+    "sectionTitle": "Lo Que Nos Impulsa",
+    "text": "Nuestra cultura es el fundamento de todo lo que hacemos. Es la combinación de valores, creencias, comportamientos y disciplina que extendemos a cada miembro de nuestra organización, garantizando un estándar de excelencia en cada operación."
+  },
+  "csr": {
+    "sectionTitle": "Empresa Socialmente Responsable",
+    "text": "Estamos orgullosos de ser una Empresa Socialmente Responsable. Nuestro objetivo principal es mantener nuestra responsabilidad social con nuestros empleados, sus familias, la sociedad y el medio ambiente mediante la promoción de valores éticos y prácticas sostenibles.",
+    "badge": "Certificado ESR"
+  },
+  "values": {
+    "sectionTitle": "Nuestros Valores",
+    "subtitle": "Los principios que guían cada decisión, cada operación y cada interacción.",
+    "integrity": {
+      "title": "Integridad",
+      "text": "Operamos con transparencia, honestidad y rendición de cuentas en cada nivel de la organización."
+    },
+    "discipline": {
+      "title": "Disciplina",
+      "text": "Protocolos rigurosos, ejecución consistente y cero tolerancia a la desviación de los estándares."
+    },
+    "excellence": {
+      "title": "Excelencia",
+      "text": "Perseguimos los más altos estándares en cada servicio, cada proceso y cada interacción con el cliente."
+    },
+    "commitment": {
+      "title": "Compromiso",
+      "text": "Dedicación total a nuestros clientes, nuestro personal y la misión en curso."
+    },
+    "teamwork": {
+      "title": "Trabajo en Equipo",
+      "text": "Esfuerzo coordinado en cada unidad, departamento y subsidiaria para entregar resultados unificados."
+    },
+    "innovation": {
+      "title": "Innovación",
+      "text": "Evolución continua de nuestros métodos, tecnología y capacitación para adelantarnos a las amenazas emergentes."
+    },
+    "responsibility": {
+      "title": "Responsabilidad",
+      "text": "Propiedad de nuestras acciones, nuestro impacto en las comunidades y nuestra obligación de proteger."
+    },
+    "respect": {
+      "title": "Respeto",
+      "text": "Dignidad para cada individuo, cliente, socio y comunidad que servimos."
+    }
+  },
+  "ethics": {
+    "sectionTitle": "Código de Ética y Conducta",
+    "text": "Nuestro Código de Ética y Conducta establece el marco conductual que rige a cada empleado, contratista y socio dentro de la red GSI. Garantiza que nuestras operaciones mantengan los más altos estándares de profesionalismo, legalidad e integridad moral.",
+    "cta": "Ver Código Completo"
+  },
+  "compliance": {
+    "sectionTitle": "Cumplimiento Antilavado de Dinero",
+    "text": "Como entidad regulada en el sector de transporte de valores, GSI cumple plenamente con la Ley Federal para la Prevención e Identificación de Operaciones con Recursos de Procedencia Ilícita (LFPIORPI) de México. Esta ley exige que tanto las empresas de transporte de valores como sus clientes reporten los envíos de efectivo. Mantenemos protocolos estrictos para garantizar el cumplimiento regulatorio total y la transparencia en todas las operaciones financieras.",
+    "cta": "Conocer Más"
+  },
+  "cta": {
+    "title": "La Cultura No Es Un Enunciado. Es Cómo Operamos.",
+    "subtitle": "Únete a una organización donde los valores se viven, no se exhiben."
+  }
+}

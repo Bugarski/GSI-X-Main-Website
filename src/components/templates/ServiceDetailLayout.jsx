@@ -10,6 +10,7 @@ import { getLocalizedPath } from '../../router/routes';
 import { motion, useInView, animate } from 'framer-motion';
 import placeholders from '../../utils/placeholders';
 import GlowCard from '../atoms/GlowCard/GlowCard';
+import SectionTitle from '../atoms/SectionTitle/SectionTitle';
 import styles from './ServiceDetailLayout.module.scss';
 
 /* ── Image maps ───────────────────────────────── */
@@ -312,7 +313,27 @@ export default function ServiceDetailLayout({ serviceKey }) {
               <p className={styles.briefingText}>{detail.problem.text}</p>
             </motion.div>
 
-            <motion.div className={styles.briefingDivider} variants={lineWipe} />
+            <motion.div
+              className={styles.briefingTransition}
+              variants={slideUp}
+              custom={1}
+            >
+              <div className={styles.transLineLeft} />
+              <div className={styles.transNode}>
+                <div className={styles.transOrb} />
+                <div className={styles.transRing1} />
+                <div className={styles.transRing2} />
+                <div className={styles.transRing3} />
+                <div className={styles.transCross}>
+                  <span /><span />
+                </div>
+                <div className={styles.transSpark} style={{ '--s-angle': '0deg', '--s-delay': '0s' }} />
+                <div className={styles.transSpark} style={{ '--s-angle': '90deg', '--s-delay': '0.8s' }} />
+                <div className={styles.transSpark} style={{ '--s-angle': '180deg', '--s-delay': '1.6s' }} />
+                <div className={styles.transSpark} style={{ '--s-angle': '270deg', '--s-delay': '2.4s' }} />
+              </div>
+              <div className={styles.transLineRight} />
+            </motion.div>
 
             {/* Value row */}
             <motion.div className={styles.briefingValue} variants={slideUp} custom={2}>
@@ -530,15 +551,16 @@ export default function ServiceDetailLayout({ serviceKey }) {
 
         return (
           <section className={styles.industriesSection}>
-            <motion.h3
-              className={styles.industriesTitle}
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             >
-              {t('common:labels.industries', { defaultValue: 'Industries We Serve' })}
-            </motion.h3>
+              <SectionTitle
+                title={t('common:labels.industries', { defaultValue: 'Industries We Serve' })}
+              />
+            </motion.div>
 
             <div className={styles.marqueeWrap}>
               <div className={styles.marqueeFade} />
@@ -580,12 +602,11 @@ export default function ServiceDetailLayout({ serviceKey }) {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <motion.div className={styles.ctaLine} variants={lineWipe} />
             <motion.div variants={slideUp} custom={0}>
-              <Text variant="h3">{detail.cta.title}</Text>
-            </motion.div>
-            <motion.div variants={slideUp} custom={1}>
-              <Text variant="body1" color="muted">{detail.cta.text}</Text>
+              <SectionTitle
+                title={detail.cta.title}
+                subtitle={detail.cta.text}
+              />
             </motion.div>
             <motion.div variants={slideUp} custom={2}>
               <Button

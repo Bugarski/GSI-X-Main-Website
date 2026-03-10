@@ -41,87 +41,86 @@ const panelReveal = {
 const LOGO_BASE = '/media/optimized/logos/empresas';
 const PHOTO_BASE = '/media/optimized/empresas';
 const EMPRESAS_GSI = [
-  { key: 'cometra', name: 'Cometra', fullName: 'Compañía Mexicana de Traslado de Valores, S.A. de C.V.', founded: '1976', logo: `${LOGO_BASE}/cometra.png`, photo: `${PHOTO_BASE}/cometra.jpg` },
-  { key: 'sepsa', name: 'Sepsa', fullName: 'Sepsa, S.A. de C.V.', founded: '1976', logo: `${LOGO_BASE}/sepsa.png`, photo: `${PHOTO_BASE}/sepsa.jpg` },
-  { key: 'seguritec', name: 'Seguritec', fullName: 'Seguritec Transporte de Valores, S.A. de C.V.', founded: '1984', logo: `${LOGO_BASE}/seguritec.png`, photo: `${PHOTO_BASE}/seguritec.jpg` },
-  { key: 'gsi-seguridad', name: 'GSI Seguridad Privada', fullName: 'GSI Seguridad Privada, S.A. de C.V.', founded: '2003', logo: `${LOGO_BASE}/gsi-seguridad.png`, photo: `${PHOTO_BASE}/gsi-seguridad.jpg`, website: 'https://www.gsiseguridad.com.mx/' },
-  { key: 'sepsa-custodias', name: 'Sepsa Custodias', fullName: 'Sepsa Custodias de Valores', founded: '1999', logo: `${LOGO_BASE}/sepsa-custodias.png`, photo: `${PHOTO_BASE}/sepsa-custodias.jpg`, website: 'https://www.sepsacustodias.com.mx/' },
-  { key: 'central-alarmas', name: 'Central de Alarmas', fullName: 'Central de Alarmas', logo: `${LOGO_BASE}/central-alarmas.png` },
-  { key: 'regio', name: 'Regio Traslados', fullName: 'Regio Translados, S.A. de C.V.', founded: '2001', logo: `${LOGO_BASE}/regio.png` },
-  { key: 'cinco-elementos', name: 'Cinco Elementos', fullName: 'Comercializadora Cinco Elementos, S.A. de C.V.', logo: `${LOGO_BASE}/cinco-elementos.png`, photo: `${PHOTO_BASE}/cinco-elementos.jpg`, website: 'https://www.cincoelementos.mx/' },
-  { key: 'ax-transporter', name: 'AX Transporter', fullName: 'AX Transporter', logo: `${LOGO_BASE}/ax-transporter.png`, photo: `${PHOTO_BASE}/ax-transporter.jpg` },
-  { key: 'gsi-fabril', name: 'GSI Fabril', fullName: 'Fabril, S.A. de C.V.', logo: `${LOGO_BASE}/gsi-fabril.png`, photo: `${PHOTO_BASE}/gsi-fabril.jpg`, website: 'https://www.gsifabril.com/' },
-  { key: 'grumer', name: 'Grumer', fullName: 'Grupo Mercurio de Transportes, S.A. de C.V.', logo: `${LOGO_BASE}/grumer.png`, photo: `${PHOTO_BASE}/grumer.jpg`, website: 'https://grumer-mexico.com.mx/' },
-  { key: 'impacto-total', name: 'Impacto Total', fullName: 'Impacto Total en Seguridad Privada Integral, S.A. de C.V.', logo: `${LOGO_BASE}/impacto-total.png`, photo: `${PHOTO_BASE}/impacto-total.jpg`, website: 'http://impactototal.mx/' },
-  { key: 'tameme', name: 'Tameme', fullName: 'Tameme', logo: `${LOGO_BASE}/tameme.png`, photo: `${PHOTO_BASE}/tameme.jpg` },
-  { key: 'tecnoval', name: 'Tecnoval', fullName: 'Tecnoval de México, S.A. de C.V.', founded: '1996', logo: `${LOGO_BASE}/tecnoval.png`, photo: `${PHOTO_BASE}/tecnoval.jpg` },
-  { key: 'cogar-trade', name: 'Cogar Trade', fullName: 'Cogar Trade, S.A. de C.V.', logo: `${LOGO_BASE}/cogar-trade.png` },
+  { key: 'cometra', name: 'Cometra', fullName: 'Compañía Mexicana de Traslado de Valores, S.A. de C.V.', founded: '1976', logo: `${LOGO_BASE}/cometra.webp`, photo: `${PHOTO_BASE}/cometra.jpg` },
+  { key: 'sepsa', name: 'Sepsa', fullName: 'Sepsa, S.A. de C.V.', founded: '1976', logo: `${LOGO_BASE}/sepsa.webp`, photo: `${PHOTO_BASE}/sepsa.jpg` },
+  { key: 'seguritec', name: 'Seguritec', fullName: 'Seguritec Transporte de Valores, S.A. de C.V.', founded: '1984', logo: `${LOGO_BASE}/seguritec.webp`, photo: `${PHOTO_BASE}/seguritec.jpg` },
+  { key: 'gsi-seguridad', name: 'GSI Seguridad Privada', fullName: 'GSI Seguridad Privada, S.A. de C.V.', founded: '2003', logo: `${LOGO_BASE}/gsi-seguridad.webp`, photo: `${PHOTO_BASE}/gsi-seguridad.jpg`, website: 'https://www.gsiseguridad.com.mx/' },
+  { key: 'sepsa-custodias', name: 'Sepsa Custodias', fullName: 'Sepsa Custodias de Valores', founded: '1999', logo: `${LOGO_BASE}/sepsa-custodias.webp`, photo: `${PHOTO_BASE}/sepsa-custodias.jpg`, website: 'https://www.sepsacustodias.com.mx/' },
+  { key: 'central-alarmas', name: 'Central de Alarmas', fullName: 'Central de Alarmas', logo: `${LOGO_BASE}/central-alarmas.webp` },
+  { key: 'regio', name: 'Regio Traslados', fullName: 'Regio Translados, S.A. de C.V.', founded: '2001', logo: `${LOGO_BASE}/regio.webp` },
+  { key: 'cinco-elementos', name: 'Cinco Elementos', fullName: 'Comercializadora Cinco Elementos, S.A. de C.V.', logo: `${LOGO_BASE}/cinco-elementos.webp`, photo: `${PHOTO_BASE}/cinco-elementos.jpg`, website: 'https://www.cincoelementos.mx/' },
+  { key: 'ax-transporter', name: 'AX Transporter', fullName: 'AX Transporter', logo: `${LOGO_BASE}/ax-transporter.webp`, photo: `${PHOTO_BASE}/ax-transporter.jpg` },
+  { key: 'gsi-fabril', name: 'GSI Fabril', fullName: 'Fabril, S.A. de C.V.', logo: `${LOGO_BASE}/gsi-fabril.webp`, photo: `${PHOTO_BASE}/gsi-fabril.jpg`, website: 'https://www.gsifabril.com/' },
+  { key: 'grumer', name: 'Grumer', fullName: 'Grupo Mercurio de Transportes, S.A. de C.V.', logo: `${LOGO_BASE}/grumer.webp`, photo: `${PHOTO_BASE}/grumer.jpg`, website: 'https://grumer-mexico.com.mx/' },
+  { key: 'impacto-total', name: 'Impacto Total', fullName: 'Impacto Total en Seguridad Privada Integral, S.A. de C.V.', logo: `${LOGO_BASE}/impacto-total.webp`, photo: `${PHOTO_BASE}/impacto-total.jpg`, website: 'http://impactototal.mx/' },
+  { key: 'tameme', name: 'Tameme', fullName: 'Tameme', logo: `${LOGO_BASE}/tameme.webp`, photo: `${PHOTO_BASE}/tameme.jpg` },
+  { key: 'tecnoval', name: 'Tecnoval', fullName: 'Tecnoval de México, S.A. de C.V.', founded: '1996', logo: `${LOGO_BASE}/tecnoval.webp`, photo: `${PHOTO_BASE}/tecnoval.jpg` },
+  { key: 'cogar-trade', name: 'Cogar Trade', fullName: 'Cogar Trade, S.A. de C.V.', logo: `${LOGO_BASE}/cogar-trade.webp` },
 ];
 
-const favicon = (domain) => `https://www.google.com/s2/favicons?domain=${domain}&sz=32`;
-
+const FV = '/media/favicons';
 const CLIENT_SECTORS = [
   {
     key: 'financial',
     clients: [
-      { name: 'Banjercito', icon: favicon('banjercito.com.mx') },
-      { name: 'BBVA', icon: favicon('bbva.mx') },
-      { name: 'Santander', icon: favicon('santander.com.mx') },
-      { name: 'Banco de México', icon: favicon('banxico.org.mx') },
-      { name: 'Citibanamex', icon: favicon('citibanamex.com') },
-      { name: 'Scotiabank', icon: favicon('scotiabank.com.mx') },
-      { name: 'HSBC', icon: favicon('hsbc.com.mx') },
-      { name: 'Banorte', icon: favicon('banorte.com') },
-      { name: 'Banco Bienestar', icon: favicon('gob.mx') },
-      { name: 'Banco Azteca', icon: favicon('bancoazteca.com.mx') },
-      { name: 'Banregio', icon: favicon('banregio.com') },
-      { name: 'BanBajío', icon: favicon('bb.com.mx') },
-      { name: 'Compartamos Banco', icon: favicon('compartamos.com.mx') },
+      { name: 'Banjercito', icon: `${FV}/banjercito.png` },
+      { name: 'BBVA', icon: `${FV}/bbva.png` },
+      { name: 'Santander', icon: `${FV}/santander.png` },
+      { name: 'Banco de México', icon: `${FV}/banxico.png` },
+      { name: 'Citibanamex', icon: `${FV}/citibanamex.png` },
+      { name: 'Scotiabank', icon: `${FV}/scotiabank.png` },
+      { name: 'HSBC', icon: `${FV}/hsbc.png` },
+      { name: 'Banorte', icon: `${FV}/banorte.png` },
+      { name: 'Banco Bienestar', icon: `${FV}/gob.png` },
+      { name: 'Banco Azteca', icon: `${FV}/bancoazteca.png` },
+      { name: 'Banregio', icon: `${FV}/banregio.png` },
+      { name: 'BanBajío', icon: `${FV}/banbajio.png` },
+      { name: 'Compartamos Banco', icon: `${FV}/compartamos.png` },
     ],
   },
   {
     key: 'enterprise',
     clients: [
-      { name: 'Telmex', icon: favicon('telmex.com') },
-      { name: 'Grupo Bimbo', icon: favicon('grupobimbo.com') },
-      { name: 'Walmart', icon: favicon('walmart.com.mx') },
-      { name: 'Sears', icon: favicon('sears.com.mx') },
-      { name: 'Elektra', icon: favicon('elektra.com.mx') },
-      { name: 'Soriana', icon: favicon('soriana.com') },
-      { name: 'Sabritas', icon: favicon('sabritas.com.mx') },
-      { name: 'Grupo ADO', icon: favicon('ado.com.mx') },
-      { name: 'Chedraui', icon: favicon('chedraui.com.mx') },
-      { name: 'Telcel', icon: favicon('telcel.com') },
-      { name: 'Liverpool', icon: favicon('liverpool.com.mx') },
-      { name: 'OXXO', icon: favicon('oxxo.com') },
-      { name: '7-Eleven', icon: favicon('7-eleven.com.mx') },
-      { name: 'El Palacio de Hierro', icon: favicon('elpalaciodehierro.com') },
-      { name: 'Alsea', icon: favicon('alsea.net') },
-      { name: 'Cinemex', icon: favicon('cinemex.com') },
-      { name: 'Cinépolis', icon: favicon('cinepolis.com') },
-      { name: 'Grupo Modelo', icon: favicon('grupomodelo.com') },
-      { name: 'Coppel', icon: favicon('coppel.com') },
-      { name: 'Costco', icon: favicon('costco.com.mx') },
-      { name: 'Danone', icon: favicon('danone.com') },
-      { name: 'PepsiCo', icon: favicon('pepsico.com') },
+      { name: 'Telmex', icon: `${FV}/telmex.png` },
+      { name: 'Grupo Bimbo', icon: `${FV}/grupobimbo.png` },
+      { name: 'Walmart', icon: `${FV}/walmart.png` },
+      { name: 'Sears', icon: `${FV}/sears.png` },
+      { name: 'Elektra', icon: `${FV}/elektra.png` },
+      { name: 'Soriana', icon: `${FV}/soriana.png` },
+      { name: 'Sabritas', icon: `${FV}/sabritas.png` },
+      { name: 'Grupo ADO', icon: `${FV}/ado.png` },
+      { name: 'Chedraui', icon: `${FV}/chedraui.png` },
+      { name: 'Telcel', icon: `${FV}/telcel.png` },
+      { name: 'Liverpool', icon: `${FV}/liverpool.png` },
+      { name: 'OXXO', icon: `${FV}/oxxo.png` },
+      { name: '7-Eleven', icon: `${FV}/7eleven.png` },
+      { name: 'El Palacio de Hierro', icon: `${FV}/palaciodehierro.png` },
+      { name: 'Alsea', icon: `${FV}/alsea.png` },
+      { name: 'Cinemex', icon: `${FV}/cinemex.png` },
+      { name: 'Cinépolis', icon: `${FV}/cinepolis.png` },
+      { name: 'Grupo Modelo', icon: `${FV}/grupomodelo.png` },
+      { name: 'Coppel', icon: `${FV}/coppel.png` },
+      { name: 'Costco', icon: `${FV}/costco.png` },
+      { name: 'Danone', icon: `${FV}/danone.png` },
+      { name: 'PepsiCo', icon: `${FV}/pepsico.png` },
     ],
   },
   {
     key: 'government',
     clients: [
-      { name: 'Gobierno de la CDMX', icon: favicon('cdmx.gob.mx') },
-      { name: 'STC Metro', icon: favicon('metro.cdmx.gob.mx') },
-      { name: 'Lotería Nacional', icon: favicon('lotenal.gob.mx') },
-      { name: 'CFE', icon: favicon('cfe.mx') },
-      { name: 'SEP', icon: favicon('gob.mx') },
-      { name: 'ISSSTE', icon: favicon('gob.mx') },
-      { name: 'Capufe', icon: favicon('capufe.gob.mx') },
-      { name: 'IMSS', icon: favicon('imss.gob.mx') },
-      { name: 'DIF', icon: favicon('gob.mx') },
-      { name: 'INE', icon: favicon('ine.mx') },
-      { name: 'DICONSA', icon: favicon('gob.mx') },
-      { name: 'FONADIN', icon: favicon('fonadin.gob.mx') },
-      { name: 'SEPOMEX', icon: favicon('gob.mx') },
+      { name: 'Gobierno de la CDMX', icon: `${FV}/cdmx.png` },
+      { name: 'STC Metro', icon: `${FV}/metro.png` },
+      { name: 'Lotería Nacional', icon: `${FV}/lotenal.png` },
+      { name: 'CFE', icon: `${FV}/cfe.png` },
+      { name: 'SEP', icon: `${FV}/gob.png` },
+      { name: 'ISSSTE', icon: `${FV}/gob.png` },
+      { name: 'Capufe', icon: `${FV}/capufe.png` },
+      { name: 'IMSS', icon: `${FV}/imss.png` },
+      { name: 'DIF', icon: `${FV}/gob.png` },
+      { name: 'INE', icon: `${FV}/ine.png` },
+      { name: 'DICONSA', icon: `${FV}/gob.png` },
+      { name: 'FONADIN', icon: `${FV}/fonadin.png` },
+      { name: 'SEPOMEX', icon: `${FV}/gob.png` },
     ],
   },
 ];
@@ -583,16 +582,11 @@ export default function Home() {
                   {[0, 1].map((copy) => (
                     <div key={copy} className={styles.clientTickerTrack} aria-hidden={copy === 1}>
                       {sector.clients.map((client) => (
-                        <span
-                          key={client.name}
-                          className={styles.clientChip}
-                          style={{ '--ping-delay': `${(Math.random() * 12 + 3).toFixed(1)}s` }}
-                        >
+                        <span key={client.name} className={styles.clientChip}>
                           <img
                             src={client.icon}
                             alt=""
                             className={styles.clientChipIcon}
-                            loading="lazy"
                             width="16"
                             height="16"
                           />
@@ -622,10 +616,10 @@ export default function Home() {
             viewport={{ once: true }}
             variants={panelReveal}
           >
-            <Text variant="h3">{t('quoteSection.title')}</Text>
-            <Text variant="body1" color="muted">
-              {t('quoteSection.subtitle')}
-            </Text>
+            <SectionTitle
+              title={t('quoteSection.title')}
+              subtitle={t('quoteSection.subtitle')}
+            />
             <Button variant="primary" size="lg" href={getLocalizedPath('contact', lang)}>
               {t('common:cta.requestQuote')}
             </Button>

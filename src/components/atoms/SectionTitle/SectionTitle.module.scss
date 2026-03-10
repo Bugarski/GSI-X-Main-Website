@@ -39,8 +39,9 @@
   font-family: var(--font-primary);
   font-size: 32px;
   font-weight: var(--fw-extrabold);
-  line-height: 1.1;
+  line-height: 1.15;
   letter-spacing: -0.02em;
+  padding-bottom: 2px;
   display: inline-block;
 
   background: linear-gradient(
@@ -70,8 +71,8 @@
   position: relative;
   width: 120px;
   height: 2px;
-  margin-top: var(--space-4);
-  margin-bottom: var(--space-4);
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-6);
   background: rgba(0, 140, 255, 0.25);
   transition: background 0.3s ease;
 

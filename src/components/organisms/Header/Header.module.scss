@@ -368,10 +368,31 @@
 .actions {
   display: none;
   align-items: center;
-  gap: var(--space-5);
+  gap: var(--space-4);
 
   @include lg {
     display: flex;
+  }
+}
+
+.portalBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  border: 1px solid var(--border-panel);
+  background: transparent;
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: var(--text-electric);
+    border-color: rgba(0, 136, 255, 0.3);
+    background: rgba(0, 136, 255, 0.06);
   }
 }
 

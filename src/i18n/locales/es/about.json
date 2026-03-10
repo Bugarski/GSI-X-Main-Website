@@ -50,5 +50,31 @@
       "portfolio": "Portafolio integral de servicios",
       "trusted": "Confiado por grandes bancos y marcas globales"
     }
+  },
+  "culture": {
+    "sectionTitle": "Nuestra Cultura y Valores",
+    "subtitle": "Los principios que guían cada decisión, cada operación y cada interacción.",
+    "csr": {
+      "badge": "Certificado ESR",
+      "text": "Somos una Empresa Socialmente Responsable comprometida con nuestros empleados, sus familias, la sociedad y el medio ambiente mediante valores éticos y prácticas sostenibles."
+    },
+    "values": {
+      "integrity": { "title": "Integridad", "text": "Transparencia, honestidad y rendición de cuentas en cada nivel." },
+      "discipline": { "title": "Disciplina", "text": "Protocolos rigurosos y cero tolerancia a la desviación." },
+      "excellence": { "title": "Excelencia", "text": "Los más altos estándares en cada servicio y proceso." },
+      "commitment": { "title": "Compromiso", "text": "Dedicación total a nuestros clientes y misión." },
+      "teamwork": { "title": "Trabajo en Equipo", "text": "Esfuerzo coordinado en cada unidad y subsidiaria." },
+      "innovation": { "title": "Innovación", "text": "Evolución de métodos y tecnología para adelantarnos." },
+      "responsibility": { "title": "Responsabilidad", "text": "Propiedad de nuestras acciones e impacto en comunidades." },
+      "respect": { "title": "Respeto", "text": "Dignidad para cada individuo y comunidad que servimos." }
+    },
+    "ethics": {
+      "title": "Código de Ética",
+      "text": "Nuestro marco conductual garantiza los más altos estándares de profesionalismo, legalidad e integridad moral en toda la red GSI."
+    },
+    "compliance": {
+      "title": "Cumplimiento Antilavado",
+      "text": "Como entidad regulada, GSI cumple plenamente con la LFPIORPI de México, manteniendo protocolos estrictos para la transparencia regulatoria."
+    }
   }
 }

@@ -9,6 +9,17 @@ import {
   faUserShield,
   faBriefcase,
   faChartLine,
+  faScaleBalanced,
+  faBullseye,
+  faMedal,
+  faHandshake,
+  faPeopleGroup,
+  faLightbulb,
+  faShieldCheck,
+  faHeart,
+  faLeaf,
+  faFileContract,
+  faLandmarkDome,
 } from '@fortawesome/pro-light-svg-icons';
 import HeroSection from '../../components/organisms/HeroSection/HeroSection';
 import Container from '../../components/atoms/Container/Container';
@@ -34,6 +45,22 @@ const STRENGTH_ICONS = {
   personnel: faUserShield,
   portfolio: faBriefcase,
   trusted: faShieldHalved,
+};
+
+const VALUE_KEYS = [
+  'integrity', 'discipline', 'excellence', 'commitment',
+  'teamwork', 'innovation', 'responsibility', 'respect',
+];
+
+const VALUE_ICONS = {
+  integrity: faScaleBalanced,
+  discipline: faBullseye,
+  excellence: faMedal,
+  commitment: faHandshake,
+  teamwork: faPeopleGroup,
+  innovation: faLightbulb,
+  responsibility: faShieldCheck,
+  respect: faHeart,
 };
 
 const ERA_CONFIG = [
@@ -268,6 +295,131 @@ export default function About() {
                 <Text variant="body1">{t(`strengths.items.${key}`)}</Text>
               </GlowCard>
             ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Culture & Values */}
+      <section className={styles.section}>
+        <Container size="lg">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={panelReveal}
+          >
+            <SectionTitle
+              title={t('culture.sectionTitle')}
+              subtitle={t('culture.subtitle')}
+              align="center"
+            />
+          </motion.div>
+
+          {/* Team photo */}
+          <motion.div
+            className={styles.cultureImageWrap}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={panelReveal}
+            custom={1}
+          >
+            <picture className={styles.cultureImage}>
+              <source srcSet="/media/optimized/careers/team-culture-lg.webp" type="image/webp" />
+              <img src="/media/optimized/careers/team-culture-lg.jpg" alt="" loading="lazy" />
+            </picture>
+            <div className={styles.cultureImageOverlay} />
+          </motion.div>
+
+          {/* CSR badge */}
+          <motion.div
+            className={styles.csrRow}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={panelReveal}
+            custom={2}
+          >
+            <GlowCard className={styles.csrCard}>
+              <div className={styles.csrBadge}>
+                <ThinIcon icon={faLeaf} />
+                <span>{t('culture.csr.badge')}</span>
+              </div>
+              <Text variant="body1" color="muted">
+                {t('culture.csr.text')}
+              </Text>
+            </GlowCard>
+          </motion.div>
+
+          {/* Values grid */}
+          <div className={styles.valuesGrid}>
+            {VALUE_KEYS.map((key, i) => (
+              <GlowCard
+                key={key}
+                className={styles.valueCard}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                custom={i}
+                variants={panelReveal}
+              >
+                <span className={styles.valueIcon}>
+                  <ThinIcon icon={VALUE_ICONS[key]} />
+                </span>
+                <Text variant="h5" className={styles.valueTitle}>
+                  {t(`culture.values.${key}.title`)}
+                </Text>
+                <Text variant="body2" color="muted">
+                  {t(`culture.values.${key}.text`)}
+                </Text>
+              </GlowCard>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Ethics & Compliance */}
+      <section className={`${styles.section} ${styles.sectionAlt}`}>
+        <Container size="lg">
+          <div className={styles.complianceGrid}>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={panelReveal}
+              custom={0}
+            >
+              <GlowCard className={styles.complianceCard}>
+                <span className={styles.complianceIcon}>
+                  <ThinIcon icon={faFileContract} />
+                </span>
+                <Text variant="h5" className={styles.complianceTitle}>
+                  {t('culture.ethics.title')}
+                </Text>
+                <Text variant="body2" color="muted">
+                  {t('culture.ethics.text')}
+                </Text>
+              </GlowCard>
+            </motion.div>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={panelReveal}
+              custom={1}
+            >
+              <GlowCard className={styles.complianceCard}>
+                <span className={styles.complianceIcon}>
+                  <ThinIcon icon={faLandmarkDome} />
+                </span>
+                <Text variant="h5" className={styles.complianceTitle}>
+                  {t('culture.compliance.title')}
+                </Text>
+                <Text variant="body2" color="muted">
+                  {t('culture.compliance.text')}
+                </Text>
+              </GlowCard>
+            </motion.div>
           </div>
         </Container>
       </section>

@@ -57,20 +57,23 @@ $gold-bright: #fbbf6d;
     linear-gradient(90deg, rgba(0, 120, 255, 0.05) 1px, transparent 1px);
   background-size: 60px 60px;
   mask-image: radial-gradient(ellipse 90% 80% at 50% 50%, black 0%, transparent 70%);
-  animation: sc-grid-gold-flash 8s ease-in-out infinite;
-}
 
-@keyframes sc-grid-gold-flash {
-  0%, 35%, 55%, 100% {
-    background-image:
-      linear-gradient(rgba(0, 120, 255, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0, 120, 255, 0.05) 1px, transparent 1px);
-  }
-  42%, 48% {
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
     background-image:
       linear-gradient(rgba(249, 159, 37, 0.06) 1px, transparent 1px),
       linear-gradient(90deg, rgba(249, 159, 37, 0.06) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: sc-grid-gold-flash 8s ease-in-out infinite;
+    will-change: opacity;
   }
+}
+
+@keyframes sc-grid-gold-flash {
+  0%, 35%, 55%, 100% { opacity: 0; }
+  42%, 48% { opacity: 1; }
 }
 
 .showcaseTraceH,
@@ -246,7 +249,8 @@ $gold-bright: #fbbf6d;
   height: 400px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(0, 120, 255, 0.06) 0%, transparent 70%);
-  animation: sc-orb 4s ease-in-out infinite, sc-orb-gold-flash 8s ease-in-out infinite;
+  animation: sc-orb 4s ease-in-out infinite;
+  will-change: transform, opacity;
 
   @include lg { width: 600px; height: 600px; }
 }
@@ -259,7 +263,8 @@ $gold-bright: #fbbf6d;
   height: 300px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(0, 120, 255, 0.04) 0%, transparent 70%);
-  animation: sc-orb 6s ease-in-out infinite 2s, sc-orb-gold-flash 8s ease-in-out infinite 4s;
+  animation: sc-orb 6s ease-in-out infinite 2s;
+  will-change: transform, opacity;
 
   @include lg { width: 480px; height: 480px; }
 }
@@ -333,14 +338,6 @@ $gold-bright: #fbbf6d;
   }
 }
 
-@keyframes sc-orb-gold-flash {
-  0%, 35%, 55%, 100% {
-    background: radial-gradient(circle, rgba(0, 120, 255, 0.06) 0%, transparent 70%);
-  }
-  42%, 48% {
-    background: radial-gradient(circle, rgba(249, 159, 37, 0.08) 0%, transparent 70%);
-  }
-}
 
 // ── Service cards — ghost photo + text on circuit ──
 
@@ -986,14 +983,15 @@ $emp-height: calc(4 * #{$emp-tile} + 3 * #{$emp-gap}); // 416px
     transparent 100%
   );
   animation: clients-scan 6s ease-in-out infinite;
+  will-change: transform, opacity;
   pointer-events: none;
 }
 
 @keyframes clients-scan {
-  0%   { top: 0; opacity: 0; }
+  0%   { transform: translateY(0); opacity: 0; }
   10%  { opacity: 1; }
   90%  { opacity: 1; }
-  100% { top: 100%; opacity: 0; }
+  100% { transform: translateY(calc(100vh)); opacity: 0; }
 }
 
 // ── Counter ─────────────────────────────
@@ -1111,6 +1109,7 @@ $emp-height: calc(4 * #{$emp-tile} + 3 * #{$emp-gap}); // 416px
   display: flex;
   width: max-content;
   animation: client-scroll var(--ticker-duration, 35s) linear infinite;
+  will-change: transform;
 
   &:hover { animation-play-state: paused; }
 }
@@ -1146,27 +1145,11 @@ $emp-height: calc(4 * #{$emp-tile} + 3 * #{$emp-gap}); // 416px
   background: rgba(0, 20, 40, 0.6);
   white-space: nowrap;
   cursor: default;
-  animation: chip-ping 15s ease-in-out infinite;
-  animation-delay: var(--ping-delay, 0s);
+  transition: color 0.3s ease, border-color 0.3s ease;
 
   &:hover {
     color: var(--text-primary);
     border-color: rgba(0, 136, 255, 0.4);
-    background: rgba(0, 136, 255, 0.1);
-    box-shadow: 0 0 16px -2px rgba(0, 136, 255, 0.25);
-  }
-}
-
-@keyframes chip-ping {
-  0%, 85%, 100% {
-    border-color: rgba(138, 158, 178, 0.08);
-    color: var(--text-muted);
-    box-shadow: none;
-  }
-  90% {
-    border-color: rgba(0, 136, 255, 0.5);
-    color: var(--text-primary);
-    box-shadow: 0 0 14px -2px rgba(0, 136, 255, 0.3);
   }
 }
 
@@ -1223,4 +1206,23 @@ $emp-height: calc(4 * #{$emp-tile} + 3 * #{$emp-gap}); // 416px
   margin: 0 auto;
   position: relative;
   z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .showcaseGrid,
+  .showcaseGrid::after,
+  .showcaseTraceH::after,
+  .showcaseTraceH2::after,
+  .showcaseTraceV::after,
+  .showcaseTraceV2::after,
+  .showcaseOrb,
+  .showcaseOrb2,
+  .showcaseNode,
+  .showcaseTruck,
+  .clientsScanline,
+  .clientsCounterIcon,
+  .clientSectorPulse,
+  .clientTicker {
+    animation: none !important;
+  }
 }

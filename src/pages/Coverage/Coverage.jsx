@@ -72,6 +72,12 @@ export default function Coverage() {
         </Container>
       </section>
 
+      <section className={styles.networkVideo}>
+        <video autoPlay loop muted playsInline className={styles.networkVideoEl}>
+          <source src="/media/videos/map-network.mp4" type="video/mp4" />
+        </video>
+      </section>
+
       <section className={`${styles.section} ${styles.sectionCta}`}>
         <Container size="lg">
           <motion.div
@@ -81,10 +87,10 @@ export default function Coverage() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <Text variant="h3">{t('cta.title')}</Text>
-            <Text variant="body1" color="muted">
-              {t('cta.subtitle')}
-            </Text>
+            <SectionTitle
+              title={t('cta.title')}
+              subtitle={t('cta.subtitle')}
+            />
             <Button variant="primary" size="lg" href={getLocalizedPath('contact', lang)}>
               {t('common:cta.contactTeam')}
             </Button>

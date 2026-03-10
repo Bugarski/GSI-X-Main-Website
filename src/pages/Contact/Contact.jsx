@@ -150,10 +150,10 @@ export default function Contact() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <Text variant="h3">{t('finalCta.title')}</Text>
-            <Text variant="body1" color="muted">
-              {t('finalCta.subtitle')}
-            </Text>
+            <SectionTitle
+              title={t('finalCta.title')}
+              subtitle={t('finalCta.subtitle')}
+            />
             <Button variant="primary" size="lg" href={getLocalizedPath('contact', lang)}>
               {t('common:cta.requestQuote')}
             </Button>
