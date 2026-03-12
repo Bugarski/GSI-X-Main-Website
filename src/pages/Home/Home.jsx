@@ -41,21 +41,21 @@ const panelReveal = {
 const LOGO_BASE = '/media/optimized/logos/empresas';
 const PHOTO_BASE = '/media/optimized/empresas';
 const EMPRESAS_GSI = [
-  { key: 'cometra', name: 'Cometra', fullName: 'Compañía Mexicana de Traslado de Valores, S.A. de C.V.', founded: '1976', logo: `${LOGO_BASE}/cometra.webp`, photo: `${PHOTO_BASE}/cometra.jpg` },
-  { key: 'sepsa', name: 'Sepsa', fullName: 'Sepsa, S.A. de C.V.', founded: '1976', logo: `${LOGO_BASE}/sepsa.webp`, photo: `${PHOTO_BASE}/sepsa.jpg` },
-  { key: 'seguritec', name: 'Seguritec', fullName: 'Seguritec Transporte de Valores, S.A. de C.V.', founded: '1984', logo: `${LOGO_BASE}/seguritec.webp`, photo: `${PHOTO_BASE}/seguritec.jpg` },
-  { key: 'gsi-seguridad', name: 'GSI Seguridad Privada', fullName: 'GSI Seguridad Privada, S.A. de C.V.', founded: '2003', logo: `${LOGO_BASE}/gsi-seguridad.webp`, photo: `${PHOTO_BASE}/gsi-seguridad.jpg`, website: 'https://www.gsiseguridad.com.mx/' },
-  { key: 'sepsa-custodias', name: 'Sepsa Custodias', fullName: 'Sepsa Custodias de Valores', founded: '1999', logo: `${LOGO_BASE}/sepsa-custodias.webp`, photo: `${PHOTO_BASE}/sepsa-custodias.jpg`, website: 'https://www.sepsacustodias.com.mx/' },
-  { key: 'central-alarmas', name: 'Central de Alarmas', fullName: 'Central de Alarmas', logo: `${LOGO_BASE}/central-alarmas.webp` },
-  { key: 'regio', name: 'Regio Traslados', fullName: 'Regio Translados, S.A. de C.V.', founded: '2001', logo: `${LOGO_BASE}/regio.webp` },
-  { key: 'cinco-elementos', name: 'Cinco Elementos', fullName: 'Comercializadora Cinco Elementos, S.A. de C.V.', logo: `${LOGO_BASE}/cinco-elementos.webp`, photo: `${PHOTO_BASE}/cinco-elementos.jpg`, website: 'https://www.cincoelementos.mx/' },
-  { key: 'ax-transporter', name: 'AX Transporter', fullName: 'AX Transporter', logo: `${LOGO_BASE}/ax-transporter.webp`, photo: `${PHOTO_BASE}/ax-transporter.jpg` },
-  { key: 'gsi-fabril', name: 'GSI Fabril', fullName: 'Fabril, S.A. de C.V.', logo: `${LOGO_BASE}/gsi-fabril.webp`, photo: `${PHOTO_BASE}/gsi-fabril.jpg`, website: 'https://www.gsifabril.com/' },
-  { key: 'grumer', name: 'Grumer', fullName: 'Grupo Mercurio de Transportes, S.A. de C.V.', logo: `${LOGO_BASE}/grumer.webp`, photo: `${PHOTO_BASE}/grumer.jpg`, website: 'https://grumer-mexico.com.mx/' },
-  { key: 'impacto-total', name: 'Impacto Total', fullName: 'Impacto Total en Seguridad Privada Integral, S.A. de C.V.', logo: `${LOGO_BASE}/impacto-total.webp`, photo: `${PHOTO_BASE}/impacto-total.jpg`, website: 'http://impactototal.mx/' },
-  { key: 'tameme', name: 'Tameme', fullName: 'Tameme', logo: `${LOGO_BASE}/tameme.webp`, photo: `${PHOTO_BASE}/tameme.jpg` },
-  { key: 'tecnoval', name: 'Tecnoval', fullName: 'Tecnoval de México, S.A. de C.V.', founded: '1996', logo: `${LOGO_BASE}/tecnoval.webp`, photo: `${PHOTO_BASE}/tecnoval.jpg` },
-  { key: 'cogar-trade', name: 'Cogar Trade', fullName: 'Cogar Trade, S.A. de C.V.', logo: `${LOGO_BASE}/cogar-trade.webp` },
+  { key: 'cometra', name: 'Cometra', fullName: 'Compañía Mexicana de Traslado de Valores, S.A. de C.V.', founded: '1976', logo: `${LOGO_BASE}/cometra.png`, photo: `${PHOTO_BASE}/cometra.jpg` },
+  { key: 'sepsa', name: 'Sepsa', fullName: 'Sepsa, S.A. de C.V.', founded: '1976', logo: `${LOGO_BASE}/sepsa.png`, photo: `${PHOTO_BASE}/sepsa.jpg` },
+  { key: 'seguritec', name: 'Seguritec', fullName: 'Seguritec Transporte de Valores, S.A. de C.V.', founded: '1984', logo: `${LOGO_BASE}/seguritec.png`, photo: `${PHOTO_BASE}/seguritec.jpg` },
+  { key: 'gsi-seguridad', name: 'GSI Seguridad Privada', fullName: 'GSI Seguridad Privada, S.A. de C.V.', founded: '2003', logo: `${LOGO_BASE}/gsi-seguridad.png`, photo: `${PHOTO_BASE}/gsi-seguridad.jpg`, website: 'https://www.gsiseguridad.com.mx/' },
+  { key: 'sepsa-custodias', name: 'Sepsa Custodias', fullName: 'Sepsa Custodias de Valores', founded: '1999', logo: `${LOGO_BASE}/sepsa-custodias.png`, photo: `${PHOTO_BASE}/sepsa-custodias.jpg`, website: 'https://www.sepsacustodias.com.mx/' },
+  { key: 'central-alarmas', name: 'Central de Alarmas', fullName: 'Central de Alarmas', logo: `${LOGO_BASE}/central-alarmas.png` },
+  { key: 'regio', name: 'Regio Traslados', fullName: 'Regio Translados, S.A. de C.V.', founded: '2001', logo: `${LOGO_BASE}/regio.png` },
+  { key: 'cinco-elementos', name: 'Cinco Elementos', fullName: 'Comercializadora Cinco Elementos, S.A. de C.V.', logo: `${LOGO_BASE}/cinco-elementos.png`, photo: `${PHOTO_BASE}/cinco-elementos.jpg`, website: 'https://www.cincoelementos.mx/' },
+  { key: 'ax-transporter', name: 'AX Transporter', fullName: 'AX Transporter', logo: `${LOGO_BASE}/ax-transporter.png`, photo: `${PHOTO_BASE}/ax-transporter.jpg` },
+  { key: 'gsi-fabril', name: 'GSI Fabril', fullName: 'Fabril, S.A. de C.V.', logo: `${LOGO_BASE}/gsi-fabril.png`, photo: `${PHOTO_BASE}/gsi-fabril.jpg`, website: 'https://www.gsifabril.com/' },
+  { key: 'grumer', name: 'Grumer', fullName: 'Grupo Mercurio de Transportes, S.A. de C.V.', logo: `${LOGO_BASE}/grumer.png`, photo: `${PHOTO_BASE}/grumer.jpg`, website: 'https://grumer-mexico.com.mx/' },
+  { key: 'impacto-total', name: 'Impacto Total', fullName: 'Impacto Total en Seguridad Privada Integral, S.A. de C.V.', logo: `${LOGO_BASE}/impacto-total.png`, photo: `${PHOTO_BASE}/impacto-total.jpg`, website: 'http://impactototal.mx/' },
+  { key: 'tameme', name: 'Tameme', fullName: 'Tameme', logo: `${LOGO_BASE}/tameme.png`, logoDark: `${LOGO_BASE}/tameme-dark.png`, photo: `${PHOTO_BASE}/tameme.jpg` },
+  { key: 'tecnoval', name: 'Tecnoval', fullName: 'Tecnoval de México, S.A. de C.V.', founded: '1996', logo: `${LOGO_BASE}/tecnoval.png`, photo: `${PHOTO_BASE}/tecnoval.jpg` },
+  { key: 'cogar-trade', name: 'Cogar Trade', fullName: 'Cogar Trade, S.A. de C.V.', logo: `${LOGO_BASE}/cogar-trade.png` },
 ];
 
 const FV = '/media/favicons';
@@ -495,7 +495,7 @@ export default function Home() {
                       </div>
                       <div className={styles.empresasPanelBody}>
                         <div className={styles.empresasPanelLogo}>
-                          <img src={emp.logo} alt={emp.name} />
+                          <img src={emp.logoDark || emp.logo} alt={emp.name} />
                         </div>
                         <div className={styles.empresasPanelInfo}>
                           <div className={styles.empresasPanelNameRow}>
